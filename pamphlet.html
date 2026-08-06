@@ -88,6 +88,37 @@
   .sq .who { font-size:14pt; }
   .sq .cta .txt b { font-size:26pt; } .sq .cta .txt .url { font-size:20pt; } .sq .cta .txt span { font-size:12.5pt; }
   .sq .foot { font-size:11pt; }
+
+  /* ── LIGHT VARIANT ────────────────────────────────────── */
+  .sheet.light { background:#FFFFFF; color:var(--navy); }
+  .light .bg { top:0; right:0; width:100%; height:47%; background-position:34% 26%;
+               filter:contrast(1.05) saturate(1.05); }
+  .light .scrim { top:0; right:0; width:100%; height:47%;
+    background:linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.3) 40%, rgba(0,0,0,.62) 72%, rgba(255,255,255,.96) 96%, #fff 100%); }
+  .light .glow { display:none; }
+  .light .lockup { color:#E8EAED; }
+  .light h1 { color:#fff; }
+  .light .strap { color:#DCE0E4; }
+  .light .eyebrow { color:var(--saffron); }
+  .light .rule { background:var(--gold); }
+  /* content below the photo band sits on white */
+  .light .datestrip { margin-top:8mm; }
+  .light .datestrip div { background:#F5F7FA; border:0.3mm solid #D8DEE6; }
+  .light .datestrip b { color:var(--navy); }
+  .light .datestrip i { color:var(--slate); }
+  .light .what .h { color:var(--accent-dim, #C77F08); }
+  .light .halls div { background:#F5F7FA; border-top:1mm solid var(--gold); }
+  .light .halls b { color:var(--navy); }
+  .light .halls span { color:#4A5568; }
+  .light .topics li { color:#2D3748; text-shadow:none; }
+  .light .who { color:#4A5568; text-shadow:none; }
+  .light .who b { color:var(--navy); }
+  .light .sportstrip div { border:0.3mm solid #D8DEE6; }
+  .light .cta { background:var(--navy); border:0; }
+  .light .cta .txt b { color:var(--gold); }
+  .light .cta .txt .url { color:#fff; }
+  .light .cta .txt span { color:#C9CFD6; }
+  .light .foot { color:var(--slate); }
   .bar { position:fixed; top:4px; left:8px; color:#ccc; font-size:11px; z-index:5; }
   @media print { .bar{display:none} body{background:#fff} .sheet{margin:0} .sq{display:none} }
 </style>
@@ -155,6 +186,66 @@
   </div>
 </div>
 
+<!-- ══════ A4 PAMPHLET — LIGHT ══════ -->
+<div class="sheet light" id="a4light">
+  <div class="bg main"></div>
+  <div class="scrim"></div>
+  <div class="glow"></div>
+  <p class="lockup">In association with Apollo Hospitals · Financial District, Hyderabad</p>
+  <div class="rule"></div>
+  <p class="eyebrow">INAUGURAL EDITION · THEME: RETURN TO SPORT</p>
+  <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
+  <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+
+  <div class="datestrip">
+    <div><b>29 &amp; 30 JAN 2027</b><i>Friday &amp; Saturday</i></div>
+    <div><b>HYDERABAD</b><i>Venue to be announced</i></div>
+    <div><b>CME APPLIED</b><i>Credit points — TSMC</i></div>
+  </div>
+
+  <div class="what">
+    <p class="h">Theme: return to sport · two parallel halls</p>
+    <div class="halls">
+      <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy and live surgical video</span></div>
+      <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management, nutrition and the athlete's mind</span></div>
+    </div>
+  </div>
+
+  <ul class="topics">
+    <li>Return to sport — the decision every discipline shares</li>
+    <li>Comprehensive sports injury management across all joints</li>
+    <li>Current concepts in arthroscopy, sports medicine &amp; rehabilitation</li>
+    <li>From prevention to return to play</li>
+    <li>Innovation in surgical techniques and orthobiologics</li>
+    <li>Live surgical videos and technical pearls</li>
+    <li>Rehabilitation and return-to-sport strategies</li>
+    <li>Fuelling the return: nutrition, energy availability &amp; recovery</li>
+    <li>The mind of the returning athlete</li>
+    <li>Free papers, e-posters &amp; Young Surgeon Forum awards</li>
+  </ul>
+
+  <p class="who"><b>Who should attend:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · Strength &amp; Conditioning Coaches · PG Students</p>
+
+  <div class="sportstrip">
+    <div class="s1" data-l="CRICKET"></div>
+    <div class="s2" data-l="BADMINTON"></div>
+    <div class="s3" data-l="CONTACT SPORT"></div>
+  </div>
+
+  <div class="cta">
+    <div class="qr" id="qr3"></div>
+    <div class="txt">
+      <b>REGISTRATION OPENING SOON</b>
+      <p class="url gold">www.sportsinjuries.care</p>
+      <span>Scan for the full brochure, program and updates. Join the priority list to be told the day registration opens.</span>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Chairman: Dr Deepthi Nandan Reddy · Organised by Precision Orthopaedics LLP</span>
+    <span>info@precisionortho.care</span>
+  </div>
+</div>
+
 <!-- ══════ 1080×1080 SOCIAL ══════ -->
 <div class="sheet sq" id="sq">
   <div class="bg main"></div>
@@ -205,6 +296,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   new QRCode(document.getElementById('qr1'), { text:'https://www.sportsinjuries.care/', width:92, height:92, correctLevel:QRCode.CorrectLevel.M });
+  new QRCode(document.getElementById('qr3'), { text:'https://www.sportsinjuries.care/', width:92, height:92, correctLevel:QRCode.CorrectLevel.M });
   new QRCode(document.getElementById('qr2'), { text:'https://www.sportsinjuries.care/', width:170, height:170, correctLevel:QRCode.CorrectLevel.M });
 </script>
 </body>
