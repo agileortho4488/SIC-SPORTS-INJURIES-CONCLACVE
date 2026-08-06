@@ -13,46 +13,68 @@
   body { font-family:'Inter',sans-serif; background:#444; }
   .sheet {
     width:210mm; height:297mm; margin:8px auto; position:relative; overflow:hidden;
-    background:linear-gradient(158deg,#000 0%,var(--navy) 62%,var(--night) 100%);
-    color:#fff; padding:16mm 15mm 14mm; display:flex; flex-direction:column;
-    page-break-after:always;
+    background:#000; color:#fff; padding:16mm 15mm 14mm;
+    display:flex; flex-direction:column; page-break-after:always;
   }
-  .glow { position:absolute; width:150mm; height:150mm; right:-45mm; top:-45mm;
-          background:radial-gradient(circle,rgba(252,163,17,.16),transparent 65%); }
+  /* full-bleed athlete photograph */
+  /* athlete photo occupies the upper-right — kept bright and readable */
+  .bg { position:absolute; top:0; right:0; width:62%; height:56%;
+        background-image:url('assets/act-cricket.jpg');
+        background-size:cover; background-position:32% center; filter:contrast(1.12) saturate(1.05); }
+  /* fades the photo into the dark page on its left and lower edges */
+  .scrim { position:absolute; top:0; right:0; width:62%; height:56%;
+    background:
+      linear-gradient(90deg, #000 2%, rgba(0,0,0,.85) 26%, rgba(0,0,0,.15) 62%, rgba(0,0,0,0) 100%),
+      linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 78%, #000 100%); }
+  .glow { position:absolute; width:150mm; height:150mm; right:-45mm; top:-40mm;
+          background:radial-gradient(circle,rgba(252,163,17,.28),transparent 62%); mix-blend-mode:screen; }
+  .sheet > *:not(.bg):not(.bgstrip):not(.scrim):not(.glow) { position:relative; z-index:2; }
   .beb { font-family:'Bebas Neue',sans-serif; font-weight:400; }
   .gold { color:var(--gold); }
   .lockup { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ash); position:relative; }
   .rule { width:32mm; height:1.1mm; background:var(--gold); margin:5mm 0; }
   .eyebrow { font-size:9pt; letter-spacing:.24em; color:var(--gold); font-weight:600; }
-  h1 { font-size:44pt; line-height:.98; margin-top:4mm; position:relative; }
+  h1 { font-size:44pt; line-height:.98; margin-top:4mm; position:relative; text-shadow:0 2px 14px rgba(0,0,0,.85); }
   .strap { font-size:9.5pt; letter-spacing:.17em; text-transform:uppercase; color:var(--ash); margin-top:5mm; }
 
-  .datestrip { display:flex; gap:4mm; margin-top:9mm; }
-  .datestrip div { flex:1; background:rgba(255,255,255,.06); border:0.3mm solid rgba(255,255,255,.14);
-                   border-radius:2.5mm; padding:4mm; text-align:center; }
+  .datestrip { display:flex; gap:4mm; margin-top:6mm; }
+  .datestrip div { flex:1; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); border:0.3mm solid rgba(252,163,17,.45);
+                   border-radius:2.5mm; padding:3mm; text-align:center; }
   .datestrip b { display:block; font-family:'Bebas Neue',sans-serif; font-size:15pt; color:var(--gold); }
   .datestrip i { font-style:normal; font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--ash); }
 
-  .what { margin-top:9mm; }
+  .what { margin-top:6mm; }
   .what .h { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:3mm; }
   .halls { display:flex; gap:3.5mm; }
-  .halls div { flex:1; border-top:1mm solid var(--gold); background:rgba(255,255,255,.05); border-radius:0 0 2.5mm 2.5mm; padding:4mm; }
+  .halls div { flex:1; border-top:1mm solid var(--gold); background:rgba(0,0,0,.6); border-radius:0 0 2.5mm 2.5mm; padding:3.2mm; }
   .halls b { font-family:'Bebas Neue',sans-serif; font-size:11pt; display:block; }
   .halls span { font-size:7.5pt; color:var(--ash); line-height:1.5; display:block; margin-top:1.5mm; }
 
-  .topics { margin-top:7mm; columns:2; column-gap:7mm; font-size:8.6pt; }
-  .topics li { list-style:none; margin-bottom:2.6mm; padding-left:5mm; position:relative; line-height:1.45; color:#E8EAED; break-inside:avoid; }
+  .topics { margin-top:5mm; columns:2; column-gap:7mm; font-size:8.4pt; }
+  .topics li { list-style:none; margin-bottom:2.1mm; padding-left:5mm; position:relative; line-height:1.45; color:#F2F4F6; break-inside:avoid; text-shadow:0 1px 3px rgba(0,0,0,.9); }
   .topics li::before { content:''; position:absolute; left:0; top:1.6mm; width:2.2mm; height:2.2mm; background:var(--gold); border-radius:50%; }
 
-  .who { margin-top:7mm; font-size:8.6pt; color:var(--ash); }
+  .who { margin-top:5mm; font-size:8.6pt; color:#DCE0E4; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+  /* three-sport photo strip — the visual proof this is about sport */
+  .sportstrip { display:flex; gap:2.5mm; margin-top:5mm; }
+  .sportstrip div { flex:1; height:23mm; border-radius:2mm; background-size:cover; background-position:center;
+                    border:0.3mm solid rgba(252,163,17,.35); position:relative; overflow:hidden; }
+  .sportstrip div::after { content:attr(data-l); position:absolute; left:0; right:0; bottom:0;
+    font-family:'Bebas Neue',sans-serif; font-size:8pt; letter-spacing:.1em; color:#fff;
+    background:linear-gradient(0deg,rgba(0,0,0,.9),transparent); padding:4mm 2mm 1.5mm; text-align:center; }
+  .sportstrip .s1 { background-image:url('assets/act-cricket.jpg'); background-position:38% center; }
+  .sportstrip .s2 { background-image:url('assets/act-badminton.jpg'); }
+  .sportstrip .s3 { background-image:url('assets/act-wrestling.jpg'); }
+  .sq .sportstrip div { height:120px; }
+  .sq .sportstrip div::after { font-size:15pt; padding:26px 8px 8px; }
   .who b { color:#fff; }
 
-  .cta { margin-top:auto; display:flex; gap:6mm; align-items:center; padding-top:8mm; border-top:0.3mm solid rgba(255,255,255,.18); }
+  .cta { margin-top:auto; display:flex; gap:5mm; align-items:center; padding:4.5mm; margin-bottom:2mm; background:rgba(0,0,0,.68); border:0.3mm solid rgba(252,163,17,.4); border-radius:3mm; }
   .qr { background:#fff; padding:2.5mm; border-radius:2mm; flex:none; }
   .cta .txt b { font-family:'Bebas Neue',sans-serif; font-size:16pt; color:var(--gold); display:block; }
   .cta .txt .url { font-size:11pt; font-weight:600; margin-top:1mm; }
   .cta .txt span { font-size:7.8pt; color:var(--ash); display:block; margin-top:1.5mm; line-height:1.5; }
-  .foot { margin-top:6mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--slate); }
+  .foot { margin-top:3.5mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--slate); }
 
   /* square social version */
   .sq { width:1080px; height:1080px; margin:8px auto; padding:70px 64px 56px; }
@@ -75,6 +97,8 @@
 
 <!-- ══════ A4 PAMPHLET ══════ -->
 <div class="sheet" id="a4">
+  <div class="bg main"></div>
+  <div class="scrim"></div>
   <div class="glow"></div>
   <p class="lockup">Hosted at Apollo Hospitals · Financial District, Hyderabad</p>
   <div class="rule"></div>
@@ -111,6 +135,12 @@
 
   <p class="who"><b>Who should attend:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · Strength &amp; Conditioning Coaches · PG Students</p>
 
+  <div class="sportstrip">
+    <div class="s1" data-l="CRICKET"></div>
+    <div class="s2" data-l="BADMINTON"></div>
+    <div class="s3" data-l="CONTACT SPORT"></div>
+  </div>
+
   <div class="cta">
     <div class="qr" id="qr1"></div>
     <div class="txt">
@@ -127,6 +157,8 @@
 
 <!-- ══════ 1080×1080 SOCIAL ══════ -->
 <div class="sheet sq" id="sq">
+  <div class="bg main"></div>
+  <div class="scrim"></div>
   <div class="glow"></div>
   <p class="lockup">Hosted at Apollo Hospitals · Financial District, Hyderabad</p>
   <div class="rule"></div>
@@ -153,6 +185,12 @@
     <li>Rehabilitation &amp; return-to-sport</li>
     <li>Free papers, e-posters &amp; awards</li>
   </ul>
+
+  <div class="sportstrip">
+    <div class="s1" data-l="CRICKET"></div>
+    <div class="s2" data-l="BADMINTON"></div>
+    <div class="s3" data-l="CONTACT SPORT"></div>
+  </div>
   <div class="cta">
     <div class="qr" id="qr2"></div>
     <div class="txt">
@@ -166,7 +204,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-  new QRCode(document.getElementById('qr1'), { text:'https://www.sportsinjuries.care/', width:104, height:104, correctLevel:QRCode.CorrectLevel.M });
+  new QRCode(document.getElementById('qr1'), { text:'https://www.sportsinjuries.care/', width:92, height:92, correctLevel:QRCode.CorrectLevel.M });
   new QRCode(document.getElementById('qr2'), { text:'https://www.sportsinjuries.care/', width:170, height:170, correctLevel:QRCode.CorrectLevel.M });
 </script>
 </body>
