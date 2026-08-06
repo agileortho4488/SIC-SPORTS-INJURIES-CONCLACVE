@@ -273,7 +273,12 @@
 
   // back to top
   const toTop = document.querySelector('.to-top');
-  lenis.on('scroll', () => toTop.classList.toggle('show', window.scrollY > innerHeight * 1.5));
+  // listen to BOTH lenis and native scroll — keyboard, anchor jumps and touch
+  // don't always route through lenis, and the button must never be stuck hidden
+  const syncToTop = () => toTop.classList.toggle('show', window.scrollY > innerHeight * 1.5);
+  lenis.on('scroll', syncToTop);
+  addEventListener('scroll', syncToTop, { passive: true });
+  syncToTop();
   toTop.addEventListener('click', () => lenis.scrollTo(0, { duration: 1.1 }));
 
   // pointer-driven effects — fine pointers only
