@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>SIC 2027 — Three-Hall Program Plan (print to PDF, A4)</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @font-face { font-family: 'Bebas Neue'; src: url('fonts/bebas-neue.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 400 600; src: url('fonts/inter.woff2') format('woff2'); }
+  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090; --ink: #1A202C; }
+  body { font-family: 'Inter', sans-serif; background: #444; font-size: 9pt; }
+  .pg { width: 210mm; min-height: 297mm; margin: 8px auto; position: relative; background: #FFF; color: var(--ink); padding: 15mm 15mm 18mm; page-break-after: always; }
+  .pg.dark { background: linear-gradient(160deg, #000 0%, var(--navy) 70%, var(--night) 100%); color: #FFF; }
+  .beb { font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
+  .gold { color: var(--gold); }
+  .label { font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 2mm; }
+  h2.sec { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 21pt; letter-spacing: 0.02em; margin-bottom: 4mm; color: var(--navy); }
+  .pg.dark h2.sec { color: #FFF; }
+  h3 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 13pt; color: var(--navy); margin: 6mm 0 2mm; border-bottom: 0.3mm solid var(--gold); padding-bottom: 1.5mm; }
+  p { line-height: 1.6; margin-bottom: 3mm; }
+  .foot { position: absolute; bottom: 8mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; font-size: 7pt; color: var(--slate); border-top: 0.3mm solid #E5E5E5; padding-top: 2mm; }
+  .pg.dark .foot { border-color: rgb(255 255 255 / 0.2); color: var(--ash); }
+  ul, ol { margin: 0 0 3mm 5mm; }
+  li { line-height: 1.55; margin-bottom: 1.5mm; }
+  strong { font-weight: 600; }
+  .lede { font-size: 10pt; line-height: 1.65; }
+
+  /* cover */
+  .cover { display: flex; flex-direction: column; }
+  .cover .lockup { font-size: 8.5pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); max-width: 110mm; }
+  .cover h1 { font-size: 40pt; line-height: 1.03; margin-top: 8mm; }
+  .cover .sub { font-size: 11pt; letter-spacing: 0.16em; color: var(--ash); text-transform: uppercase; margin-top: 6mm; }
+  .cover .dates { font-size: 18pt; margin-top: 12mm; }
+  .cover .meta { margin-top: auto; }
+  .cover .meta p { color: var(--ash); font-size: 8.5pt; margin: 0; }
+  .stamp { position: absolute; top: 12mm; right: 15mm; border: 0.5mm solid var(--saffron); color: var(--saffron); font-size: 7.5pt; font-weight: 700; letter-spacing: 0.12em; padding: 1.5mm 3.5mm; border-radius: 2mm; }
+
+  /* hall summary cards */
+  .halls { display: flex; gap: 4mm; margin: 4mm 0 6mm; }
+  .hcard { flex: 1; border: 0.3mm solid #E5E5E5; border-top: 1.2mm solid var(--gold); border-radius: 2mm; padding: 4mm; }
+  .hcard .tag { font-family: 'Bebas Neue', sans-serif; font-size: 11pt; color: var(--gold); }
+  .hcard b { display: block; font-size: 9.5pt; margin: 1mm 0 2mm; }
+  .hcard span { font-size: 7.5pt; color: var(--slate); line-height: 1.5; display: block; }
+
+  /* master grid */
+  table.grid { width: 100%; border-collapse: collapse; font-size: 7.6pt; margin-bottom: 4mm; }
+  table.grid th { text-align: left; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: #FFF; background: var(--navy); padding: 2mm; }
+  table.grid td { padding: 1.8mm 2mm; border-bottom: 0.25mm solid #E8E8E8; vertical-align: top; line-height: 1.4; }
+  table.grid td.t { font-family: 'Bebas Neue', sans-serif; font-size: 8.5pt; color: var(--night); white-space: nowrap; width: 15mm; }
+  td.joint { background: #FFF6E6; border-left: 0.8mm solid var(--gold); font-weight: 600; }
+  tr.brk td { background: #F4F5F7; color: var(--slate); font-style: italic; }
+
+  /* session detail */
+  .block { border-left: 0.8mm solid var(--gold); padding: 2mm 0 2mm 4mm; margin-bottom: 4mm; break-inside: avoid; }
+  .block b { display: block; font-size: 9.5pt; color: var(--navy); margin-bottom: 1mm; }
+  .block p { font-size: 8.2pt; margin: 0; color: #4A5568; }
+  .block .debate { display: inline-block; margin-top: 1.5mm; font-size: 7.8pt; background: var(--navy); color: #FFF; padding: 1mm 2.5mm; border-radius: 1.5mm; }
+  .flag { font-size: 7pt; background: #FFF6E6; color: #8A5A00; padding: 0.5mm 1.5mm; border-radius: 1mm; margin-left: 1mm; }
+
+  .decision { border: 0.3mm solid #E5E5E5; border-radius: 2mm; padding: 4mm; margin-bottom: 3mm; break-inside: avoid; }
+  .decision b { color: var(--navy); font-size: 9.5pt; }
+  .decision p { font-size: 8.2pt; margin: 1.5mm 0 0; color: #4A5568; }
+  .callout { background: var(--navy); color: #FFF; border-radius: 2mm; padding: 5mm; margin: 4mm 0; }
+  .callout b { color: var(--gold); }
+  .callout p { font-size: 8.5pt; margin: 0; }
+  .srcs { font-size: 6.8pt; color: var(--slate); line-height: 1.5; margin-top: 3mm; }
+  .bar { position: fixed; top: 4px; left: 8px; color: #ccc; font-size: 11px; z-index: 5; }
+  @media print { .bar { display: none; } body { background: #fff; } .pg { margin: 0; } }
+</style>
+</head>
+<body>
+<p class="bar">Ctrl+P → Save as PDF (A4, margins: none, background graphics ON)</p>
+
+<!-- COVER -->
+<div class="pg dark cover">
+  <span class="stamp">DRAFT — SCIENTIFIC COMMITTEE</span>
+  <p class="lockup">Apollo Hospitals · Financial District, Hyderabad</p>
+  <p class="label" style="margin-top:6mm">SIC 2027 · INAUGURAL EDITION</p>
+  <h1 class="beb">THREE-HALL<br>SCIENTIFIC<br>PROGRAM <span class="gold">PLAN</span></h1>
+  <p class="sub">Hyderabad Sports Injuries Conclave</p>
+  <p class="dates beb gold">29TH &amp; 30TH JANUARY 2027</p>
+  <div class="meta">
+    <p>Prepared for the Scientific Committee</p>
+    <p>Researched against IASCON · IASMCON · ISKSAA · ISAKOS · AOSSM · ESSKA · IFSPT · NSCA<br>and the IOC, WADA and ACSM consensus literature</p>
+    <p style="margin-top:4mm">Organised by Precision Orthopaedics LLP · info@precisionortho.care</p>
+  </div>
+</div>
+
+<!-- PAGE 2 — ARCHITECTURE -->
+<div class="pg">
+  <p class="label">01 · THE ARCHITECTURE</p>
+  <h2 class="sec">WHY THREE HALLS</h2>
+  <p class="lede">One hall forces a compromise programme: surgeons sit through nutrition talks, physiotherapists sit through arthroscopic technique. Three parallel halls give each profession two full days of depth — while shared plenary sessions keep SIC 2027 feeling like one conclave rather than three co-located meetings.</p>
+
+  <div class="halls">
+    <div class="hcard"><span class="tag">HALL A</span><b>Surgery &amp; Sports Orthopaedics</b><span>Orthopaedic &amp; arthroscopy surgeons, sports physicians, PG trainees · ~45% of delegates</span></div>
+    <div class="hcard"><span class="tag">HALL B</span><b>Rehabilitation, Performance &amp; Return to Play</b><span>Sports physiotherapists, S&amp;C coaches, athletic trainers · ~35%</span></div>
+    <div class="hcard"><span class="tag">HALL C</span><b>Sports Science, Nutrition &amp; Athlete Health</b><span>Nutritionists, physiologists, team doctors, psychologists · ~20%</span></div>
+  </div>
+
+  <p><strong>Room sizing:</strong> Hall A doubles as the plenary hall and must seat the full delegate count. Halls B and C need roughly 40% and 25% of that. Hall B additionally needs clear floor space for hands-on workshops.</p>
+
+  <h3>JOINT PLENARY — EVERYONE IN ONE ROOM</h3>
+  <p>These six sessions are deliberately <strong>not</strong> parallel. They are what make it one conclave:</p>
+  <table class="grid">
+    <tr><th>Session</th><th>When</th><th>Why it must be joint</th></tr>
+    <tr><td>Inauguration</td><td>Day 1, 09:00</td><td>Ceremonial; sets the inaugural-edition tone</td></tr>
+    <tr><td>Opening keynote</td><td>Day 1, 09:15</td><td>One marquee name, heard by every delegate</td></tr>
+    <tr><td><strong>The Return-to-Play Panel</strong><br>surgeon · physio · S&amp;C · nutritionist · athlete</td><td>Day 1, 12:45</td><td><strong>The signature session.</strong> The one decision every profession in the building shares — and the clearest expression of why this conclave exists</td></tr>
+    <tr><td><strong>Medical ethics &amp; good clinical practice</strong></td><td>Day 1, 17:30</td><td><strong>Mandatory for TSMC CPD accreditation</strong> — the Declaration Proforma requires it. Joint scheduling guarantees attendance capture</td></tr>
+    <tr><td>Athlete fireside chat</td><td>Day 2, 12:35</td><td>Draws every audience; strongest media moment</td></tr>
+    <tr><td>Awards &amp; valedictory</td><td>Day 2, 17:00</td><td>Best paper and poster across all three tracks</td></tr>
+  </table>
+
+  <div class="callout">
+    <p><b>The research produced roughly three days of strong content for a two-day event.</b> The committee's first decision should be whether to add a pre-conference day on 28 January for hands-on workshops and the reserve blocks — because that decision determines the venue contract.</p>
+  </div>
+  <div class="foot"><span>SIC 2027 · Three-Hall Program Plan · Draft for Scientific Committee</span><span>Page 2</span></div>
+</div>
+
+<!-- PAGE 3 — DAY 1 GRID -->
+<div class="pg">
+  <p class="label">02 · MASTER GRID</p>
+  <h2 class="sec">DAY 1 — FRIDAY 29 JANUARY 2027</h2>
+  <table class="grid">
+    <tr><th>Time</th><th>Hall A — Surgery</th><th>Hall B — Rehab &amp; Performance</th><th>Hall C — Science &amp; Nutrition</th></tr>
+    <tr><td class="t">08:00</td><td colspan="3">Registration · breakfast · trade exhibition</td></tr>
+    <tr><td class="t">09:00</td><td colspan="3" class="joint">JOINT — Inauguration</td></tr>
+    <tr><td class="t">09:15</td><td colspan="3" class="joint">JOINT — Opening keynote</td></tr>
+    <tr><td class="t">10:00</td><td>A1 · Instability: beyond the Bankart</td><td>B1 · Criteria-based rehab &amp; the RTP decision</td><td>C1 · Energy availability &amp; REDs</td></tr>
+    <tr class="brk"><td class="t">11:15</td><td colspan="3">Tea · exhibition</td></tr>
+    <tr><td class="t">11:35</td><td>A2 · Rotator cuff: repair, augment, transfer</td><td>B2 · Objective testing, screening &amp; technology</td><td>C2 · Nutrition periodisation on Indian diets</td></tr>
+    <tr><td class="t">12:45</td><td colspan="3" class="joint">JOINT — THE RETURN-TO-PLAY PANEL · surgeon · physio · S&amp;C · nutritionist · athlete</td></tr>
+    <tr class="brk"><td class="t">13:30</td><td colspan="3">Lunch · exhibition</td></tr>
+    <tr><td class="t">14:30</td><td>A4 · ACL I — primary reconstruction debates</td><td>B3 · Tendinopathy &amp; load-driven pain</td><td>C3 · Hydration &amp; heat in Indian conditions</td></tr>
+    <tr class="brk"><td class="t">16:00</td><td colspan="3">Tea</td></tr>
+    <tr><td class="t">16:15</td><td>A5 · ACL II — complex &amp; multiligament knee</td><td><strong>W1 · Hands-on carousel</strong> (ticketed, capped)</td><td>C4 · Supplements &amp; ergogenic aids</td></tr>
+    <tr><td class="t">17:30</td><td colspan="3" class="joint">JOINT — Medical ethics &amp; GCP in sports medicine <em>(TSMC CPD requirement)</em></td></tr>
+    <tr><td class="t">18:15</td><td colspan="3">Free papers — parallel by track</td></tr>
+    <tr class="brk"><td class="t">19:30</td><td colspan="3">Faculty dinner</td></tr>
+  </table>
+
+  <h2 class="sec" style="margin-top:8mm">DAY 2 — SATURDAY 30 JANUARY 2027</h2>
+  <table class="grid">
+    <tr><th>Time</th><th>Hall A — Surgery</th><th>Hall B — Rehab &amp; Performance</th><th>Hall C — Science &amp; Nutrition</th></tr>
+    <tr><td class="t">08:30</td><td>A6 · Save the meniscus</td><td><strong>W2 · Field-based RTP testing &amp; hamstring</strong> (hands-on)</td><td>C8 · Exercise physiology &amp; performance testing</td></tr>
+    <tr><td class="t">09:50</td><td>A7 · Cartilage &amp; joint preservation</td><td>B5 · Muscle injury &amp; the hamstring</td><td>C9 · Wearables, AI &amp; athlete monitoring</td></tr>
+    <tr class="brk"><td class="t">11:05</td><td colspan="3">Tea · exhibition</td></tr>
+    <tr><td class="t">11:25</td><td>A8 · Hip &amp; groin</td><td>B6 · Load management &amp; injury risk</td><td>C12 · Concussion — consensus-based practice</td></tr>
+    <tr><td class="t">12:35</td><td colspan="3" class="joint">JOINT — Athlete fireside chat</td></tr>
+    <tr class="brk"><td class="t">13:10</td><td colspan="3">Lunch · exhibition</td></tr>
+    <tr><td class="t">14:10</td><td>A9 · Foot &amp; ankle in sport</td><td>B7 · The athlete who isn't a 25-year-old male</td><td>C13 · Anti-doping &amp; WADA 2026 updates</td></tr>
+    <tr><td class="t">15:10</td><td>A10 · Paediatric &amp; adolescent athlete</td><td>Free papers — rapid fire</td><td>C14 · Sports cardiology &amp; screening</td></tr>
+    <tr class="brk"><td class="t">16:00</td><td colspan="3">Tea</td></tr>
+    <tr><td class="t">16:15</td><td>A11 · Orthobiologics: evidence vs marketing</td><td><em>joins Hall A</em></td><td>C15 · Para-athlete health &amp; surveillance</td></tr>
+    <tr><td class="t">17:00</td><td colspan="3" class="joint">JOINT — Awards &amp; valedictory</td></tr>
+  </table>
+  <p style="font-size:7.5pt;color:var(--slate);margin-top:3mm"><strong>Reserve blocks</strong> (add with a pre-conference day, or swap in as faculty confirm): A3 Elbow &amp; the overhead athlete · A12 Revision &amp; failed surgery · B4 Adjuncts under scrutiny · C5 Gut health · C6 Female athlete health · C7 Youth athlete · C10 Recovery &amp; sleep · C11 Sports psychology.</p>
+  <div class="foot"><span>SIC 2027 · Three-Hall Program Plan · Draft for Scientific Committee</span><span>Page 3</span></div>
+</div>
+
+<!-- PAGE 4 — HALL A -->
+<div class="pg">
+  <p class="label">03 · HALL A</p>
+  <h2 class="sec">SURGERY &amp; SPORTS ORTHOPAEDICS</h2>
+  <p style="font-size:8.5pt"><strong>Format:</strong> 12-minute talks (10 speak + 2 changeover), hard stops enforced by chairs. Debates 2 × 8 min + rebuttal, with audience polling before and after. <strong>Pre-record all "live" surgery</strong> — the operating surgeon narrates the recording live. This gives the teaching value without OT-link risk. Chair pairs, one senior + one mid-career who runs the clock.</p>
+
+  <div class="block"><b>A1 · Instability: beyond the Bankart</b><p>Measuring bone loss that changes the plan (3D-CT vs glenoid track vs MRI) · Bankart + remplissage into subcritical bone loss · Latarjet 2027: classic vs congruent-arc, screw vs button, open vs arthroscopic · free bone block after failed Latarjet · posterior and multidirectional instability in throwers and gymnasts · <strong>relive:</strong> arthroscopic Latarjet — the six steps where it goes wrong.</p><span class="debate">DEBATE · 19-year-old kabaddi player, first dislocation — stabilise now vs rehab and wait</span></div>
+
+  <div class="block"><b>A2 · Rotator cuff: repair, augment, transfer</b><p>Massive but reparable — margin convergence, interval slides, knowing when to stop pulling · SCR vs lower trapezius transfer, with fatty infiltration as the discriminator · patch and bioinductive augmentation: what 2025 evidence supports and what it doesn't · the subscapularis tear you're still missing · case panel: three cuffs, three plans.</p></div>
+
+  <div class="block"><b>A4 · ACL I — the primary reconstruction debates</b><p>Graft selection 2027: is quadriceps tendon now the default? (international survey — QT preferred for 61% of primaries, 89% of revisions) · hamstring sizing and fixation when the graft measures 7 mm · ACL repair with internal bracing: which 5% of tears? · ramp lesions and why they're missed at index surgery · <strong>relive:</strong> QT ACLR + modified Lemaire LET, narrated end to end.</p><span class="debate">DEBATE · Every high-risk primary ACL needs a lateral extra-articular tenodesis</span></div>
+
+  <div class="block"><b>A5 · ACL II — the complex &amp; multiligament knee</b><p>Posterior tibial slope: when to measure, when to cut — slope-reducing osteotomy in the re-ruptured knee · the multiligament knee in India: road-traffic vs kabaddi patterns, single-stage vs staged · PCL and the residual sag nobody reports · posterolateral corner reconstruction that fits a 90-minute list · RTS criteria with no isokinetic dynamometer.</p></div>
+
+  <div class="block"><b>A6 · Save the meniscus</b><p>Posterior root tears — fixation angle, tension, and why extrusion persists · meniscal centralisation: promising or over-sold? · radial and horizontal cleavage tears in the young adult · "meniscectomy is not a crime" — the 15% where resection is right · allograft and scaffold pathways in India · <strong>relive + panel:</strong> root and ramp repair in the same knee, including the complication.</p></div>
+
+  <div class="block"><b>A7 · Cartilage &amp; joint preservation</b><p>The 2 cm² decision: microfracture vs AMIC vs minced vs MACI, with Indian cost reality · single-stage minced cartilage and the 2025 matched-pair data · osteochondral auto- and allograft, and the supply problem nobody discusses · unloading osteotomy <em>is</em> treatment · RTS after cartilage surgery — 9 months is a floor, not a target · <strong>meet the expert:</strong> audience-submitted hardest case.</p></div>
+
+  <div class="block"><b>A8 · Hip &amp; groin</b><p>Groin pain algorithm for footballers and kabaddi players that survives contact · FAI syndrome after the physiotherapy trials — who still gets a scope? · labral repair vs reconstruction vs augmentation, and does the capsule have to be closed? · <strong>how I do it:</strong> hip arthroscopy setup, portals, avoiding cam under-resection.</p><span class="debate">DEBATE · Borderline dysplasia (LCEA 20–25°) — arthroscopy + plication vs PAO</span></div>
+
+  <div class="block"><b>A9 · Foot &amp; ankle in sport</b><p>Chronic lateral instability decision tree: arthroscopic Broström, InternalBrace, or anatomic reconstruction · osteochondral lesions of the talus — size thresholds · Achilles in the athlete · syndesmosis: button vs screw and how much malreduction matters · posterior impingement and FHL in dancers.</p></div>
+
+  <div class="block"><b>A10 · The paediatric &amp; adolescent athlete</b><p>ACL in the skeletally immature — transphyseal vs all-epiphyseal vs IT-band (growth disturbance &lt;2%, re-tear 9–15%) · tibial spine and patellar sleeve avulsions · adolescent patellar instability: MPFL alone, or must you address trochlea and TT-TG? · OCD of knee and capitellum · the overtrained 14-year-old and the academy culture problem.</p></div>
+
+  <div class="block"><b>A11 · Orthobiologics: evidence vs marketing</b><p>What ESSKA-ORBIT supports (PRP in KL 1–3 knee OA, lateral epicondylitis) and what it does not · BMAC, adipose and "stem cell" clinics against placebo-controlled data, plus the Indian regulatory position · consent, cost and honest claims with an Indian patient.</p><span class="debate">DEBATE · Biologics have no place in the arthroscopic OR in 2027</span></div>
+
+  <div class="block"><b>A12 · When it goes wrong — revision &amp; failed surgery <span class="flag">RESERVE</span></b><p>A workup that finds the real cause of the failed ACL (tunnel, slope, meniscus, alignment, rehab) · one- vs two-stage revision when autograft is spent · recurrent instability after Bankart or Latarjet · septic arthritis after arthroscopy — retain or remove the graft? · <strong>panel:</strong> "My worst complication" — four faculty, unedited. <em>Programme this last on Day 2 — it is the session people stay for.</em></p></div>
+
+  <p class="srcs"><strong>Sources:</strong> IASCON 2025 &amp; 2026 programmes · ISAKOS 2025 Congress · AOSSM 2025 Annual Meeting · ESSKA 2026 · ISKSAA · LET international consensus (Arthroscopy 2025) · quadriceps tendon global survey (JEO 2026) · ramp/root/radial current concepts (JASSM 2025) · minced cartilage vs ACI (KSSTA) · ESSKA-ORBIT PRP consensus · PAO vs hip arthroscopy meta-analysis 2025 · all-epiphyseal ACLR meta-analysis 2025 · kabaddi knee injury epidemiology (Asian J Sports Med).</p>
+  <div class="foot"><span>SIC 2027 · Three-Hall Program Plan · Draft for Scientific Committee</span><span>Page 4</span></div>
+</div>
+
+<!-- PAGE 5 — HALL B -->
+<div class="pg">
+  <p class="label">04 · HALL B</p>
+  <h2 class="sec">REHABILITATION, PERFORMANCE &amp; RETURN TO PLAY</h2>
+  <p style="font-size:8.5pt"><strong>Format:</strong> 12–15 minute talks; blocks close with a moderated discussion rather than per-talk Q&amp;A. Two ticketed, capped hands-on workshops — these are the reason physiotherapists pay to attend rather than watch online. <strong>Recruit S&amp;C faculty, not only physiotherapists</strong>: an all-physio track loses the S&amp;C audience by mid-morning of Day 1.</p>
+
+  <div class="block"><b>B1 · Criteria-based rehabilitation &amp; the RTP decision</b><p>"Time is not a criterion" — what criteria-based actually means when you write the discharge note · what proportion of your athletes would truly pass a full test battery at 9 months post-ACLR · return to participation → sport → performance · psychological readiness (ACL-RSI) and the athlete whose knee passes but whose head doesn't · who owns the decision, and how it is documented. Closes by building a one-page RTP criteria sheet live from the floor.</p><span class="debate">DEBATE · No athlete should be cleared for pivoting sport before 9 months post-ACLR</span></div>
+
+  <div class="block"><b>B2 · Objective testing, screening &amp; technology</b><p>Force plates in a 400-sq-ft clinic: the five countermovement-jump metrics worth reporting and the twenty that aren't · handheld dynamometry done properly — belt fixation, normalisation, minimum detectable change · isokinetics vs field testing in 2027 · movement screening after FMS: what survived the validity literature · markerless motion capture — good enough to change a clinical decision? · <strong>panel:</strong> "What would you buy first with ₹5 lakh?"</p></div>
+
+  <div class="block"><b>B3 · Tendinopathy &amp; load-driven pain</b><p>Tendon pain as a loading problem, in one slide · isometrics for analgesia: where "45 seconds × 5" came from and how often it fails · heavy slow resistance vs eccentrics for patellar tendinopathy — the network meta-analysis verdict · insertional vs mid-portion Achilles: why the same programme fails one · gluteal tendinopathy — compression is the enemy, stretching is the trap · energy storage and release, the phase everyone skips.</p></div>
+
+  <div class="block"><b>W1 · Hands-on carousel <span class="flag">TICKETED · CAPPED ~30/STATION</span></b><p><strong>Station 1 — Objective testing bench:</strong> live CMJ and drop jump on volunteers, reading the force–time curve on screen; dynamometry with vs without belt fixation, showing the tester-strength artefact; writing the actual report line a surgeon and a coach will each read.<br><strong>Station 2 — Tendon loading lab:</strong> Spanish squat rigged with a belt and pole, no proprietary kit; HSR tempo work; modifying every exercise for a clinic with one bench, one step and one barbell; the 24-hour pain-response rule on case vignettes.<br><strong>Station 3 — Plyometric progression:</strong> pogo → hop → bound ladder with landing-quality criteria; take a 3-month post-ACLR athlete to month 7 using only cones, a box and floor space.</p></div>
+
+  <div class="block"><b>W2 · Field-based RTP testing &amp; hamstring reconditioning <span class="flag">HANDS-ON</span></b><p>Build a 40-minute RTP battery with no lab — 505 change of direction, hop series with a tape measure, Askling H-test, sprint exposure with timing gates, and honest caveats on phone-app timing · hamstring L-protocol and Nordic technique coached hands-on, with regressions · sprint reintroduction dosing and the criterion for the first max-effort sprint · the pass/fail sheet you hand the coach.</p></div>
+
+  <div class="block"><b>B5 · Muscle injury &amp; the hamstring</b><p>Classifying muscle injury (BAMIC, MLG-R) — and whether the MRI changes what you do on Monday · L-protocol vs conventional strengthening: 28 days vs 51 days, and what newer reviews say about reinjury · lengthened-state training and the Nordic: fascicle length vs adherence reality · calf and adductor — the two you are under-rehabbing · from return to running to return to sprinting.</p></div>
+
+  <div class="block"><b>B6 · Load management &amp; injury risk</b><p>What happened to ACWR — from "predicts injury" to a cluster RCT in 482 elite youth footballers showing no difference in injury rates · metrics that survive a real Indian club season: sRPE, weekly change, chronic capacity, low-tech monitoring that actually gets collected · bowling workload and the fast bowler's back · sleep, energy availability and travel — the load that never appears in the GPS file.</p></div>
+
+  <div class="block"><b>B7 · The athlete who isn't a 25-year-old male</b><p>Youth resistance training is protective — the position-statement evidence, and how to say it to a parent and a coach · the maturing athlete: apophyseal injury, load modification not rest · the female athlete and the menstrual cycle: what genuinely low-quality evidence permits you to claim · REDs as a modifiable rehabilitation variable · para-athlete rehabilitation and why your normative data doesn't apply.</p></div>
+
+  <div class="block"><b>B4 · Adjuncts under scrutiny <span class="flag">RESERVE</span></b><p>Blood flow restriction: what 2024–25 meta-analyses actually show (comparable, not superior) and the three groups where the cuff earns its place · manual therapy as a short-half-life adjunct — using it without building dependence · shockwave, dry needling, and the physiotherapist's filter for injectable-adjacent claims.</p></div>
+
+  <p class="srcs"><strong>Sources:</strong> RTS tests and criteria after ACLR scoping review 2025 · AOSSM RTP metrics (Winter 2025) · LSI overestimates knee function (JOSPT) · BFR vs general rehab after ACLR (KSSTA 2025) · eccentric vs isometric vs HSR network meta-analysis · hamstring rehab comparative effectiveness · ACWR systematic review and meta-analysis · FMS predictive validity · NSCA youth resistance training position statement · IFSPT / World Physiotherapy Congress 2025 · kabaddi knee injury epidemiology.</p>
+  <div class="foot"><span>SIC 2027 · Three-Hall Program Plan · Draft for Scientific Committee</span><span>Page 5</span></div>
+</div>
+
+<!-- PAGE 6 — HALL C -->
+<div class="pg">
+  <p class="label">05 · HALL C</p>
+  <h2 class="sec">SPORTS SCIENCE, NUTRITION &amp; ATHLETE HEALTH</h2>
+  <p style="font-size:8.5pt"><strong>Format:</strong> 12-minute talks, four per hour plus a chaired panel. Blocks marked <span class="flag">CONSENSUS</span> rest on a formal consensus document — cite it on the slide; it strengthens the CME file. Blocks marked <span class="flag">INDIA</span> carry an India-specific angle. <strong>REDs and concussion need physician co-chairs</strong> — both carry diagnosis and return-to-play liability.</p>
+
+  <div class="block"><b>C1 · Energy availability &amp; REDs <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>From RED-S to REDs: what actually changed in the 2023 IOC consensus, and what it changes on Monday morning · adaptable vs problematic low energy availability — applying the CAT2 traffic-light stratification across a 30-athlete squad · screening for low energy availability without a DXA in an Indian academy · male REDs, the missed diagnosis: weight-making in wrestling, boxing and weightlifting.</p></div>
+
+  <div class="block"><b>C2 · Nutrition periodisation on Indian diets <span class="flag">INDIA</span></b><p>Fuel for the work required — periodising carbohydrate across a 12-week block without inducing low energy availability · hitting 1.6–2.2 g/kg protein on a vegetarian Indian diet: dal, dairy and the leucine threshold problem · building a pre-competition menu from rice, roti, poha and idli rather than translating a Western one · feeding the residential hostel athlete: what a SAI or Khelo India mess can and cannot deliver.</p></div>
+
+  <div class="block"><b>C3 · Hydration &amp; thermoregulation in Indian heat <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>WBGT is not air temperature — writing a heat policy an Indian match referee will actually enforce · sweat rate and sweat sodium at 33°C and 85% humidity, and why imported hydration prescriptions under-deliver · exertional heat stroke on the field: cool first, transport second — cold-water immersion below 39°C <em>before</em> the ambulance moves · ten-day heat acclimatisation for travelling teams.</p></div>
+
+  <div class="block"><b>C4 · Supplements &amp; ergogenic aids <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>The five that survive scrutiny — creatine, caffeine, beta-alanine, nitrate, bicarbonate: effect sizes, not enthusiasm · contamination risk in the Indian supplement market and what third-party batch certification does and doesn't cover · strict liability explained to an athlete · ayurvedic and herbal ergogenics: ashwagandha, shilajit, and the evidence-to-marketing gap.</p></div>
+
+  <div class="block"><b>C8 · Exercise physiology &amp; performance testing</b><p>Durability — the endurance parameter your VO₂max test misses · critical power and critical speed as field tools: three tests on a track in one session · lactate thresholds without a lab, and the errors that change prescription · force plates and the countermovement jump: which metrics track fatigue and which track noise.</p></div>
+
+  <div class="block"><b>C9 · Wearables, AI &amp; athlete monitoring <span class="flag">INDIA</span></b><p>Only ~43% of wearable studies report adequate validity and reliability — a buyer's checklist before your federation signs · GPS and workload after a decade of criticism: what survives · why AI injury-prediction models keep failing external validation, and what to demand from a vendor · <strong>athlete data governance under India's DPDP Act</strong>: consent, ownership and the federation contract.</p></div>
+
+  <div class="block"><b>C12 · Concussion <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>Amsterdam 2022 in practice: SCAT6, SCOAT6 and the 10–15 minute multimodal screen the sideline never gives you · the new visible signs mandating immediate removal — tonic posturing, impact seizure, ataxia, blank look · Child SCAT6 and school sport: a protocol an Indian school can run without a physician on site.</p></div>
+
+  <div class="block"><b>C13 · Anti-doping &amp; WADA 2026 updates <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>The 2026 Prohibited List decoded for team clinicians — carbon monoxide as new M1.4, cell components, revised salmeterol intervals · building a TUE file that gets approved · <strong>India top of WADA's violation table three years running</strong>: 7,113 tests, 260 adverse findings, 3.6% positivity — read honestly · where India's positives cluster (athletics 76, weightlifting 43, wrestling 29) and what support staff can actually change.<br><em>Recommendation: record this block and publish it free. Federation support staff who never register are exactly the audience that needs it.</em></p></div>
+
+  <div class="block"><b>C14 · Sports cardiology &amp; pre-participation screening <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>What is normal in a trained heart — the International Criteria and the 2–7% abnormal-ECG downstream burden · Asia-Pacific Society of Cardiology screening recommendations and their fit to South Asian athletes · screening at scale in Indian school and academy sport: what is deliverable, and what to do when it isn't.</p></div>
+
+  <div class="block"><b>C15 · Para-athlete health &amp; injury surveillance <span class="flag">CONSENSUS</span> <span class="flag">INDIA</span></b><p>Thermoregulation in para-athletes — spinal cord injury, impaired sudomotor function, autonomic dysreflexia, and Indian heat · nutrition for the wheelchair athlete · the IOC 2020 surveillance consensus and STROBE-SIIS: what it would take to build a national injury registry for Indian sport · <strong>closing panel:</strong> what Hall C should be able to measure by SIC 2029.</p></div>
+
+  <p style="font-size:7.5pt;color:var(--slate)"><strong>Reserve blocks:</strong> C5 gut health &amp; fuelling tolerance · C6 female athlete health &amp; the menstrual cycle · C7 youth &amp; academy athlete (bio-banding, age fraud, minimum-viable screening) · C10 recovery, sleep &amp; travel · C11 sports psychology &amp; mental health.</p>
+  <p class="srcs"><strong>Sources:</strong> IOC 2023 REDs consensus (BJSM 57:1073–1097) · REDs CAT2 validation · WADA 2026 Prohibited List and Summary of Modifications · WADA 2024 testing figures · Amsterdam 2022 concussion consensus · ACSM expert consensus on exertional heat illness · 2025 Female Athlete Triad Coalition update · IOC 2020 injury and illness surveillance consensus (STROBE-SIIS) · IOC 2019 mental health consensus · supplement contamination systematic review · APSC pre-participation screening recommendations · India DPDP Act 2023.</p>
+  <div class="foot"><span>SIC 2027 · Three-Hall Program Plan · Draft for Scientific Committee</span><span>Page 6</span></div>
+</div>
+
+<!-- PAGE 7 — INDIAN IDENTITY + DECISIONS -->
+<div class="pg">
+  <p class="label">06 · WHAT MAKES THIS PROGRAMME INDIAN</p>
+  <h2 class="sec">THE THREADS THAT MAKE IT OURS</h2>
+  <p class="lede">A translated Western programme is the failure mode of a new conference. These threads run through all three halls and give SIC 2027 an identity no international meeting can copy.</p>
+  <ul>
+    <li><strong>Kabaddi.</strong> Indian series data show ACL tears in 89.5% of injured players, 68.4% with meniscal involvement, <strong>57.9% never returning to the sport</strong>, and 16.6 months mean time lost among those who do. That single dataset earns a case in the ACL, meniscus, hip/groin and rehabilitation sessions.</li>
+    <li><strong>Cricket bowling workload</strong> and the fast bowler's back — across surgical, rehabilitation and load-management halls.</li>
+    <li><strong>Heat and humidity.</strong> Heat policy, sweat sodium, acclimatisation. Non-negotiable for an Indian audience and absent from most imported programmes.</li>
+    <li><strong>Vegetarian athlete nutrition</strong> — protein targets and the leucine threshold on Indian diets.</li>
+    <li><strong>Doping.</strong> India has led WADA's violation table three years running. Confronting it directly is the most valuable thing Hall C can do for Indian sport.</li>
+    <li><strong>Rehabilitation without a lab.</strong> Most Indian clinics have no isokinetic dynamometer or force plate. Every rehab talk should state what to do without one.</li>
+    <li><strong>Late presentation.</strong> Kabaddi ACL injuries present at a mean of ~14 months. Programme it as a clinical reality, not a footnote.</li>
+  </ul>
+
+  <p class="label" style="margin-top:8mm">07 · DECISIONS FOR THE COMMITTEE</p>
+  <h2 class="sec">WHAT WE NEED SIGNED OFF</h2>
+
+  <div class="decision"><b>1 · Two days, or two plus a pre-conference day?</b><p>The research yields roughly three days of strong content. A 28 January pre-conference day would hold the hands-on workshops, any dry-lab work and the reserve blocks. <strong>Take this decision first — it determines the venue contract.</strong></p></div>
+  <div class="decision"><b>2 · Confirm the three-hall split and approve the hall titles.</b><p>Hall A doubles as the plenary hall and must seat the full delegate count.</p></div>
+  <div class="decision"><b>3 · Faculty scale.</b><p>Roughly <strong>75–95 speaking slots</strong> across three halls over two days, plus chairs — about 40–50 faculty at two talks each. For an inaugural edition, lock 2–3 marquee anchors first and recruit everyone else off their names. Confirm in writing 6–9 months out and keep a reserve bench.</p></div>
+  <div class="decision"><b>4 · Which debates run.</b><p>Two per hall per day is the ceiling. More and they stop feeling like events.</p></div>
+  <div class="decision"><b>5 · The ethics / GCP session stays as a joint plenary.</b><p><strong>TSMC's Declaration Proforma requires it</strong> for CPD accreditation. Non-negotiable.</p></div>
+  <div class="decision"><b>6 · Workshop ticketing.</b><p>Hands-on sessions must be capped and ticketed at registration with per-station rosters. Uncapped "hands-on" becomes a lecture with mats on the floor.</p></div>
+  <div class="decision"><b>7 · Equipment sponsorship boundary.</b><p>Force plates and dynamometers will be vendor-supplied — tie them to an exhibitor package, but keep teaching faculty independent of the vendor and say so from the podium. This is the single biggest credibility risk in the rehabilitation track.</p></div>
+  <div class="decision"><b>8 · Free-paper prizes per track.</b><p>So physiotherapy and nutrition entries don't compete against surgical case series.</p></div>
+
+  <div class="callout">
+    <p><b>Two research caveats, stated plainly.</b> The ISAKOS, AOSSM and ESSKA programme pages blocked direct retrieval, so Hall A structure is reconstructed from search-indexed programme and abstract listings rather than read off the printed programme — worth checking the ESSKA 2026 highlight-lecture list before finalising. And IASMCON does not publish a session-level programme in machine-readable form, so Hall C is built from the consensus literature and Indian data rather than a competitor programme — a call to the IASM secretariat before finalising would de-risk duplication.</p>
+  </div>
+  <div class="foot"><span>SIC 2027 · Three-Hall Program Plan · Draft for Scientific Committee · Precision Orthopaedics LLP</span><span>Page 7</span></div>
+</div>
+
+</body>
+</html>
