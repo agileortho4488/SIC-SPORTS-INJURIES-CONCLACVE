@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your Brochure — SIC 2027</title>
+<link rel="preload" as="font" type="font/woff2" href="fonts/bebas-neue.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter.woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Cpath d='M8 44 56 32' stroke='%23FCA311' stroke-width='6'/%3E%3Ctext x='32' y='28' font-family='Arial Black,sans-serif' font-size='20' font-style='italic' font-weight='900' fill='%23FFFFFF' text-anchor='middle'%3ESIC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { display: grid; place-items: center; min-height: 100svh; padding: 1.5rem; text-align: center; }
+  .card { max-width: 32rem; }
+  .card h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 3.2rem); margin-bottom: 1rem; }
+  .card p { color: var(--mute); margin-bottom: 2rem; }
+  .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="card">
+  <p class="label">SIC 2027 · SCIENTIFIC BROCHURE</p>
+  <h1>YOUR DOWNLOAD<br>IS <span style="color:var(--accent)">STARTING</span></h1>
+  <p>If it doesn't begin automatically, use the button below. We'll keep you posted on registration, faculty and the full program — see you in Hyderabad, 29th &amp; 30th January 2027.</p>
+  <div class="actions">
+    <a class="pill" href="downloads/SIC-2027-Scientific-Brochure.pdf" download>DOWNLOAD BROCHURE&ensp;↓</a>
+    <a class="ghost" href="index.html">EXPLORE THE CONCLAVE</a>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var a = document.createElement('a');
+    a.href = 'downloads/SIC-2027-Scientific-Brochure.pdf';
+    a.download = '';
+    document.body.appendChild(a);
+    a.click();
+  }, 800);
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /registration.html
+Disallow: /register-live.html
+Disallow: /abstracts.html
+Disallow: /program.html
+Disallow: /pass.html
+Disallow: /checkin.html
+Disallow: /certificate.html
+Disallow: /certificate-template.html
+Disallow: /brochure.html
+Disallow: /brochure-thanks.html
+Disallow: /api/
+
+Sitemap: https://sic-sports-injuries-conclacve.vercel.app/sitemap.xml

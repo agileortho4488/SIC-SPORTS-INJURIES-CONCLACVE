@@ -34,6 +34,10 @@ async function db() {
       council TEXT, council_reg_no TEXT, amount INT, order_id TEXT, payment_id TEXT,
       status TEXT, created_at TIMESTAMPTZ DEFAULT now(), checked_in_at TIMESTAMPTZ
     )`;
+    await pg.sql`CREATE TABLE IF NOT EXISTS leads (
+      id TEXT PRIMARY KEY, name TEXT, email TEXT, mobile TEXT, category TEXT,
+      source TEXT, created_at TIMESTAMPTZ DEFAULT now()
+    )`;
   }
   return pg;
 }
@@ -63,6 +67,21 @@ async function getReg(id) {
   if (p) { const r = await p.sql`SELECT * FROM registrations WHERE id=${id}`; return r.rows[0] || null; }
   return fileRead()[id] || null;
 }
+async function saveLead(rec) {
+  const p = await db();
+  if (p) {
+    await p.sql`INSERT INTO leads (id,name,email,mobile,category,source)
+      VALUES (${rec.id},${rec.name},${rec.email},${rec.mobile},${rec.category},${rec.source})`;
+  } else {
+    const d = fileRead(); (d.__leads = d.__leads || []).push({ ...rec, created_at: new Date().toISOString() }); fileWrite(d);
+  }
+}
+async function allLeads() {
+  const p = await db();
+  if (p) { const r = await p.sql`SELECT * FROM leads ORDER BY created_at`; return r.rows; }
+  return fileRead().__leads || [];
+}
+
 async function allRegs() {
   const p = await db();
   if (p) { const r = await p.sql`SELECT * FROM registrations ORDER BY created_at`; return r.rows; }
@@ -103,4 +122,4 @@ async function body(req) {
   let s = ''; for await (const c of req) s += c; return s ? JSON.parse(s) : {};
 }
 
-module.exports = { CATEGORIES, TEST_MODE, sign, verifySig, saveReg, updateReg, getReg, allRegs, createOrder, verifyRazorpaySignature, sendMail, json, body };
+module.exports = { CATEGORIES, TEST_MODE, sign, verifySig, saveReg, updateReg, getReg, allRegs, saveLead, allLeads, createOrder, verifyRazorpaySignature, sendMail, json, body };
