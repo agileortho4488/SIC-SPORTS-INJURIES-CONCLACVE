@@ -13,7 +13,7 @@
   body { font-family:'Inter',sans-serif; background:#444; }
   .sheet {
     width:210mm; height:297mm; margin:8px auto; position:relative; overflow:hidden;
-    background:#000; color:#fff; padding:16mm 15mm 14mm;
+    background:#000; color:#fff; padding:14mm 14mm 11mm;
     display:flex; flex-direction:column; page-break-after:always;
   }
   /* full-bleed athlete photograph */
@@ -31,36 +31,36 @@
   .sheet > *:not(.bg):not(.bgstrip):not(.scrim):not(.glow) { position:relative; z-index:2; }
   .beb { font-family:'Bebas Neue',sans-serif; font-weight:400; }
   .gold { color:var(--gold); }
-  .lockup { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ash); position:relative; }
-  .rule { width:32mm; height:1.1mm; background:var(--gold); margin:5mm 0; }
-  .eyebrow { font-size:9pt; letter-spacing:.24em; color:var(--gold); font-weight:600; }
-  h1 { font-size:44pt; line-height:.98; margin-top:4mm; position:relative; text-shadow:0 2px 14px rgba(0,0,0,.85); }
-  .strap { font-size:9.5pt; letter-spacing:.17em; text-transform:uppercase; color:var(--ash); margin-top:5mm; }
+  .lockup { font-size:9.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ash); position:relative; }
+  .rule { width:32mm; height:1.1mm; background:var(--gold); margin:4mm 0; }
+  .eyebrow { font-size:10pt; letter-spacing:.24em; color:var(--gold); font-weight:600; }
+  h1 { font-size:46pt; line-height:.98; margin-top:4mm; position:relative; text-shadow:0 2px 14px rgba(0,0,0,.85); }
+  .strap { font-size:10.5pt; letter-spacing:.17em; text-transform:uppercase; color:var(--ash); margin-top:5mm; }
 
   .datestrip { display:flex; gap:4mm; margin-top:5mm; }
   .datestrip div { flex:1; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); border:0.3mm solid rgba(252,163,17,.45);
-                   border-radius:2.5mm; padding:3mm; text-align:center; }
-  .datestrip b { display:block; font-family:'Bebas Neue',sans-serif; font-size:15pt; color:var(--gold); }
-  .datestrip i { font-style:normal; font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--ash); }
+                   border-radius:2.5mm; padding:2.6mm; text-align:center; }
+  .datestrip b { display:block; font-family:'Bebas Neue',sans-serif; font-size:18pt; color:var(--gold); }
+  .datestrip i { font-style:normal; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; color:var(--ash); }
 
-  .what { margin-top:5mm; }
-  .what .h { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:3mm; }
+  .what { margin-top:4mm; }
+  .what .h { font-size:9.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:2.2mm; }
   .halls { display:flex; gap:3.5mm; }
   .halls div { flex:1; border-top:1mm solid var(--gold); background:rgba(0,0,0,.6); border-radius:0 0 2.5mm 2.5mm; padding:2.8mm; }
-  .halls b { font-family:'Bebas Neue',sans-serif; font-size:11pt; display:block; }
-  .halls span { font-size:7.5pt; color:var(--ash); line-height:1.5; display:block; margin-top:1.5mm; }
+  .halls b { font-family:'Bebas Neue',sans-serif; font-size:13.5pt; display:block; }
+  .halls span { font-size:9.5pt; color:var(--ash); line-height:1.5; display:block; margin-top:1.5mm; }
 
-  .topics { margin-top:4mm; columns:2; column-gap:6mm; font-size:8pt; }
-  .topics li { list-style:none; margin-bottom:1.7mm; padding-left:5mm; position:relative; line-height:1.45; color:#F2F4F6; break-inside:avoid; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+  .topics { margin-top:5mm; columns:2; column-gap:7mm; font-size:10pt; }
+  .topics li { list-style:none; margin-bottom:2.2mm; padding-left:5mm; position:relative; line-height:1.45; color:#F2F4F6; break-inside:avoid; text-shadow:0 1px 3px rgba(0,0,0,.9); }
   .topics li::before { content:''; position:absolute; left:0; top:1.6mm; width:2.2mm; height:2.2mm; background:var(--gold); border-radius:50%; }
 
-  .who { margin-top:4mm; font-size:8.6pt; color:#DCE0E4; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+  .who { margin-top:4mm; font-size:9.5pt; color:#DCE0E4; text-shadow:0 1px 3px rgba(0,0,0,.9); }
   /* three-sport photo strip — the visual proof this is about sport */
   .sportstrip { display:flex; gap:2.5mm; margin-top:4mm; }
-  .sportstrip div { flex:1; height:16mm; border-radius:2mm; background-size:cover; background-position:center;
+  .sportstrip div { flex:1; height:18mm; border-radius:2mm; background-size:cover; background-position:center;
                     border:0.3mm solid rgba(252,163,17,.35); position:relative; overflow:hidden; }
   .sportstrip div::after { content:attr(data-l); position:absolute; left:0; right:0; bottom:0;
-    font-family:'Bebas Neue',sans-serif; font-size:8pt; letter-spacing:.1em; color:#fff;
+    font-family:'Bebas Neue',sans-serif; font-size:10pt; letter-spacing:.1em; color:#fff;
     background:linear-gradient(0deg,rgba(0,0,0,.9),transparent); padding:4mm 2mm 1.5mm; text-align:center; }
   .sportstrip .s1 { background-image:url('assets/act-cricket.jpg'); background-position:38% center; }
   .sportstrip .s2 { background-image:url('assets/act-badminton.jpg'); }
@@ -69,12 +69,12 @@
   .sq .sportstrip div::after { font-size:15pt; padding:26px 8px 8px; }
   .who b { color:#fff; }
 
-  .cta { margin-top:auto; display:flex; gap:5mm; align-items:center; padding:4mm; margin-bottom:2mm; background:rgba(0,0,0,.68); border:0.3mm solid rgba(252,163,17,.4); border-radius:3mm; }
+  .cta { margin-top:auto; display:flex; gap:5mm; align-items:center; padding:3.5mm; margin-bottom:1mm; background:rgba(0,0,0,.68); border:0.3mm solid rgba(252,163,17,.4); border-radius:3mm; }
   .qr { background:#fff; padding:2.5mm; border-radius:2mm; flex:none; }
-  .cta .txt b { font-family:'Bebas Neue',sans-serif; font-size:16pt; color:var(--gold); display:block; }
-  .cta .txt .url { font-size:11pt; font-weight:600; margin-top:1mm; }
-  .cta .txt span { font-size:7.4pt; color:var(--ash); display:block; margin-top:1.5mm; line-height:1.5; }
-  .foot { margin-top:2.5mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--slate); }
+  .cta .txt b { font-family:'Bebas Neue',sans-serif; font-size:19pt; color:var(--gold); display:block; }
+  .cta .txt .url { font-size:14pt; font-weight:600; margin-top:1mm; }
+  .cta .txt span { font-size:9pt; color:var(--ash); display:block; margin-top:1.5mm; line-height:1.5; }
+  .foot { margin-top:3mm; display:flex; justify-content:space-between; font-size:8.5pt; color:var(--slate); }
 
   /* square social version */
   .sq { width:1080px; height:1080px; margin:8px auto; padding:70px 64px 56px; }
@@ -121,11 +121,11 @@
   .light .foot { color:var(--slate); }
 
   /* inaugural theme block */
-  .theme { margin-top:4mm; border-left:1.2mm solid var(--gold); padding:1mm 0 1mm 5mm; }
-  .theme .k { font-size:7.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); font-weight:600; }
-  .theme .t { font-family:'Bebas Neue',sans-serif; font-size:17pt; line-height:1.05; margin-top:1.5mm; }
-  .theme .s { font-size:9pt; color:#DCE0E4; margin-top:1.5mm; font-style:italic; }
-  .tagline { margin-top:3mm; font-family:'Bebas Neue',sans-serif; font-size:13pt; letter-spacing:.16em; color:var(--gold); }
+  .theme { margin-top:4mm; border-left:1.2mm solid var(--gold); padding:0.5mm 0 0.5mm 5mm; }
+  .theme .k { font-size:9pt; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+  .theme .t { font-family:'Bebas Neue',sans-serif; font-size:21pt; line-height:1.05; margin-top:1.5mm; }
+  .theme .s { font-size:10.5pt; color:#DCE0E4; margin-top:1.5mm; font-style:italic; }
+  .tagline { margin-top:3mm; font-family:'Bebas Neue',sans-serif; font-size:16pt; letter-spacing:.16em; color:var(--gold); }
   .light .theme .t { color:#fff; }
   .light .theme .s { color:#E2E6EA; }
   .sq .theme .t { font-size:34pt; } .sq .theme .k { font-size:13pt; } .sq .theme .s { font-size:15pt; }
@@ -150,7 +150,7 @@
   <div class="theme">
     <p class="k">Inaugural theme</p>
     <p class="t">RETURN TO SPORT — <span class="gold">BRIDGING SURGERY,<br>SCIENCE AND PERFORMANCE</span></p>
-    <p class="s">The one decision every surgeon, physiotherapist, S&amp;C coach and athlete shares.</p>
+    <p class="s">The one decision every surgeon, physio, coach and athlete shares.</p>
   </div>
   <p class="tagline">ASSESS · REHAB · PERFORM · RETURN</p>
 
@@ -163,22 +163,21 @@
   <div class="what">
     <p class="h">Two parallel halls</p>
     <div class="halls">
-      <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy and live surgical video</span></div>
-      <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management, nutrition and the athlete's mind</span></div>
+      <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy &amp; live surgery</span></div>
+      <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management &amp; nutrition</span></div>
     </div>
   </div>
 
   <ul class="topics">
-    <li>Comprehensive sports injury management across all joints</li>
-    <li>Innovation in surgical techniques and orthobiologics</li>
-    <li>Live surgical videos and technical pearls</li>
-    <li>Rehabilitation and return-to-sport strategies</li>
-    <li>Fuelling the return: nutrition, energy availability &amp; recovery</li>
-    <li>The mind of the returning athlete</li>
-    <li>Free papers, e-posters &amp; Young Surgeon Forum awards</li>
+    <li>Injury management across all joints</li>
+    <li>Live surgical videos &amp; technical pearls</li>
+    <li>Rehabilitation &amp; return-to-sport strategies</li>
+    <li>Orthobiologics &amp; surgical innovation</li>
+    <li>Nutrition, energy availability &amp; recovery</li>
+    <li>Free papers, e-posters &amp; awards</li>
   </ul>
 
-  <p class="who"><b>Who should attend:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · Strength &amp; Conditioning Coaches · PG Students</p>
+  <p class="who"><b>For:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · S&amp;C Coaches · PG Students</p>
 
   <div class="sportstrip">
     <div class="s1" data-l="CRICKET"></div>
@@ -191,7 +190,7 @@
     <div class="txt">
       <b>REGISTRATION OPENING SOON</b>
       <p class="url gold">www.sportsinjuries.care</p>
-      <span>Scan for the full brochure, program and updates. Join the priority list to be told the day registration opens.</span>
+      <span>Scan for the brochure, program and updates.</span>
     </div>
   </div>
   <div class="foot">
@@ -213,7 +212,7 @@
   <div class="theme">
     <p class="k">Inaugural theme</p>
     <p class="t">RETURN TO SPORT — <span class="gold">BRIDGING SURGERY,<br>SCIENCE AND PERFORMANCE</span></p>
-    <p class="s">The one decision every surgeon, physiotherapist, S&amp;C coach and athlete shares.</p>
+    <p class="s">The one decision every surgeon, physio, coach and athlete shares.</p>
   </div>
   <p class="tagline">ASSESS · REHAB · PERFORM · RETURN</p>
 
@@ -226,22 +225,21 @@
   <div class="what">
     <p class="h">Two parallel halls</p>
     <div class="halls">
-      <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy and live surgical video</span></div>
-      <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management, nutrition and the athlete's mind</span></div>
+      <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy &amp; live surgery</span></div>
+      <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management &amp; nutrition</span></div>
     </div>
   </div>
 
   <ul class="topics">
-    <li>Comprehensive sports injury management across all joints</li>
-    <li>Innovation in surgical techniques and orthobiologics</li>
-    <li>Live surgical videos and technical pearls</li>
-    <li>Rehabilitation and return-to-sport strategies</li>
-    <li>Fuelling the return: nutrition, energy availability &amp; recovery</li>
-    <li>The mind of the returning athlete</li>
-    <li>Free papers, e-posters &amp; Young Surgeon Forum awards</li>
+    <li>Injury management across all joints</li>
+    <li>Live surgical videos &amp; technical pearls</li>
+    <li>Rehabilitation &amp; return-to-sport strategies</li>
+    <li>Orthobiologics &amp; surgical innovation</li>
+    <li>Nutrition, energy availability &amp; recovery</li>
+    <li>Free papers, e-posters &amp; awards</li>
   </ul>
 
-  <p class="who"><b>Who should attend:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · Strength &amp; Conditioning Coaches · PG Students</p>
+  <p class="who"><b>For:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · S&amp;C Coaches · PG Students</p>
 
   <div class="sportstrip">
     <div class="s1" data-l="CRICKET"></div>
@@ -254,7 +252,7 @@
     <div class="txt">
       <b>REGISTRATION OPENING SOON</b>
       <p class="url gold">www.sportsinjuries.care</p>
-      <span>Scan for the full brochure, program and updates. Join the priority list to be told the day registration opens.</span>
+      <span>Scan for the brochure, program and updates.</span>
     </div>
   </div>
   <div class="foot">
@@ -276,7 +274,7 @@
   <div class="theme">
     <p class="k">Inaugural theme</p>
     <p class="t">RETURN TO SPORT — <span class="gold">BRIDGING SURGERY,<br>SCIENCE AND PERFORMANCE</span></p>
-    <p class="s">The one decision every surgeon, physiotherapist, S&amp;C coach and athlete shares.</p>
+    <p class="s">The one decision every surgeon, physio, coach and athlete shares.</p>
   </div>
   <p class="tagline">ASSESS · REHAB · PERFORM · RETURN</p>
   <div class="datestrip">
