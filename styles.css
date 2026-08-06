@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/bebas-neue.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('fonts/inter.woff2') format('woff2');
+}
+
 /* SIC 2027 — Navy & Gold Elegance.
    NOTE: printed poster is still lime; align poster or revert tokens before launch. */
 :root {
