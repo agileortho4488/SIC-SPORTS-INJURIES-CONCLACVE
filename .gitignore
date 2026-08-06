@@ -1,0 +1,5 @@
+_source-assets/
+node_modules/
+.claude/
+Thumbs.db
+.DS_Store
