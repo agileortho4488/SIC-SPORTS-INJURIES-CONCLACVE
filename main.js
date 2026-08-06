@@ -251,6 +251,9 @@
     });
   });
   document.querySelectorAll('.nav-links a').forEach(a => {
+    // nav now holds cross-page links too (Brochure, Exhibitors) — empty hash
+    // throws in querySelector and would kill every feature below this loop
+    if (!a.hash) return;
     const sec = document.querySelector(a.hash);
     if (!sec) return;
     ScrollTrigger.create({
