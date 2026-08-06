@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Register — SIC 2027</title>
+<link rel="preload" as="font" type="font/woff2" href="fonts/bebas-neue.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter.woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Cpath d='M8 44 56 32' stroke='%23FCA311' stroke-width='6'/%3E%3Ctext x='32' y='28' font-family='Arial Black,sans-serif' font-size='20' font-style='italic' font-weight='900' fill='%23FFFFFF' text-anchor='middle'%3ESIC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-head { padding: calc(var(--nav-h) + clamp(3rem, 8vh, 5rem)) 0 clamp(2rem, 5vh, 3rem); border-bottom: 1px solid rgb(20 33 61 / 0.6); background: linear-gradient(180deg, rgb(27 59 89 / 0.35), transparent); }
+  .page-head h1 { font-family: var(--display); text-transform: uppercase; font-weight: 400; line-height: 1.04; font-size: clamp(2.4rem, 5.5vw, 4rem); }
+  .demo-strip { position: sticky; top: var(--nav-h); z-index: 40; background: var(--accent-2); color: #000; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; padding: 0.5rem 1rem; }
+  .reg-card { max-width: 44rem; margin: 0 auto; background: rgb(20 33 61 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 16px; padding: clamp(1.5rem, 4vw, 2.5rem); }
+  .fld { margin-bottom: 1.1rem; }
+  .fld label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--mute); margin-bottom: 0.4rem; }
+  .fld input, .fld select { width: 100%; padding: 0.85rem 1rem; background: rgb(0 0 0 / 0.4); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-family: var(--body); font-size: 1rem; }
+  .fld input:focus, .fld select:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 40rem) { .row2 { grid-template-columns: 1fr; } }
+  .fee-line { display: flex; justify-content: space-between; padding: 1rem 0; border-top: 1px solid rgb(66 94 123 / 0.3); margin-top: 1rem; font-weight: 600; }
+  .fee-line b { font-family: var(--display); font-size: 1.5rem; color: var(--accent); font-weight: 400; }
+  button.pill { border: 0; cursor: pointer; font-family: var(--body); width: 100%; padding: 1rem; font-size: 14px; }
+  .err { color: #FF6B6B; font-size: 0.9rem; margin-top: 0.75rem; display: none; }
+  .doctor-only { display: none; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="SIC 2027 — home"><span class="brand-mark">SIC</span><span class="brand-year">2027</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="index.html#about">About</a>
+      <a href="program.html">Program</a>
+      <a href="abstracts.html">Abstracts</a>
+      <a href="exhibitors.html">Exhibitors</a>
+      <a href="registration.html" class="active">Registration</a>
+    </nav>
+  </div>
+</header>
+
+<div class="demo-strip" id="demoStrip">DEMO MODE — NO REAL PAYMENT · FEES ARE PLACEHOLDERS PENDING COMMITTEE APPROVAL</div>
+
+<div class="page-head">
+  <div class="container">
+    <p class="label">DELEGATE REGISTRATION</p>
+    <h1>REGISTER FOR SIC 2027</h1>
+  </div>
+</div>
+
+<main>
+<section>
+  <div class="container">
+    <form class="reg-card" id="regForm" novalidate>
+      <div class="fld"><label for="r-name">Full name (as it should appear on the certificate)</label><input id="r-name" name="name" required autocomplete="name"></div>
+      <div class="row2">
+        <div class="fld"><label for="r-email">Email</label><input id="r-email" type="email" name="email" required autocomplete="email"></div>
+        <div class="fld"><label for="r-mobile">Mobile (for CME &amp; WhatsApp updates)</label><input id="r-mobile" type="tel" name="mobile" required autocomplete="tel"></div>
+      </div>
+      <div class="fld"><label for="r-cat">Category</label>
+        <select id="r-cat" name="category" required>
+          <option value="">Select category…</option>
+          <option value="consultant">Consultant / Specialist</option>
+          <option value="pg">PG Student (HOD certificate verified at desk)</option>
+          <option value="physio">Physiotherapist / Allied Health</option>
+          <option value="companion">Accompanying Person</option>
+        </select>
+      </div>
+      <div class="row2 doctor-only" id="doctorFields">
+        <div class="fld"><label for="r-council">State medical council</label><input id="r-council" name="council" placeholder="e.g. Telangana State Medical Council"></div>
+        <div class="fld"><label for="r-regno">Council registration no. (needed for CME credits)</label><input id="r-regno" name="council_reg_no"></div>
+      </div>
+      <div class="fee-line"><span>Registration fee (incl. GST)</span><b id="feeOut">—</b></div>
+      <button class="pill" type="submit" id="payBtn">PROCEED&ensp;→</button>
+      <p class="err" id="errOut"></p>
+      <p class="fineprint" style="margin-top: 1.25rem;">By registering you agree to the cancellation policy on the <a href="registration.html">registration page</a>. Doctors: your medical council registration number is collected solely for submission to TSMC for CME credit points.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+(function () {
+  var FEES = { consultant: 500000, pg: 300000, physio: 250000, companion: 200000 }; // paise — placeholders
+  var form = document.getElementById('regForm');
+  var cat = document.getElementById('r-cat');
+  var feeOut = document.getElementById('feeOut');
+  var err = document.getElementById('errOut');
+  var btn = document.getElementById('payBtn');
+
+  cat.addEventListener('change', function () {
+    feeOut.textContent = FEES[cat.value] ? '₹' + (FEES[cat.value] / 100).toLocaleString('en-IN') : '—';
+    document.getElementById('doctorFields').style.display = (cat.value === 'consultant' || cat.value === 'pg') ? 'grid' : 'none';
+  });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    btn.disabled = true; btn.textContent = 'PLEASE WAIT…';
+    var payload = {
+      name: form.name.value.trim(), email: form.email.value.trim(), mobile: form.mobile.value.trim(),
+      category: cat.value, council: form.council.value.trim(), council_reg_no: form.council_reg_no.value.trim(),
+    };
+    try {
+      var r = await fetch('/api/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      var d = await r.json();
+      if (!r.ok) throw new Error(d.error || 'Registration failed');
+      if (d.test) { location.href = 'pass.html?id=' + d.id + '&sig=' + d.sig; return; }
+      var rzp = new Razorpay({
+        key: d.key_id, order_id: d.order_id, amount: d.amount, currency: 'INR',
+        name: 'SIC 2027', description: 'Delegate registration',
+        prefill: { name: payload.name, email: payload.email, contact: payload.mobile },
+        theme: { color: '#FCA311' },
+        handler: async function (resp) {
+          var v = await fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: d.id, razorpay_order_id: resp.razorpay_order_id, razorpay_payment_id: resp.razorpay_payment_id, razorpay_signature: resp.razorpay_signature }) });
+          var vd = await v.json();
+          if (v.ok) location.href = 'pass.html?id=' + vd.id + '&sig=' + vd.sig;
+          else { err.textContent = vd.error || 'Payment verification failed — contact info@agileortho.in'; err.style.display = 'block'; }
+        },
+      });
+      rzp.open();
+      btn.disabled = false; btn.textContent = 'PROCEED →';
+    } catch (ex) {
+      err.textContent = ex.message; err.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'PROCEED →';
+    }
+  });
+
+})();
+</script>
+</body>
+</html>

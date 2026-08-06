@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Check-In Scanner — SIC 2027 (staff)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Cpath d='M8 44 56 32' stroke='%23FCA311' stroke-width='6'/%3E%3Ctext x='32' y='28' font-family='Arial Black,sans-serif' font-size='20' font-style='italic' font-weight='900' fill='%23FFFFFF' text-anchor='middle'%3ESIC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { max-width: 30rem; margin: 0 auto; padding: 1.5rem; }
+  h1 { font-family: var(--display); font-size: 1.8rem; margin: 0.5rem 0 1rem; }
+  #reader { border-radius: 14px; overflow: clip; border: 1px solid rgb(66 94 123 / 0.5); }
+  .fld input { width: 100%; padding: 0.85rem 1rem; background: rgb(20 33 61 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-size: 1.1rem; }
+  .result { margin-top: 1rem; padding: 1.25rem; border-radius: 14px; text-align: center; display: none; }
+  .result.ok { display: block; background: #103A1C; border: 1px solid #2FBF5F; }
+  .result.dup { display: block; background: #3A2E10; border: 1px solid var(--accent); }
+  .result.bad { display: block; background: #3A1010; border: 1px solid #FF6B6B; }
+  .result b { font-family: var(--display); font-size: 1.6rem; display: block; }
+  .count { color: var(--mute); font-size: 0.9rem; margin-top: 1rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>SIC 2027 — CHECK-IN</h1>
+<div class="fld"><input id="pin" type="password" placeholder="Staff PIN" inputmode="numeric"></div>
+<div id="reader"></div>
+<div class="result" id="result"></div>
+<p class="count" id="count"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+<script>
+(function () {
+  var result = document.getElementById('result');
+  var countEl = document.getElementById('count');
+  var scans = 0, busy = false;
+
+  function show(cls, title, sub) {
+    result.className = 'result ' + cls;
+    result.innerHTML = '<b>' + title + '</b>' + (sub || '');
+    if (navigator.vibrate) navigator.vibrate(cls === 'ok' ? 80 : [60, 60, 60]);
+  }
+
+  var scanner = new Html5QrcodeScanner('reader', { fps: 8, qrbox: 220 }, false);
+  scanner.render(function (text) {
+    if (busy) return;
+    busy = true;
+    var pin = document.getElementById('pin').value;
+    var payload;
+    try { payload = JSON.parse(text); } catch { show('bad', 'NOT A SIC PASS'); busy = false; return; }
+    fetch('/api/checkin', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: payload.id, sig: payload.sig, pin: pin }) })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (x) {
+        if (!x.ok) { show('bad', 'REJECTED', x.d.error || ''); }
+        else if (x.d.already) { show('dup', x.d.name, 'ALREADY CHECKED IN · ' + x.d.id); }
+        else { scans++; show('ok', x.d.name, x.d.category + ' · ' + x.d.id); }
+        countEl.textContent = scans + ' checked in this session';
+        setTimeout(function () { busy = false; }, 1200);
+      })
+      .catch(function () { show('bad', 'NETWORK ERROR'); busy = false; });
+  }, function () {});
+})();
+</script>
+</body>
+</html>

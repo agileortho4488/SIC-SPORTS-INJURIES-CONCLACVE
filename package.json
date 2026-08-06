@@ -1,0 +1,7 @@
+{
+  "name": "sic-2027",
+  "private": true,
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0"
+  }
+}
