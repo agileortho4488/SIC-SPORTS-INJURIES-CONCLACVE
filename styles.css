@@ -788,3 +788,17 @@ html.static #spot, html.static body::after { display: none; }
 
 /* committee tilt is transform-based; give it depth */
 .committee > div { transform-style: preserve-3d; will-change: transform; }
+
+/* ── THREE-HALL PROGRAM GRID ─────────────────────────────── */
+.halls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.hall-card { background: rgb(20 33 61 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 14px; padding: 1.25rem; }
+.hall-tag { font-family: var(--display); font-size: 0.95rem; color: var(--accent); letter-spacing: 0.1em; }
+.hall-card b { display: block; margin: 0.35rem 0; font-size: 1.02rem; }
+.hall-card p { font-size: 0.85rem; }
+.gridwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.halls-grid { width: 100%; min-width: 46rem; border-collapse: collapse; font-size: 0.9rem; }
+table.halls-grid th { text-align: left; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding: 0.75rem; border-bottom: 1px solid var(--fjord); }
+table.halls-grid td { padding: 0.85rem 0.75rem; border-bottom: 1px solid rgb(66 94 123 / 0.28); vertical-align: top; }
+table.halls-grid td.t { font-family: var(--display); color: var(--accent-2); white-space: nowrap; width: 5rem; }
+table.halls-grid td.joint { background: rgb(252 163 17 / 0.1); border-left: 2px solid var(--accent); font-weight: 600; }
+table.halls-grid tr.break td { background: rgb(20 33 61 / 0.3); color: var(--mute); font-style: italic; }
