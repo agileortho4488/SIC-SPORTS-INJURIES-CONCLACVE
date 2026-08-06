@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>SIC 2027 — Public Pamphlet (A4 + square)</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @font-face { font-family: 'Bebas Neue'; src: url('fonts/bebas-neue.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 400 600; src: url('fonts/inter.woff2') format('woff2'); }
+  :root { --navy:#14213D; --night:#1B3B59; --gold:#FCA311; --saffron:#FDD400; --ash:#BDC3C7; --slate:#708090; }
+  body { font-family:'Inter',sans-serif; background:#444; }
+  .sheet {
+    width:210mm; height:297mm; margin:8px auto; position:relative; overflow:hidden;
+    background:linear-gradient(158deg,#000 0%,var(--navy) 62%,var(--night) 100%);
+    color:#fff; padding:16mm 15mm 14mm; display:flex; flex-direction:column;
+    page-break-after:always;
+  }
+  .glow { position:absolute; width:150mm; height:150mm; right:-45mm; top:-45mm;
+          background:radial-gradient(circle,rgba(252,163,17,.16),transparent 65%); }
+  .beb { font-family:'Bebas Neue',sans-serif; font-weight:400; }
+  .gold { color:var(--gold); }
+  .lockup { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--ash); position:relative; }
+  .rule { width:32mm; height:1.1mm; background:var(--gold); margin:5mm 0; }
+  .eyebrow { font-size:9pt; letter-spacing:.24em; color:var(--gold); font-weight:600; }
+  h1 { font-size:44pt; line-height:.98; margin-top:4mm; position:relative; }
+  .strap { font-size:9.5pt; letter-spacing:.17em; text-transform:uppercase; color:var(--ash); margin-top:5mm; }
+
+  .datestrip { display:flex; gap:4mm; margin-top:9mm; }
+  .datestrip div { flex:1; background:rgba(255,255,255,.06); border:0.3mm solid rgba(255,255,255,.14);
+                   border-radius:2.5mm; padding:4mm; text-align:center; }
+  .datestrip b { display:block; font-family:'Bebas Neue',sans-serif; font-size:15pt; color:var(--gold); }
+  .datestrip i { font-style:normal; font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--ash); }
+
+  .what { margin-top:9mm; }
+  .what .h { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:3mm; }
+  .halls { display:flex; gap:3.5mm; }
+  .halls div { flex:1; border-top:1mm solid var(--gold); background:rgba(255,255,255,.05); border-radius:0 0 2.5mm 2.5mm; padding:4mm; }
+  .halls b { font-family:'Bebas Neue',sans-serif; font-size:11pt; display:block; }
+  .halls span { font-size:7.5pt; color:var(--ash); line-height:1.5; display:block; margin-top:1.5mm; }
+
+  .topics { margin-top:7mm; columns:2; column-gap:7mm; font-size:8.6pt; }
+  .topics li { list-style:none; margin-bottom:2.6mm; padding-left:5mm; position:relative; line-height:1.45; color:#E8EAED; break-inside:avoid; }
+  .topics li::before { content:''; position:absolute; left:0; top:1.6mm; width:2.2mm; height:2.2mm; background:var(--gold); border-radius:50%; }
+
+  .who { margin-top:7mm; font-size:8.6pt; color:var(--ash); }
+  .who b { color:#fff; }
+
+  .cta { margin-top:auto; display:flex; gap:6mm; align-items:center; padding-top:8mm; border-top:0.3mm solid rgba(255,255,255,.18); }
+  .qr { background:#fff; padding:2.5mm; border-radius:2mm; flex:none; }
+  .cta .txt b { font-family:'Bebas Neue',sans-serif; font-size:16pt; color:var(--gold); display:block; }
+  .cta .txt .url { font-size:11pt; font-weight:600; margin-top:1mm; }
+  .cta .txt span { font-size:7.8pt; color:var(--ash); display:block; margin-top:1.5mm; line-height:1.5; }
+  .foot { margin-top:6mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--slate); }
+
+  /* square social version */
+  .sq { width:1080px; height:1080px; margin:8px auto; padding:70px 64px 56px; }
+  .sq h1 { font-size:74pt; }
+  .sq .topics { font-size:15pt; columns:2; }
+  .sq .topics li { margin-bottom:12px; padding-left:26px; }
+  .sq .topics li::before { width:11px; height:11px; top:9px; }
+  .sq .datestrip b { font-size:26pt; } .sq .datestrip i { font-size:11pt; }
+  .sq .halls b { font-size:19pt; } .sq .halls span { font-size:12.5pt; }
+  .sq .lockup, .sq .eyebrow { font-size:15pt; } .sq .strap { font-size:15pt; }
+  .sq .who { font-size:14pt; }
+  .sq .cta .txt b { font-size:26pt; } .sq .cta .txt .url { font-size:20pt; } .sq .cta .txt span { font-size:12.5pt; }
+  .sq .foot { font-size:11pt; }
+  .bar { position:fixed; top:4px; left:8px; color:#ccc; font-size:11px; z-index:5; }
+  @media print { .bar{display:none} body{background:#fff} .sheet{margin:0} .sq{display:none} }
+</style>
+</head>
+<body>
+<p class="bar">A4 pamphlet + 1080×1080 social version below · Ctrl+P → Save as PDF (A4, margins none, background graphics ON)</p>
+
+<!-- ══════ A4 PAMPHLET ══════ -->
+<div class="sheet" id="a4">
+  <div class="glow"></div>
+  <p class="lockup">Hosted at Apollo Hospitals · Financial District, Hyderabad</p>
+  <div class="rule"></div>
+  <p class="eyebrow">INAUGURAL EDITION · SAVE THE DATE</p>
+  <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
+  <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+
+  <div class="datestrip">
+    <div><b>29 &amp; 30 JAN 2027</b><i>Friday &amp; Saturday</i></div>
+    <div><b>HYDERABAD</b><i>Venue to be announced</i></div>
+    <div><b>CME APPLIED</b><i>Credit points — TSMC</i></div>
+  </div>
+
+  <div class="what">
+    <p class="h">Two days · three parallel halls</p>
+    <div class="halls">
+      <div><b>SURGERY</b><span>Sports orthopaedics, arthroscopy &amp; live surgical video</span></div>
+      <div><b>REHABILITATION</b><span>Physiotherapy, S&amp;C and return to play</span></div>
+      <div><b>SPORTS SCIENCE</b><span>Nutrition, performance &amp; athlete health</span></div>
+    </div>
+  </div>
+
+  <ul class="topics">
+    <li>Comprehensive sports injury management across all joints</li>
+    <li>Current concepts in arthroscopy, sports medicine &amp; rehabilitation</li>
+    <li>From prevention to return to play</li>
+    <li>Innovation in surgical techniques and orthobiologics</li>
+    <li>Live surgical videos and technical pearls</li>
+    <li>Rehabilitation and return-to-sport strategies</li>
+    <li>Sports nutrition, psychology and emerging technologies</li>
+    <li>Free papers, e-posters &amp; Young Surgeon Forum awards</li>
+  </ul>
+
+  <p class="who"><b>Who should attend:</b> Orthopaedic Surgeons · Sports Physicians · Physiotherapists · Strength &amp; Conditioning Coaches · PG Students</p>
+
+  <div class="cta">
+    <div class="qr" id="qr1"></div>
+    <div class="txt">
+      <b>REGISTRATION OPENING SOON</b>
+      <p class="url gold">www.sportsinjuries.care</p>
+      <span>Scan for the full brochure, program and updates. Join the priority list to be told the day registration opens.</span>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Chairman: Dr Deepthi Nandan Reddy · Organised by Precision Orthopaedics LLP</span>
+    <span>info@precisionortho.care</span>
+  </div>
+</div>
+
+<!-- ══════ 1080×1080 SOCIAL ══════ -->
+<div class="sheet sq" id="sq">
+  <div class="glow"></div>
+  <p class="lockup">Hosted at Apollo Hospitals · Financial District, Hyderabad</p>
+  <div class="rule"></div>
+  <p class="eyebrow">INAUGURAL EDITION · SAVE THE DATE</p>
+  <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
+  <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+  <div class="datestrip">
+    <div><b>29 &amp; 30 JAN 2027</b><i>Friday &amp; Saturday</i></div>
+    <div><b>HYDERABAD</b><i>Venue to be announced</i></div>
+    <div><b>CME APPLIED</b><i>TSMC</i></div>
+  </div>
+  <div class="what">
+    <p class="h" style="font-size:14pt">Two days · three parallel halls</p>
+    <div class="halls">
+      <div><b>SURGERY</b><span>Sports orthopaedics &amp; arthroscopy</span></div>
+      <div><b>REHABILITATION</b><span>Physiotherapy, S&amp;C, return to play</span></div>
+      <div><b>SPORTS SCIENCE</b><span>Nutrition &amp; athlete health</span></div>
+    </div>
+  </div>
+  <ul class="topics">
+    <li>Injury management across all joints</li>
+    <li>Live surgical videos &amp; technical pearls</li>
+    <li>From prevention to return to play</li>
+    <li>Orthobiologics &amp; innovation</li>
+    <li>Rehabilitation &amp; return-to-sport</li>
+    <li>Free papers, e-posters &amp; awards</li>
+  </ul>
+  <div class="cta">
+    <div class="qr" id="qr2"></div>
+    <div class="txt">
+      <b>REGISTRATION OPENING SOON</b>
+      <p class="url gold">www.sportsinjuries.care</p>
+      <span>Scan for brochure, program &amp; updates</span>
+    </div>
+  </div>
+  <div class="foot"><span>Chairman: Dr Deepthi Nandan Reddy · Precision Orthopaedics LLP</span><span>info@precisionortho.care</span></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qr1'), { text:'https://www.sportsinjuries.care/', width:104, height:104, correctLevel:QRCode.CorrectLevel.M });
+  new QRCode(document.getElementById('qr2'), { text:'https://www.sportsinjuries.care/', width:170, height:170, correctLevel:QRCode.CorrectLevel.M });
+</script>
+</body>
+</html>
