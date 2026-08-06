@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>SIC 2027 — Scientific Brochure (print to PDF, A4)</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @font-face { font-family: 'Bebas Neue'; src: url('fonts/bebas-neue.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 400 600; src: url('fonts/inter.woff2') format('woff2'); }
+  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090; }
+  body { font-family: 'Inter', sans-serif; background: #444; }
+  .pg {
+    width: 210mm; height: 297mm;
+    margin: 8px auto;
+    position: relative;
+    overflow: hidden;
+    background: #FFFFFF;
+    color: var(--navy);
+    padding: 16mm 16mm 20mm;
+    page-break-after: always;
+  }
+  .pg.dark { background: linear-gradient(160deg, #000 0%, var(--navy) 70%, var(--night) 100%); color: #FFF; }
+  .beb { font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
+  .gold { color: var(--gold); }
+  .label { font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .foot { position: absolute; bottom: 8mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--slate); border-top: 0.3mm solid #E5E5E5; padding-top: 2.5mm; }
+  .pg.dark .foot { border-color: rgb(255 255 255 / 0.2); color: var(--ash); }
+  .slash { height: 0.8mm; background: var(--gold); width: 34mm; margin: 4mm 0; transform: skewY(-2deg); }
+
+  /* cover */
+  .cover { display: flex; flex-direction: column; }
+  .cover .lockup { font-size: 9pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); max-width: 105mm; }
+  .cover h1 { font-size: 46pt; line-height: 1.02; margin-top: 8mm; }
+  .cover .strap { font-size: 10pt; letter-spacing: 0.18em; color: var(--ash); text-transform: uppercase; margin-top: 6mm; }
+  .cover .dates { font-size: 22pt; margin-top: 14mm; }
+  .cover .meta { margin-top: auto; display: flex; gap: 12mm; }
+  .cover .meta div b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 15pt; }
+  .cover .meta div i { font-style: normal; font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash); }
+  .draftmark { position: absolute; top: 12mm; right: 16mm; border: 0.5mm solid var(--saffron); color: var(--saffron); font-size: 8pt; font-weight: 700; letter-spacing: 0.14em; padding: 1.5mm 4mm; border-radius: 2mm; }
+  .pg:not(.dark) .draftmark { border-color: #C77F08; color: #C77F08; }
+
+  h2.sec { font-size: 24pt; margin: 2mm 0 6mm; }
+  .committee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .person { border: 0.3mm solid #E5E5E5; border-left: 1mm solid var(--gold); padding: 5mm; border-radius: 2mm; }
+  .person .role { font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .person b { display: block; font-size: 12.5pt; margin: 1mm 0 0.5mm; }
+  .person .desig { font-size: 8.5pt; color: var(--slate); }
+  .person p { font-size: 8pt; color: #4A5568; margin-top: 2mm; line-height: 1.55; }
+
+  .about p { font-size: 10pt; line-height: 1.7; max-width: 165mm; margin-bottom: 4mm; }
+  .mission { background: var(--navy); color: #FFF; border-radius: 3mm; padding: 8mm; font-size: 12pt; line-height: 1.55; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; text-transform: uppercase; margin: 6mm 0; }
+  .mission span { color: var(--gold); }
+  .hl { columns: 2; column-gap: 8mm; font-size: 9pt; }
+  .hl li { break-inside: avoid; margin: 0 0 3mm 5mm; line-height: 1.5; }
+
+  /* program tables */
+  .day-head { display: flex; align-items: baseline; gap: 4mm; margin: 5mm 0 3mm; }
+  .day-head .beb { font-size: 16pt; }
+  .day-head span { font-size: 8.5pt; color: var(--slate); letter-spacing: 0.14em; text-transform: uppercase; }
+  table.grid { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
+  table.grid th { text-align: left; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 1.6mm 2.5mm; border-bottom: 0.4mm solid var(--navy); }
+  table.grid td { padding: 1.7mm 2.5mm; border-bottom: 0.25mm solid #E8E8E8; vertical-align: top; }
+  table.grid td.t { white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 9.5pt; color: var(--night); width: 24mm; }
+  tr.block td { background: var(--navy); color: #FFF; font-weight: 600; font-size: 8.6pt; letter-spacing: 0.08em; }
+  tr.break td { background: #F4F5F7; color: var(--slate); font-style: italic; }
+
+  /* tariff */
+  table.fees { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-top: 4mm; }
+  table.fees th { background: var(--navy); color: #FFF; padding: 3mm; font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase; text-align: left; }
+  table.fees td { padding: 3mm; border-bottom: 0.3mm solid #E5E5E5; }
+  table.fees td.tba { color: var(--slate); }
+  .notes { font-size: 8pt; color: #4A5568; line-height: 1.65; margin-top: 5mm; }
+  .notes li { margin-left: 5mm; margin-bottom: 1.5mm; }
+  .qr-row { display: flex; gap: 10mm; align-items: center; margin-top: 8mm; }
+  #qr { background: #FFF; padding: 3mm; border: 0.3mm solid #E5E5E5; border-radius: 2mm; }
+  .qr-row .cta b { font-family: 'Bebas Neue', sans-serif; font-size: 15pt; display: block; }
+  .qr-row .cta span { font-size: 8.5pt; color: var(--slate); }
+
+  .venue p { font-size: 9.5pt; line-height: 1.7; max-width: 165mm; margin-bottom: 4mm; }
+  .facts { display: flex; gap: 6mm; margin-top: 5mm; }
+  .facts div { flex: 1; border: 0.3mm solid #E5E5E5; border-radius: 2mm; padding: 5mm; }
+  .facts b { font-family: 'Bebas Neue', sans-serif; font-size: 14pt; color: var(--gold); display: block; }
+  .facts i { font-style: normal; font-size: 8pt; color: var(--slate); }
+  .contact-band { background: var(--navy); color: #FFF; border-radius: 3mm; padding: 8mm; margin-top: 8mm; display: flex; justify-content: space-between; align-items: center; }
+  .contact-band b { font-family: 'Bebas Neue', sans-serif; font-size: 16pt; }
+  .contact-band a { color: var(--gold); text-decoration: none; font-size: 10pt; }
+  .bar { position: fixed; top: 4px; left: 8px; color: #ccc; font-size: 11px; z-index: 5; }
+  @media print { .bar { display: none; } body { background: #fff; } .pg { margin: 0; } }
+</style>
+</head>
+<body>
+<p class="bar">DRAFT brochure — Ctrl+P → Save as PDF (A4, margins: none, background graphics ON)</p>
+
+<!-- PAGE 1 — COVER -->
+<div class="pg dark cover">
+  <span class="draftmark">DRAFT — FOR COMMITTEE REVIEW</span>
+  <p class="lockup">Apollo Hospitals · Financial District, Hyderabad</p>
+  <div class="slash"></div>
+  <p class="label">SIC 2027 · SCIENTIFIC BROCHURE</p>
+  <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
+  <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+  <p class="dates beb gold">29TH &amp; 30TH JANUARY 2027 · FRIDAY &amp; SATURDAY</p>
+  <div class="meta">
+    <div><b>VENUE TBA</b><i>Hyderabad, Telangana</i></div>
+    <div><b>CME APPLIED</b><i>Credit points — TSMC</i></div>
+    <div><b>REGISTRATION</b><i>Opening soon</i></div>
+  </div>
+  <div class="foot"><span>Organised by Precision Orthopaedics LLP</span><span>info@precisionortho.care</span></div>
+</div>
+
+<!-- PAGE 2 — ABOUT & MISSION -->
+<div class="pg about">
+  <p class="label">ABOUT THE CONCLAVE</p>
+  <h2 class="sec beb">INDIA IS PLAYING MORE.<br>INJURIES ARE RISING FASTER.</h2>
+  <p>From the IPL and Pro Kabaddi to Khelo India and weekend marathons, more Indians are competing than ever — and sports injury care has to keep pace. The gap is not enthusiasm; it is coordinated, evidence-based treatment: accurate early assessment, modern arthroscopic and preservation surgery, structured rehabilitation, and objective return-to-play decisions.</p>
+  <p>SIC 2027 exists to close that gap — bringing the surgeons, sports physicians, physiotherapists and sports scientists who share one athlete into one room, across two focused days in Hyderabad.</p>
+  <div class="mission">"Our mission: to advance evidence-based sports injury care in India — uniting surgeons, sports physicians, physiotherapists and sports scientists to take every athlete safely from injury <span>back to peak performance.</span>"</div>
+  <p class="label">CONFERENCE HIGHLIGHTS</p>
+  <ul class="hl">
+    <li>Comprehensive Sports Injury Management Across All Joints</li>
+    <li>Current Concepts in Arthroscopy, Sports Medicine &amp; Rehabilitation</li>
+    <li>From Prevention to Return to Play</li>
+    <li>Innovation in Surgical Techniques and Orthobiologics</li>
+    <li>Live Surgical Videos and Technical Pearls</li>
+    <li>Rehabilitation and Return-to-Sport Strategies</li>
+    <li>Sports Nutrition, Psychology and Emerging Technologies</li>
+  </ul>
+  <p class="label" style="margin-top:5mm">WHO SHOULD ATTEND</p>
+  <p style="font-size:9pt">Orthopaedic Surgeons · Sports Physicians · Physiotherapists · S&amp;C Coaches · PG Students</p>
+  <div class="foot"><span>SIC 2027 — Hyderabad Sports Injuries Conclave</span><span>Page 2</span></div>
+</div>
+
+<!-- PAGE 3 — COMMITTEE -->
+<div class="pg">
+  <p class="label">ORGANIZING COMMITTEE</p>
+  <h2 class="sec beb">THE TEAM BEHIND SIC 2027</h2>
+  <div class="committee-grid">
+    <div class="person">
+      <span class="role">Chairman</span>
+      <b>Dr Deepthi Nandan Reddy</b>
+      <span class="desig">HOD &amp; Sr. Consultant, Sports Injuries &amp; Orthopaedic Surgery</span>
+      <p>Past President, Shoulder &amp; Elbow Society of India. FRCS Ed, FRCS (Tr &amp; Orth, UK), CCT (UK), with advanced fellowships in the UK and at Mayo Clinic (USA). Three decades in shoulder reconstruction, rotator cuff repair and instability surgery.</p>
+    </div>
+    <div class="person">
+      <span class="role">Co-Chairman</span>
+      <b>Dr Amith Reddy</b>
+      <span class="desig">Senior Consultant, Orthopaedic Surgeon</span>
+      <p>Clinical Director, Apollo Hospitals Financial District. Over 19 years across advanced joint care and sports medicine, focused on robotic knee, hip and shoulder replacement and minimally invasive surgery.</p>
+    </div>
+    <div class="person">
+      <span class="role">Organizing Secretary</span>
+      <b>Dr Ravi Teja Rudraraju</b>
+      <span class="desig">Consultant, Knee Preservation, Robotics &amp; Sports Medicine</span>
+      <p>Fellowship-trained across three continents — FAOA (Australia), FISM (USA), FIJR (South Korea) — with dedicated robotic-surgery training in Melbourne. Treats elite athletes from Pro Kabaddi and professional football.</p>
+    </div>
+    <div class="person">
+      <span class="role">Treasurer</span>
+      <b>Dr Harsha Vardhana Reddy</b>
+      <span class="desig">Consultant, Orthopaedic Surgeon</span>
+      <p>D.Ortho, DNB (Ortho), MBA (Hospital Administration). A decade of practice in robotic and computer-assisted joint replacement, arthroscopic shoulder and knee surgery, and ligament reconstruction.</p>
+    </div>
+  </div>
+  <p class="label" style="margin-top:8mm">FACULTY</p>
+  <p style="font-size:9.5pt; color:#4A5568">International and national faculty announcement to follow. No placeholders — names are published as they are confirmed, on the conclave website.</p>
+  <div class="foot"><span>SIC 2027 — Hyderabad Sports Injuries Conclave</span><span>Page 3</span></div>
+</div>
+
+<!-- PAGE 4 — PROGRAM DAY 1 -->
+<div class="pg">
+  <span class="draftmark">INDICATIVE — FINAL GRID PENDING SCIENTIFIC COMMITTEE</span>
+  <p class="label">SCIENTIFIC PROGRAM</p>
+  <h2 class="sec beb">DAY 1 — <span class="gold">FRIDAY, 29TH JANUARY 2027</span></h2>
+  <table class="grid">
+    <tr><th>Time</th><th>Session / Topic</th></tr>
+    <tr><td class="t">08:00–09:00</td><td>Registration, breakfast &amp; trade exhibition opens</td></tr>
+    <tr><td class="t">09:00–09:30</td><td>Inauguration</td></tr>
+    <tr class="block"><td class="t">09:30–11:00</td><td>THE SHOULDER IN SPORT</td></tr>
+    <tr><td class="t">09:30–09:50</td><td>Keynote — The overhead athlete's shoulder: from GIRD to the rotator cuff</td></tr>
+    <tr><td class="t">09:50–10:10</td><td>Instability in the collision athlete: on-field recognition to stabilisation</td></tr>
+    <tr><td class="t">10:10–10:30</td><td>Rotator cuff repair — live surgical video &amp; technical pearls</td></tr>
+    <tr><td class="t">10:30–11:00</td><td>Panel: return to throwing and overhead sport after shoulder surgery</td></tr>
+    <tr class="break"><td class="t">11:00–11:15</td><td>Tea break · exhibition</td></tr>
+    <tr class="block"><td class="t">11:15–13:00</td><td>THE ATHLETE'S KNEE — LIGAMENT &amp; MENISCUS</td></tr>
+    <tr><td class="t">11:15–11:35</td><td>ACL in 2027: graft choice, lateral augmentation and the evidence</td></tr>
+    <tr><td class="t">11:35–11:55</td><td>Meniscus preservation: save it, fix it — repair techniques that last</td></tr>
+    <tr><td class="t">11:55–12:15</td><td>ACL reconstruction — live surgical video &amp; technical pearls</td></tr>
+    <tr><td class="t">12:15–12:40</td><td>Debate: early vs delayed ACL reconstruction in the competitive athlete</td></tr>
+    <tr><td class="t">12:40–13:00</td><td>Case-based discussion: the multiligament knee</td></tr>
+    <tr class="break"><td class="t">13:00–14:00</td><td>Lunch · exhibition</td></tr>
+    <tr class="block"><td class="t">14:00–15:30</td><td>ORTHOBIOLOGICS &amp; PRESERVATION</td></tr>
+    <tr><td class="t">14:00–14:20</td><td>PRP, BMAC and beyond: separating evidence from hype</td></tr>
+    <tr><td class="t">14:20–14:40</td><td>Cartilage repair in the athlete: what works at return to play</td></tr>
+    <tr><td class="t">14:40–15:00</td><td>Knee preservation &amp; osteotomy in the young athlete</td></tr>
+    <tr><td class="t">15:00–15:30</td><td>Meet the expert: my algorithm for the failing athletic knee</td></tr>
+    <tr class="break"><td class="t">15:30–15:45</td><td>Tea break</td></tr>
+    <tr class="block"><td class="t">15:45–17:15</td><td>ASSESSMENT &amp; IMAGING + ETHICS</td></tr>
+    <tr><td class="t">15:45–16:05</td><td>Clinical examination that still beats the MRI</td></tr>
+    <tr><td class="t">16:05–16:25</td><td>Imaging the injured athlete: choosing wisely</td></tr>
+    <tr><td class="t">16:25–16:55</td><td>Medical ethics &amp; good clinical practice in sports medicine (TSMC CPD session)</td></tr>
+    <tr><td class="t">16:55–17:15</td><td>Rapid-fire cases with audience polling</td></tr>
+    <tr class="break"><td class="t">19:00</td><td>Faculty dinner</td></tr>
+  </table>
+  <div class="foot"><span>Indicative program — every time and topic subject to scientific-committee approval</span><span>Page 4</span></div>
+</div>
+
+<!-- PAGE 5 — PROGRAM DAY 2 -->
+<div class="pg">
+  <span class="draftmark">INDICATIVE — FINAL GRID PENDING SCIENTIFIC COMMITTEE</span>
+  <p class="label">SCIENTIFIC PROGRAM</p>
+  <h2 class="sec beb">DAY 2 — <span class="gold">SATURDAY, 30TH JANUARY 2027</span></h2>
+  <table class="grid">
+    <tr><th>Time</th><th>Session / Topic</th></tr>
+    <tr class="block"><td class="t">08:30–10:00</td><td>FOOT, ANKLE &amp; THE RUNNING ATHLETE</td></tr>
+    <tr><td class="t">08:30–08:50</td><td>Lateral ankle instability: when physiotherapy is not enough</td></tr>
+    <tr><td class="t">08:50–09:10</td><td>Achilles tendinopathy and rupture: modern management</td></tr>
+    <tr><td class="t">09:10–09:30</td><td>The injured runner: load, gait and footwear</td></tr>
+    <tr><td class="t">09:30–10:00</td><td>Panel: stress injuries in the endurance athlete</td></tr>
+    <tr class="block"><td class="t">10:00–11:15</td><td>REHABILITATION &amp; RETURN TO PLAY</td></tr>
+    <tr><td class="t">10:00–10:20</td><td>Criteria-based rehabilitation: progressions that earn the next stage</td></tr>
+    <tr><td class="t">10:20–10:40</td><td>Objective testing for the return-to-play decision</td></tr>
+    <tr><td class="t">10:40–11:15</td><td>Panel: who decides return to sport? Surgeon, physio, coach, athlete</td></tr>
+    <tr class="break"><td class="t">11:15–11:30</td><td>Tea break · exhibition</td></tr>
+    <tr class="block"><td class="t">11:30–13:00</td><td>THE PERFORMANCE LAYER</td></tr>
+    <tr><td class="t">11:30–11:50</td><td>Sports nutrition for injury recovery and performance</td></tr>
+    <tr><td class="t">11:50–12:10</td><td>The athlete's mind: psychology of injury and comeback</td></tr>
+    <tr><td class="t">12:10–12:30</td><td>Emerging technologies: data, wearables and AI in injury prevention</td></tr>
+    <tr><td class="t">12:30–13:00</td><td>Controversies in sports medicine: rapid-fire debate</td></tr>
+    <tr class="break"><td class="t">13:00–14:00</td><td>Lunch · exhibition</td></tr>
+    <tr class="block"><td class="t">14:00–16:00</td><td>FREE PAPERS &amp; YOUNG SURGEON FORUM</td></tr>
+    <tr><td class="t">14:00–15:00</td><td>Free paper podium session</td></tr>
+    <tr><td class="t">15:00–16:00</td><td>Young Surgeon Forum — trainee &amp; young consultant podium</td></tr>
+    <tr class="break"><td class="t">16:00–16:15</td><td>Tea break</td></tr>
+    <tr class="block"><td class="t">16:15–17:00</td><td>CLOSE</td></tr>
+    <tr><td class="t">16:15–16:45</td><td>Best Paper &amp; Best E-Poster Awards · Young Surgeon Forum Awards</td></tr>
+    <tr><td class="t">16:45–17:00</td><td>Valedictory &amp; see you at the next edition</td></tr>
+  </table>
+  <p class="notes" style="margin-top:4mm">E-posters are on display through both days. Abstract guidelines: structured format (Title, Introduction, Methods, Results, Conclusion), maximum 250 words; presenting author must be a registered delegate; submission portal opens with registration.</p>
+  <div class="foot"><span>Indicative program — every time and topic subject to scientific-committee approval</span><span>Page 5</span></div>
+</div>
+
+<!-- PAGE 6 — REGISTRATION & CONTACT -->
+<div class="pg">
+  <p class="label">REGISTRATION TARIFF</p>
+  <h2 class="sec beb">DELEGATE CATEGORIES</h2>
+  <table class="fees">
+    <tr><th>Category</th><th>Early Bird (till date TBA)</th><th>Regular</th><th>Spot</th></tr>
+    <tr><td><b>Consultant / Specialist</b></td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td></tr>
+    <tr><td><b>PG Student</b> — HOD certificate mandatory</td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td></tr>
+    <tr><td><b>Physiotherapist / Allied Health</b></td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td></tr>
+    <tr><td><b>Accompanying Person</b></td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td><td class="tba">₹ TBA</td></tr>
+  </table>
+  <ul class="notes">
+    <li>All fees are inclusive of 18% GST as per Government of India regulations; GST invoice issued for payments through official conference accounts.</li>
+    <li>Registration includes access to the two-day scientific programme, live surgical video sessions, trade exhibition, delegate kit, and lunch on both days.</li>
+    <li>Certificate of participation with TSMC CME credit points (applied; final count on approval). Doctors: keep your state medical council registration number handy — it is required for CME credit submission.</li>
+    <li>PG registration requires a certificate from the Head of Department / Institution; senior residents are not eligible under the PG category.</li>
+    <li>Cancellation: written request before the announced cutoff; 25% processing deduction; balance refunded within one month after the conclave.</li>
+  </ul>
+  <div class="qr-row">
+    <div id="qr"></div>
+    <div class="cta">
+      <b class="gold">SCAN TO JOIN THE PRIORITY LIST</b>
+      <span>Be first when registration opens — fee announcement, early-bird window and abstract portal, straight to your inbox.</span>
+    </div>
+  </div>
+  <div class="contact-band">
+    <div>
+      <b>SIC <span class="gold">2027</span></b><br>
+      <span style="font-size:8pt; letter-spacing:0.16em; text-transform:uppercase; color:var(--ash)">29th &amp; 30th January 2027 · Hyderabad</span>
+    </div>
+    <div style="text-align:right">
+      <a href="mailto:info@precisionortho.care">info@precisionortho.care</a><br>
+      <span style="font-size:8pt; color:var(--ash)">Organised by Precision Orthopaedics LLP · Hosted at Apollo Hospitals, Financial District</span>
+    </div>
+  </div>
+  <div class="foot"><span>SIC 2027 — Hyderabad Sports Injuries Conclave · Scientific Brochure (draft)</span><span>Page 6</span></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qr'), {
+    text: 'https://sic-sports-injuries-conclacve.vercel.app/registration.html',
+    width: 120, height: 120, correctLevel: QRCode.CorrectLevel.M,
+  });
+</script>
+</body>
+</html>
