@@ -1,7 +1,7 @@
 # SIC 2027 — Launch Checklist
 
 Everything staged and what remains to flip each piece live.
-Live site: https://sic-sports-injuries-conclacve.vercel.app · Repo: agileortho4488/SIC-SPORTS-INJURIES-CONCLACVE
+Live site: https://www.sportsinjuries.care · Repo: agileortho4488/SIC-SPORTS-INJURIES-CONCLACVE
 
 ## Staged pages (built, unlisted, `noindex`, draft-banner)
 

@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     if (L.TEST_MODE) {
       await L.saveReg({ id, name, email, mobile, category, council, council_reg_no, amount, order_id: 'test', status: 'test' });
       const sig = L.sign(id);
-      L.sendMail(email, 'SIC 2027 — registration received (demo)', `<p>Dear ${name}, your demo registration ${id} is recorded. Pass: <a href="https://sic-sports-injuries-conclacve.vercel.app/pass.html?id=${id}&sig=${sig}">view pass</a></p>`);
+      L.sendMail(email, 'SIC 2027 — registration received (demo)', `<p>Dear ${name}, your demo registration ${id} is recorded. Pass: <a href="https://www.sportsinjuries.care/pass.html?id=${id}&sig=${sig}">view pass</a></p>`);
       return L.json(res, 200, { test: true, id, sig });
     }
 

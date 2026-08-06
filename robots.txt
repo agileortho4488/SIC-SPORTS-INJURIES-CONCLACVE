@@ -12,4 +12,4 @@ Disallow: /brochure.html
 Disallow: /brochure-thanks.html
 Disallow: /api/
 
-Sitemap: https://sic-sports-injuries-conclacve.vercel.app/sitemap.xml
+Sitemap: https://www.sportsinjuries.care/sitemap.xml
