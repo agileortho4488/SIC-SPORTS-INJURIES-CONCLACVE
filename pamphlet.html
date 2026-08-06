@@ -37,27 +37,27 @@
   h1 { font-size:44pt; line-height:.98; margin-top:4mm; position:relative; text-shadow:0 2px 14px rgba(0,0,0,.85); }
   .strap { font-size:9.5pt; letter-spacing:.17em; text-transform:uppercase; color:var(--ash); margin-top:5mm; }
 
-  .datestrip { display:flex; gap:4mm; margin-top:6mm; }
+  .datestrip { display:flex; gap:4mm; margin-top:5mm; }
   .datestrip div { flex:1; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); border:0.3mm solid rgba(252,163,17,.45);
                    border-radius:2.5mm; padding:3mm; text-align:center; }
   .datestrip b { display:block; font-family:'Bebas Neue',sans-serif; font-size:15pt; color:var(--gold); }
   .datestrip i { font-style:normal; font-size:7pt; letter-spacing:.14em; text-transform:uppercase; color:var(--ash); }
 
-  .what { margin-top:6mm; }
+  .what { margin-top:5mm; }
   .what .h { font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:3mm; }
   .halls { display:flex; gap:3.5mm; }
-  .halls div { flex:1; border-top:1mm solid var(--gold); background:rgba(0,0,0,.6); border-radius:0 0 2.5mm 2.5mm; padding:3.2mm; }
+  .halls div { flex:1; border-top:1mm solid var(--gold); background:rgba(0,0,0,.6); border-radius:0 0 2.5mm 2.5mm; padding:2.8mm; }
   .halls b { font-family:'Bebas Neue',sans-serif; font-size:11pt; display:block; }
   .halls span { font-size:7.5pt; color:var(--ash); line-height:1.5; display:block; margin-top:1.5mm; }
 
-  .topics { margin-top:5mm; columns:2; column-gap:7mm; font-size:8.4pt; }
-  .topics li { list-style:none; margin-bottom:2.1mm; padding-left:5mm; position:relative; line-height:1.45; color:#F2F4F6; break-inside:avoid; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+  .topics { margin-top:4mm; columns:2; column-gap:6mm; font-size:8pt; }
+  .topics li { list-style:none; margin-bottom:1.7mm; padding-left:5mm; position:relative; line-height:1.45; color:#F2F4F6; break-inside:avoid; text-shadow:0 1px 3px rgba(0,0,0,.9); }
   .topics li::before { content:''; position:absolute; left:0; top:1.6mm; width:2.2mm; height:2.2mm; background:var(--gold); border-radius:50%; }
 
-  .who { margin-top:5mm; font-size:8.6pt; color:#DCE0E4; text-shadow:0 1px 3px rgba(0,0,0,.9); }
+  .who { margin-top:4mm; font-size:8.6pt; color:#DCE0E4; text-shadow:0 1px 3px rgba(0,0,0,.9); }
   /* three-sport photo strip — the visual proof this is about sport */
-  .sportstrip { display:flex; gap:2.5mm; margin-top:5mm; }
-  .sportstrip div { flex:1; height:23mm; border-radius:2mm; background-size:cover; background-position:center;
+  .sportstrip { display:flex; gap:2.5mm; margin-top:4mm; }
+  .sportstrip div { flex:1; height:16mm; border-radius:2mm; background-size:cover; background-position:center;
                     border:0.3mm solid rgba(252,163,17,.35); position:relative; overflow:hidden; }
   .sportstrip div::after { content:attr(data-l); position:absolute; left:0; right:0; bottom:0;
     font-family:'Bebas Neue',sans-serif; font-size:8pt; letter-spacing:.1em; color:#fff;
@@ -69,12 +69,12 @@
   .sq .sportstrip div::after { font-size:15pt; padding:26px 8px 8px; }
   .who b { color:#fff; }
 
-  .cta { margin-top:auto; display:flex; gap:5mm; align-items:center; padding:4.5mm; margin-bottom:2mm; background:rgba(0,0,0,.68); border:0.3mm solid rgba(252,163,17,.4); border-radius:3mm; }
+  .cta { margin-top:auto; display:flex; gap:5mm; align-items:center; padding:4mm; margin-bottom:2mm; background:rgba(0,0,0,.68); border:0.3mm solid rgba(252,163,17,.4); border-radius:3mm; }
   .qr { background:#fff; padding:2.5mm; border-radius:2mm; flex:none; }
   .cta .txt b { font-family:'Bebas Neue',sans-serif; font-size:16pt; color:var(--gold); display:block; }
   .cta .txt .url { font-size:11pt; font-weight:600; margin-top:1mm; }
-  .cta .txt span { font-size:7.8pt; color:var(--ash); display:block; margin-top:1.5mm; line-height:1.5; }
-  .foot { margin-top:3.5mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--slate); }
+  .cta .txt span { font-size:7.4pt; color:var(--ash); display:block; margin-top:1.5mm; line-height:1.5; }
+  .foot { margin-top:2.5mm; display:flex; justify-content:space-between; font-size:7pt; color:var(--slate); }
 
   /* square social version */
   .sq { width:1080px; height:1080px; margin:8px auto; padding:70px 64px 56px; }
@@ -91,9 +91,9 @@
 
   /* ── LIGHT VARIANT ────────────────────────────────────── */
   .sheet.light { background:#FFFFFF; color:var(--navy); }
-  .light .bg { top:0; right:0; width:100%; height:47%; background-position:34% 26%;
+  .light .bg { top:0; right:0; width:100%; height:56%; background-position:34% 26%;
                filter:contrast(1.05) saturate(1.05); }
-  .light .scrim { top:0; right:0; width:100%; height:47%;
+  .light .scrim { top:0; right:0; width:100%; height:56%;
     background:linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.3) 40%, rgba(0,0,0,.62) 72%, rgba(255,255,255,.96) 96%, #fff 100%); }
   .light .glow { display:none; }
   .light .lockup { color:#E8EAED; }
@@ -102,7 +102,7 @@
   .light .eyebrow { color:var(--saffron); }
   .light .rule { background:var(--gold); }
   /* content below the photo band sits on white */
-  .light .datestrip { margin-top:8mm; }
+  .light .datestrip { margin-top:5mm; }
   .light .datestrip div { background:#F5F7FA; border:0.3mm solid #D8DEE6; }
   .light .datestrip b { color:var(--navy); }
   .light .datestrip i { color:var(--slate); }
@@ -119,6 +119,17 @@
   .light .cta .txt .url { color:#fff; }
   .light .cta .txt span { color:#C9CFD6; }
   .light .foot { color:var(--slate); }
+
+  /* inaugural theme block */
+  .theme { margin-top:4mm; border-left:1.2mm solid var(--gold); padding:1mm 0 1mm 5mm; }
+  .theme .k { font-size:7.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+  .theme .t { font-family:'Bebas Neue',sans-serif; font-size:17pt; line-height:1.05; margin-top:1.5mm; }
+  .theme .s { font-size:9pt; color:#DCE0E4; margin-top:1.5mm; font-style:italic; }
+  .tagline { margin-top:3mm; font-family:'Bebas Neue',sans-serif; font-size:13pt; letter-spacing:.16em; color:var(--gold); }
+  .light .theme .t { color:#fff; }
+  .light .theme .s { color:#E2E6EA; }
+  .sq .theme .t { font-size:34pt; } .sq .theme .k { font-size:13pt; } .sq .theme .s { font-size:15pt; }
+  .sq .tagline { font-size:22pt; }
   .bar { position:fixed; top:4px; left:8px; color:#ccc; font-size:11px; z-index:5; }
   @media print { .bar{display:none} body{background:#fff} .sheet{margin:0} .sq{display:none} }
 </style>
@@ -136,6 +147,12 @@
   <p class="eyebrow">INAUGURAL EDITION · THEME: RETURN TO SPORT</p>
   <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
   <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+  <div class="theme">
+    <p class="k">Inaugural theme</p>
+    <p class="t">RETURN TO SPORT — <span class="gold">BRIDGING SURGERY,<br>SCIENCE AND PERFORMANCE</span></p>
+    <p class="s">The one decision every surgeon, physiotherapist, S&amp;C coach and athlete shares.</p>
+  </div>
+  <p class="tagline">ASSESS · REHAB · PERFORM · RETURN</p>
 
   <div class="datestrip">
     <div><b>29 &amp; 30 JAN 2027</b><i>Friday &amp; Saturday</i></div>
@@ -144,7 +161,7 @@
   </div>
 
   <div class="what">
-    <p class="h">Theme: return to sport · two parallel halls</p>
+    <p class="h">Two parallel halls</p>
     <div class="halls">
       <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy and live surgical video</span></div>
       <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management, nutrition and the athlete's mind</span></div>
@@ -152,10 +169,7 @@
   </div>
 
   <ul class="topics">
-    <li>Return to sport — the decision every discipline shares</li>
     <li>Comprehensive sports injury management across all joints</li>
-    <li>Current concepts in arthroscopy, sports medicine &amp; rehabilitation</li>
-    <li>From prevention to return to play</li>
     <li>Innovation in surgical techniques and orthobiologics</li>
     <li>Live surgical videos and technical pearls</li>
     <li>Rehabilitation and return-to-sport strategies</li>
@@ -196,6 +210,12 @@
   <p class="eyebrow">INAUGURAL EDITION · THEME: RETURN TO SPORT</p>
   <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
   <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+  <div class="theme">
+    <p class="k">Inaugural theme</p>
+    <p class="t">RETURN TO SPORT — <span class="gold">BRIDGING SURGERY,<br>SCIENCE AND PERFORMANCE</span></p>
+    <p class="s">The one decision every surgeon, physiotherapist, S&amp;C coach and athlete shares.</p>
+  </div>
+  <p class="tagline">ASSESS · REHAB · PERFORM · RETURN</p>
 
   <div class="datestrip">
     <div><b>29 &amp; 30 JAN 2027</b><i>Friday &amp; Saturday</i></div>
@@ -204,7 +224,7 @@
   </div>
 
   <div class="what">
-    <p class="h">Theme: return to sport · two parallel halls</p>
+    <p class="h">Two parallel halls</p>
     <div class="halls">
       <div><b>HALL A · SURGERY</b><span>Sports orthopaedics, arthroscopy and live surgical video</span></div>
       <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, load management, nutrition and the athlete's mind</span></div>
@@ -212,10 +232,7 @@
   </div>
 
   <ul class="topics">
-    <li>Return to sport — the decision every discipline shares</li>
     <li>Comprehensive sports injury management across all joints</li>
-    <li>Current concepts in arthroscopy, sports medicine &amp; rehabilitation</li>
-    <li>From prevention to return to play</li>
     <li>Innovation in surgical techniques and orthobiologics</li>
     <li>Live surgical videos and technical pearls</li>
     <li>Rehabilitation and return-to-sport strategies</li>
@@ -256,13 +273,19 @@
   <p class="eyebrow">INAUGURAL EDITION · THEME: RETURN TO SPORT</p>
   <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
   <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
+  <div class="theme">
+    <p class="k">Inaugural theme</p>
+    <p class="t">RETURN TO SPORT — <span class="gold">BRIDGING SURGERY,<br>SCIENCE AND PERFORMANCE</span></p>
+    <p class="s">The one decision every surgeon, physiotherapist, S&amp;C coach and athlete shares.</p>
+  </div>
+  <p class="tagline">ASSESS · REHAB · PERFORM · RETURN</p>
   <div class="datestrip">
     <div><b>29 &amp; 30 JAN 2027</b><i>Friday &amp; Saturday</i></div>
     <div><b>HYDERABAD</b><i>Venue to be announced</i></div>
     <div><b>CME APPLIED</b><i>TSMC</i></div>
   </div>
   <div class="what">
-    <p class="h" style="font-size:14pt">Theme: return to sport · two parallel halls</p>
+    <p class="h" style="font-size:14pt">Two parallel halls</p>
     <div class="halls">
       <div><b>HALL A · SURGERY</b><span>Sports orthopaedics &amp; arthroscopy</span></div>
       <div><b>HALL B · REHAB, PHYSIO &amp; S&amp;C</b><span>Return to play, testing, nutrition</span></div>
