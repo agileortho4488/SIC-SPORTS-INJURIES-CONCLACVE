@@ -120,7 +120,7 @@
             body: JSON.stringify({ id: d.id, razorpay_order_id: resp.razorpay_order_id, razorpay_payment_id: resp.razorpay_payment_id, razorpay_signature: resp.razorpay_signature }) });
           var vd = await v.json();
           if (v.ok) location.href = 'pass.html?id=' + vd.id + '&sig=' + vd.sig;
-          else { err.textContent = vd.error || 'Payment verification failed — contact info@agileortho.in'; err.style.display = 'block'; }
+          else { err.textContent = vd.error || 'Payment verification failed — contact info@precisionortho.care'; err.style.display = 'block'; }
         },
       });
       rzp.open();

@@ -73,7 +73,7 @@
       if (!x.ok) { msg.textContent = x.d.error || 'Not found.'; return; }
       var d = x.d;
       if (!d.certificates_open && d.status !== 'test') { msg.textContent = 'Certificates will be available after the conclave.'; return; }
-      if (!d.checked_in && d.status !== 'test') { msg.textContent = 'Certificate is issued to attended delegates only. If you attended, contact info@agileortho.in'; return; }
+      if (!d.checked_in && d.status !== 'test') { msg.textContent = 'Certificate is issued to attended delegates only. If you attended, contact info@precisionortho.care'; return; }
       document.getElementById('cName').textContent = d.name;
       document.getElementById('cReg').textContent = d.council ? d.council + ' · Registration No: ' + d.council_reg_no : '';
       document.getElementById('cCme').textContent = d.cme_line;

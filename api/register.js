@@ -26,6 +26,6 @@ module.exports = async (req, res) => {
     await L.saveReg({ id, name, email, mobile, category, council, council_reg_no, amount, order_id: order.id, status: 'pending' });
     return L.json(res, 200, { id, order_id: order.id, amount, key_id: process.env.RAZORPAY_KEY_ID, name });
   } catch (e) {
-    return L.json(res, 500, { error: 'Registration failed. Please try again or email info@agileortho.in' });
+    return L.json(res, 500, { error: 'Registration failed. Please try again or email info@precisionortho.care' });
   }
 };

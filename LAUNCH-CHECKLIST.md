@@ -17,8 +17,8 @@ Flip = delete the `.draft-strip` div + `<meta name="robots">` line, add nav link
 
 ## Forms (priority list / enquiries)
 
-- Registration page form posts to FormSubmit → info@agileortho.in.
-- **ACTION (one-time):** submit the form once yourself; FormSubmit emails a confirmation link to info@agileortho.in — click it to activate. After that every submission arrives by email.
+- Registration page form posts to FormSubmit → info@precisionortho.care.
+- **ACTION (one-time):** submit the form once yourself; FormSubmit emails a confirmation link to info@precisionortho.care — click it to activate. After that every submission arrives by email.
 - Upgrade path when volume grows: Google Sheet via Apps Script, or Konfhub's own lead forms.
 
 ## Payment / registration engine — DO NOT self-build
