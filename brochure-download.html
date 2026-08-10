@@ -55,13 +55,17 @@
 <header class="nav" id="top">
   <div class="nav-inner">
     <a class="brand" href="index.html" aria-label="SIC 2027 — home"><span class="brand-mark">SIC</span><span class="brand-year">2027</span></a>
-    <nav class="nav-links" aria-label="Sections">
+    <nav class="nav-links" id="navMenu" aria-label="Sections">
       <a href="index.html#about">About</a>
       <a href="index.html#highlights">Highlights</a>
       <a href="exhibitors.html">Exhibitors</a>
       <a href="brochure-download.html" class="active">Brochure</a>
       <a href="index.html#venue">Venue</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i></span>
+      <span class="sr-only">Menu</span>
+    </button>
     <a class="pill nav-cta" href="index.html#register">SAVE THE DATE</a>
   </div>
 </header>
@@ -146,5 +150,6 @@ document.getElementById('gateForm').addEventListener('submit', function () {
   try { navigator.sendBeacon('/api/lead', new Blob([payload], { type: 'application/json' })); } catch (e) {}
 });
 </script>
+<script src="nav.js" defer></script>
 </body>
 </html>

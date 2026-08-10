@@ -37,6 +37,7 @@
 
   // Lenis smooth scroll, driven by gsap.ticker — short duration keeps it responsive
   const lenis = new Lenis({ duration: 0.85, wheelMultiplier: 1.15 });
+  window.__lenis = lenis; // nav.js pauses this while the mobile sheet is open
   document.documentElement.classList.add('lenis');
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));

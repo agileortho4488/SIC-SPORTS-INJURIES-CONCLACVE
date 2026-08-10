@@ -188,6 +188,41 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
 }
 .nav-links a.active { color: var(--paper); border-color: var(--accent); }
 .nav-cta { flex: none; }
+.nav-links a.nav-cta-clone { display: none; } /* sheet-only; shown at the mobile breakpoint */
+
+/* ── MOBILE MENU TOGGLE ──────────────────────────────────── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+.nav-toggle {
+  display: none; /* desktop shows the full link row instead */
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem; height: 2.75rem;   /* 44px — minimum comfortable touch target */
+  flex: none;
+  border: 1px solid rgb(66 94 123 / 0.5);
+  border-radius: 10px;
+  background: rgb(20 33 61 / 0.5);
+  color: var(--paper);
+  cursor: pointer;
+  transition: border-color var(--swap) var(--ease-out), background var(--swap) var(--ease-out),
+              scale var(--press) var(--ease-out);
+}
+.nav-toggle:active { scale: 0.94; }
+.nav-toggle-bars { display: block; width: 1.15rem; height: 0.75rem; position: relative; }
+.nav-toggle-bars i {
+  position: absolute; left: 0; right: 0; height: 2px;
+  background: currentColor; border-radius: 2px;
+  transition: translate 220ms var(--ease-out), rotate 220ms var(--ease-out);
+}
+.nav-toggle-bars i:first-child { top: 0; }
+.nav-toggle-bars i:last-child  { bottom: 0; }
+/* bars converge to the middle, then cross — one continuous move, no keyframes */
+.nav.open .nav-toggle-bars i:first-child { translate: 0 0.365rem; rotate: 45deg; }
+.nav.open .nav-toggle-bars i:last-child  { translate: 0 -0.365rem; rotate: -45deg; }
+.nav.open .nav-toggle { border-color: var(--accent); color: var(--accent); }
 
 /* ── pills & buttons ─────────────────────────────────────── */
 .pill {
@@ -705,8 +740,72 @@ footer { border-top: 1px solid rgb(20 33 61 / 0.8); padding-top: clamp(3rem, 7vh
   .about-grid, .split, .faculty-grid, .foot-grid { grid-template-columns: 1fr; }
   .split-side { position: static; }
   .venue-facts { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
+
+  /* The nav links used to be `display: none` here with nothing in their place,
+     which left every phone with no way to reach any section of the site.
+     They now become a proper sheet behind the toggle button. */
+  .nav-toggle { display: inline-flex; }
+  .nav-cta { display: none; }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-h); left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem clamp(1.25rem, 4vw, 3rem) 1.5rem;
+    /* solid, not translucent: this gets read on a phone in daylight, and at
+       any alpha the hero headline ghosted through behind the link labels */
+    background: #04070E;
+    border-bottom: 1px solid rgb(66 94 123 / 0.4);
+    box-shadow: 0 24px 48px rgb(0 0 0 / 0.5);
+    max-height: calc(100svh - var(--nav-h));
+    overflow-y: auto;
+    /* closed state: never scale from 0 — it reads as coming from nowhere */
+    opacity: 0;
+    translate: 0 -0.75rem;
+    visibility: hidden;
+    transition: opacity 220ms var(--ease-out), translate 220ms var(--ease-out),
+                visibility 0s linear 220ms;
+  }
+  .nav.open .nav-links {
+    opacity: 1;
+    translate: 0 0;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  .nav-links a {
+    padding: 0.95rem 0.25rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgb(66 94 123 / 0.25);
+    /* links ride in behind the sheet, 40ms apart — set per-item in main.js */
+    opacity: 0;
+    translate: 0 -0.5rem;
+    transition: opacity 200ms var(--ease-out), translate 200ms var(--ease-out),
+                color var(--swap) var(--ease-out);
+  }
+  .nav.open .nav-links a { opacity: 1; translate: 0 0; }
+  .nav-links a:last-child { border-bottom: 0; }
+  .nav-links a.active { border-bottom-color: var(--accent); }
+
+  /* The sheet carries its own CTA (the header one is hidden at this width).
+     `.nav-links a` is more specific than `.pill`, so without these it would
+     inherit the muted link colour and the row divider. */
+  .nav-links a.nav-cta-clone {
+    display: block;
+    margin-top: 1.25rem;
+    padding: 0.95em 1.7em;
+    text-align: center;
+    color: var(--ink);
+    background: var(--accent);
+    border-bottom: 0;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+  }
 }
+
 
 @media (max-width: 44rem) {
   .hero-meta { gap: 1.25rem; }
@@ -844,3 +943,6 @@ table.halls-grid tr.break td { background: rgb(20 33 61 / 0.3); color: var(--mut
 .committee-names .avatar { width: 2.75rem; height: 2.75rem; font-size: 0.82rem; margin-bottom: 0.75rem; }
 .committee-names dt.tbd { color: var(--slate); }
 .committee-names strong { font-size: 1.02rem; line-height: 1.3; display: block; }
+
+/* mobile menu open — freeze the page behind the sheet */
+html.menu-open, html.menu-open body { overflow: hidden; }
