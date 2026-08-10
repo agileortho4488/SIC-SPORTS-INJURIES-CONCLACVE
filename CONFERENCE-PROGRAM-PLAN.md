@@ -1,22 +1,26 @@
-# SIC 2027 — Three-Hall Scientific Program Plan
+# SIC 2027 — Two-Hall Scientific Program Plan
 
 **Hyderabad Sports Injuries Conclave · 29th & 30th January 2027**
 Draft for the Scientific Committee · prepared from a review of IASCON 2025/26, IASMCON 2025, ISKSAA, ISAKOS 2025, AOSSM 2025, ESSKA 2026, IFSPT/World Physiotherapy, NSCA, and the IOC/WADA/ACSM consensus literature. Every source is listed at the end of each hall section.
 
+> **Structure finalised:** two halls, decided by the Chairman. Return to sport is the through-line. Sports science, nutrition and athlete health are **not** a third room — they sit inside Hall B, next to the people who act on them. This document was originally drafted as three halls; section 5 explains what that costs.
+
 ---
 
-## 1. The architecture — why three halls
+## 1. The architecture — why two halls
 
-One hall forces a compromise programme: surgeons sit through nutrition talks, physiotherapists sit through arthroscopic technique. Three parallel halls let each profession get two full days of depth, while shared plenary sessions keep the conclave feeling like one event rather than three co-located meetings.
+One hall forces a compromise programme: surgeons sit through nutrition talks, physiotherapists sit through arthroscopic technique. Three halls solve that but split a first-year conclave too thin — a 20% room is a room that looks empty in photographs, and it puts nutrition and sports science in front of nutritionists only, which is precisely the audience that already agrees.
 
-| | Hall A | Hall B | Hall C |
-|---|---|---|---|
-| **Title** | Surgery & Sports Orthopaedics | Rehabilitation, Performance & Return to Play | Sports Science, Nutrition & Athlete Health |
-| **Audience** | Orthopaedic & arthroscopy surgeons, sports physicians, ortho PGs | Sports physiotherapists, S&C coaches, athletic trainers, physio PGs | Sports nutritionists, exercise physiologists, team doctors, psychologists, coaches |
-| **Expected share** | ~45% | ~35% | ~20% |
-| **Room need** | Largest (also hosts plenary) | Medium + floor space for hands-on | Smallest |
+Two halls keep the split where the professions genuinely diverge — operative vs non-operative — and put the science in front of the clinicians who have to act on it.
 
-**Sizing rule:** Hall A doubles as the plenary hall, so it must seat the full delegate count. Halls B and C need roughly 40% and 25% of that.
+| | Hall A | Hall B |
+|---|---|---|
+| **Title** | Surgery & Sports Orthopaedics | Rehab, Physiotherapy, S&C & Sports Science |
+| **Audience** | Orthopaedic & arthroscopy surgeons, sports physicians, ortho PGs | Sports physiotherapists, S&C coaches, athletic trainers, nutritionists, exercise physiologists, team doctors, physio PGs |
+| **Expected share** | ~45% | ~55% |
+| **Room need** | Largest (also hosts plenary) | Large + floor space for hands-on |
+
+**Sizing rule:** Hall A doubles as the plenary hall, so it must seat the full delegate count. Hall B now carries the larger share of delegates — size it at roughly 55–60% of Hall A, not the 40% a secondary room would need.
 
 ### Joint plenary — everyone in one room
 
@@ -29,7 +33,7 @@ These are deliberately **not** parallel. They are the moments that make it one c
 | **The Return-to-Play panel** — surgeon + physio + S&C + nutritionist + athlete | Day 1, close of morning | The single decision every profession in the building shares. This is the signature session of SIC 2027. |
 | **Medical ethics & good clinical practice** | Day 1, late afternoon | **Mandatory for TSMC CPD accreditation** — the Declaration Proforma requires it. Running it jointly guarantees attendance is captured. |
 | Athlete fireside chat | Day 2, midday | Draws every audience; strong media moment |
-| Awards & valedictory | Day 2, close | Best paper/poster across all three tracks |
+| Awards & valedictory | Day 2, close | Best paper/poster across both tracks |
 
 Everything else runs in parallel.
 
@@ -39,40 +43,45 @@ Everything else runs in parallel.
 
 ### DAY 1 — Friday 29 January 2027
 
-| Time | Hall A | Hall B | Hall C |
-|---|---|---|---|
-| 08:00 | Registration · breakfast · exhibition | | |
-| 09:00 | **JOINT — Inauguration** | | |
-| 09:15 | **JOINT — Opening keynote** | | |
-| 10:00 | A1 · Instability: beyond the Bankart | B1 · Criteria-based rehab & the RTP decision | C1 · Energy availability & REDs |
-| 11:15 | Tea · exhibition | | |
-| 11:35 | A2 · Rotator cuff: repair, augment, transfer | B2 · Objective testing, screening & technology | C2 · Nutrition periodisation on Indian diets |
-| 12:45 | **JOINT — THE RETURN-TO-PLAY PANEL** (surgeon · physio · S&C · nutritionist · athlete) | | |
-| 13:30 | Lunch · exhibition | | |
-| 14:30 | A4 · ACL I — primary reconstruction debates | B3 · Tendinopathy & load-driven pain | C3 · Hydration & heat in Indian conditions |
-| 16:00 | Tea | | |
-| 16:15 | A5 · ACL II — complex & multiligament knee | **W1 · Hands-on carousel** (ticketed, capped) | C4 · Supplements & ergogenic aids |
-| 17:30 | **JOINT — Medical ethics & GCP in sports medicine** *(TSMC CPD requirement)* | | |
-| 18:15 | Free papers — parallel by track | | |
-| 19:30 | Faculty dinner | | |
+| Time | Hall A — Surgery | Hall B — Rehab, Physio, S&C, Science |
+|---|---|---|
+| 08:00 | Registration · breakfast · exhibition | |
+| 09:00 | **JOINT — Inauguration** | |
+| 09:15 | **JOINT — Opening keynote** | |
+| 10:00 | A1 · Instability: beyond the Bankart | B1 · Criteria-based rehab & the RTP decision |
+| 11:15 | Tea · exhibition | |
+| 11:35 | A2 · Rotator cuff: repair, augment, transfer | B2 · Objective testing, screening & technology |
+| 12:45 | **JOINT — THE RETURN-TO-PLAY PANEL** (surgeon · physio · S&C · nutritionist · athlete) | |
+| 13:30 | Lunch · exhibition | |
+| 14:30 | A4 · ACL I — primary reconstruction debates | B3 · Tendinopathy & load-driven pain |
+| 15:20 | *(joins Hall B)* | **C1+C2 · Fuelling recovery** — energy availability, REDs & nutrition periodisation on Indian diets |
+| 16:00 | Tea | |
+| 16:15 | A5 · ACL II — complex & multiligament knee | **W1 · Hands-on carousel** (ticketed, capped) |
+| 17:30 | **JOINT — Medical ethics & GCP in sports medicine** *(TSMC CPD requirement)* | |
+| 18:15 | Free papers — parallel by track | |
+| 19:30 | Faculty dinner | |
 
 ### DAY 2 — Saturday 30 January 2027
 
-| Time | Hall A | Hall B | Hall C |
-|---|---|---|---|
-| 08:30 | A6 · Save the meniscus | **W2 · Field-based RTP testing & hamstring** (hands-on) | C8 · Exercise physiology & performance testing |
-| 09:50 | A7 · Cartilage & joint preservation | B5 · Muscle injury & the hamstring | C9 · Wearables, AI & athlete monitoring |
-| 11:05 | Tea · exhibition | | |
-| 11:25 | A8 · Hip & groin | B6 · Load management & injury risk | C12 · Concussion *(consensus-based)* |
-| 12:35 | **JOINT — Athlete fireside chat** | | |
-| 13:10 | Lunch · exhibition | | |
-| 14:10 | A9 · Foot & ankle in sport | B7 · The athlete who isn't a 25-year-old male | C13 · Anti-doping & WADA 2026 updates |
-| 15:10 | A10 · Paediatric & adolescent athlete | B-free papers (rapid fire) | C14 · Sports cardiology & pre-participation screening |
-| 16:00 | Tea | | |
-| 16:15 | A11 · Orthobiologics: evidence vs marketing | *(joins Hall A)* | C15 · Para-athlete health & injury surveillance |
-| 17:00 | **JOINT — Awards & valedictory** | | |
+| Time | Hall A — Surgery | Hall B — Rehab, Physio, S&C, Science |
+|---|---|---|
+| 08:30 | A6 · Save the meniscus | **W2 · Field-based RTP testing & hamstring** (hands-on) |
+| 09:50 | A7 · Cartilage & joint preservation | B5 · Muscle injury, the hamstring & athlete monitoring |
+| 11:05 | Tea · exhibition | |
+| 11:25 | A8 · Hip & groin | B6 · Load management & injury risk |
+| 12:05 | **JOINT — C12 · Concussion** *(consensus-based)* | |
+| 12:35 | **JOINT — Athlete fireside chat** | |
+| 13:10 | Lunch · exhibition | |
+| 14:10 | A9 · Foot & ankle in sport | B7 · The athlete who isn't a 25-year-old male |
+| 15:10 | A10 · Paediatric & adolescent athlete | B-free papers (rapid fire) |
+| 15:50 | **JOINT — C14+C13 · Sports cardiology, screening & anti-doping (WADA 2026)** | |
+| 16:00 | Tea | |
+| 16:15 | A11 · Orthobiologics: evidence vs marketing | C15 · Para-athlete health & injury surveillance |
+| 17:00 | **JOINT — Awards & valedictory** | |
 
-**Reserve sessions** (drop in if faculty confirm, or move to a pre-conference day): A3 Elbow & the overhead athlete, A12 Revision & failed surgery, B4 Adjuncts under scrutiny, C5 Gut health, C6 Female athlete health, C7 Youth athlete, C10 Recovery & sleep, C11 Sports psychology.
+**Reserve sessions** (drop in if faculty confirm, or move to a pre-conference day): A3 Elbow & the overhead athlete, A12 Revision & failed surgery, B4 Adjuncts under scrutiny, **C3 Hydration & heat**, **C4 Supplements & ergogenic aids**, **C8 Exercise physiology & performance testing**, **C9 Wearables, AI & monitoring**, C5 Gut health, C6 Female athlete health, C7 Youth athlete, C10 Recovery & sleep, C11 Sports psychology.
+
+> **What the second hall costs.** Three halls offered ~48 parallel slots over two days; two halls offer ~32. Four sessions that were programmed in the three-hall draft — **C3 heat, C4 supplements, C8 exercise physiology, C9 wearables** — are now in reserve, and C1/C2 and C13/C14 are merged. C3 and C4 are the two the committee should look hardest at: heat policy and supplement contamination are the most India-specific, most immediately useful blocks in the whole science stream. A pre-conference day on 28 Jan would recover all four.
 
 > **Note:** the research produced more high-quality content than two days can hold — roughly 3 days' worth. Either add a **pre-conference day (28 Jan)** for workshops and the reserve blocks, or cut to the sessions above. The committee should decide this first, because it determines venue booking.
 
@@ -112,7 +121,7 @@ Everything else runs in parallel.
 
 ---
 
-## 4. Hall B — Rehabilitation, Performance & Return to Play
+## 4. Hall B — Rehabilitation, Physiotherapy, S&C & Return to Play
 
 **Format:** 12–15 min talks; blocks close with a moderated discussion rather than per-talk Q&A. Two ticketed, capped hands-on workshops.
 
@@ -142,7 +151,9 @@ Everything else runs in parallel.
 
 ---
 
-## 5. Hall C — Sports Science, Nutrition & Athlete Health
+## 5. Hall B, science stream — Sports Science, Nutrition & Athlete Health
+
+**This is not a separate hall.** These blocks run inside Hall B, and the strongest of them (concussion, sports cardiology, anti-doping) are promoted to joint plenary so the surgical audience gets them too — which is the point of collapsing the third room rather than deleting it. The `C` numbering is kept only so the committee can match sessions against the earlier three-hall draft.
 
 **Format:** 12-min talks, 4 per hour + chaired panel. `[C]` = has a formal consensus basis — cite the document on the slide (useful for the CME file). `[IN]` = India-specific angle.
 
@@ -181,7 +192,7 @@ A translated Western programme is the failure mode. These threads give SIC 2027 
 - **Cricket bowling workload** and the fast bowler's back — across surgical, rehab and load-management halls.
 - **Heat and humidity** — heat policy, sweat sodium, acclimatisation. Non-negotiable for an Indian audience.
 - **Vegetarian athlete nutrition** — protein targets and the leucine threshold on Indian diets.
-- **Doping** — India has led WADA's violation table three years running. Confronting it directly is the most valuable thing Hall C can do.
+- **Doping** — India has led WADA's violation table three years running. Confronting it directly is the most valuable thing the science stream can do — and as a joint plenary it now reaches the surgeons too.
 - **Rehab without a lab** — most Indian clinics have no isokinetic dynamometer or force plate. Every rehab talk should state what to do without one.
 - **Late presentation** — kabaddi ACL injuries present at a mean of ~14 months. Programme it as a clinical reality, not a footnote.
 
@@ -190,16 +201,17 @@ A translated Western programme is the failure mode. These threads give SIC 2027 
 ## 7. Decisions the Scientific Committee must take
 
 1. **Two days or two + a pre-conference day?** The research yields ~3 days of strong content. A 28 Jan pre-conference day would hold the hands-on workshops, cadaver/dry-lab work and the reserve blocks. *This decision drives venue booking, so take it first.*
-2. **Confirm the three-hall split** and approve hall titles.
-3. **Faculty count.** Roughly **75–95 speaking slots** across three halls over two days, plus chairs. At 2 talks per faculty member that's ~40–50 faculty. Anchor 2–3 marquee names first and use them to recruit.
+2. **Hall titles.** The two-hall split is settled; confirm the wording of the titles, particularly whether Hall B leads with "Rehab" or "Return to Sport".
+3. **Faculty count.** Roughly **50–65 speaking slots** across two halls over two days, plus chairs. At 2 talks per faculty member that's ~28–33 faculty — appreciably fewer to recruit than the three-hall draft, which is an advantage for an inaugural year. Anchor 2–3 marquee names first and use them to recruit.
 4. **Which debates run.** Two per hall per day is the ceiling — more and they stop feeling like events.
 5. **Ethics/GCP session** — confirm it stays in the grid as a joint plenary. **TSMC's Declaration Proforma requires it** for CPD accreditation.
 6. **Workshop ticketing.** Hands-on sessions must be capped and ticketed at registration, with per-station rosters. Uncapped "hands-on" becomes a lecture with mats on the floor.
 7. **Equipment sponsorship boundary.** Force plates and dynamometers will be vendor-supplied — tie them to an exhibitor package, but keep teaching faculty independent of the vendor and say so from the podium. This is the biggest credibility risk in the rehab track.
-8. **Recruit S&C faculty, not only physiotherapists**, for Hall B — an all-physio track loses the S&C audience by mid-morning.
-9. **Free-paper prizes per track** so physiotherapy and nutrition PG entries don't compete against surgical case series.
+8. **Recruit S&C and nutrition faculty, not only physiotherapists**, for Hall B — it now carries the science stream as well, and an all-physio programme loses both the S&C and the nutrition audience by mid-morning.
+9. **Free-paper prizes per track** so physiotherapy and nutrition PG entries don't compete against surgical case series. With two halls, keep three prize categories (surgical / rehab / science) even though there are only two rooms.
+10. **Which four reserve blocks return.** See the note in section 2 — C3 heat and C4 supplements are the strongest candidates if a pre-conference day is approved.
 
 ## 8. Two research caveats
 
 - The **ISAKOS/AOSSM/ESSKA** programme pages blocked direct fetching, so Hall A structures are reconstructed from search-indexed programme and abstract listings rather than read off the printed programme. Worth a manual check of the ESSKA 2026 highlight-lecture list before finalising.
-- **IASMCON's session-level programme is not published in machine-readable form.** Hall C is built from consensus literature and Indian data rather than a competitor programme — a call to the IASM secretariat before finalising would de-risk duplication.
+- **IASMCON's session-level programme is not published in machine-readable form.** The science stream is built from consensus literature and Indian data rather than a competitor programme — a call to the IASM secretariat before finalising would de-risk duplication.
