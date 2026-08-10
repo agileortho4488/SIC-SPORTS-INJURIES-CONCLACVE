@@ -6,11 +6,11 @@
   src: url('fonts/bebas-neue.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Instrument Sans';
+  font-family: 'Archivo';
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url('fonts/instrument-sans.woff2') format('woff2');
+  src: url('fonts/archivo.woff2') format('woff2');
 }
 
 /* SIC 2027 — Navy & Gold Elegance.
@@ -28,7 +28,13 @@
   --mute:     #BDC3C7; /* 11.9:1 on ink, 9.3:1 on navy — AAA */
   --silver:   #E5E5E5;
   --display:  'Bebas Neue', 'Arial Narrow', sans-serif;
-  --body:     'Instrument Sans', system-ui, sans-serif;
+  --body:     'Archivo', system-ui, sans-serif;
+  /* the built-in CSS easings are too weak to read as intentional —
+     these are the strong variants motion work actually needs */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --press:       120ms;  /* button press feedback */
+  --swap:        200ms;  /* colour / border state change */
   --slash-angle: -6deg;
   --container: 76rem;
   --nav-h: 4.25rem;
@@ -124,11 +130,15 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
 }
 .skip-link:focus { top: 0; }
 
+/* Reduced motion means gentler, not zero. Killing every transition — including
+   colour and opacity — makes hover and focus states snap harshly, which is its
+   own accessibility problem. Drop the movement; keep the fades. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-property: opacity, color, background-color, border-color, box-shadow, outline-color !important;
+    transition-duration: 150ms !important;
   }
   html { scroll-behavior: auto; }
 }
@@ -174,9 +184,9 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   letter-spacing: 0.04em;
   padding: 0.4rem 0;
   border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color var(--swap) var(--ease-out), border-color var(--swap) var(--ease-out);
 }
-.nav-links a:hover, .nav-links a.active { color: var(--paper); border-color: var(--accent); }
+.nav-links a.active { color: var(--paper); border-color: var(--accent); }
 .nav-cta { flex: none; }
 
 /* ── pills & buttons ─────────────────────────────────────── */
@@ -190,12 +200,13 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   font-size: 13px;
   letter-spacing: 0.14em;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  /* `translate`/`scale` as independent properties, NOT `transform` — the magnetic
+     handler in main.js writes an inline `transform`, and a CSS `transform` here
+     would simply lose to it. Independent transform properties compose instead. */
+  transition: translate var(--swap) var(--ease-out), scale var(--press) var(--ease-out),
+              background var(--swap) var(--ease-out), box-shadow var(--swap) var(--ease-out);
 }
-.pill:hover { background: var(--accent-dim); transform: translateY(-2px); box-shadow: 0 8px 24px rgb(252 163 17 / 0.25); }
-.pill:active { transform: translateY(0); }
 .pill-inverse { background: var(--ink); color: var(--paper); }
-.pill-inverse:hover { background: var(--ink-2); box-shadow: 0 8px 24px rgb(0 0 0 / 0.35); }
 .ghost {
   display: inline-block;
   padding: 0.7em 1.7em;
@@ -206,9 +217,28 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   font-size: 13px;
   letter-spacing: 0.14em;
   text-decoration: none;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color var(--swap) var(--ease-out), background var(--swap) var(--ease-out),
+              scale var(--press) var(--ease-out);
 }
-.ghost:hover { border-color: var(--accent); background: rgb(20 33 61 / 0.5); }
+
+/* Press feedback. Every pressable element must confirm it heard the tap —
+   this is the cheapest thing on the page and the most felt.
+   NOTE: .pill / .ghost / .committee>div are ALSO driven by GSAP on fine
+   pointers, and GSAP writes `translate/rotate/scale: none` inline on anything
+   it transforms — so for those three, CSS can never win. main.js applies their
+   press and lift through GSAP instead; these rules are the touch and no-JS
+   path, where GSAP never binds and they work exactly as written. */
+.pill:active, .ghost:active, .to-top:active, .rail-dot:active { scale: 0.97; }
+.nav-links a:active, .brand:active { scale: 0.98; }
+
+/* Hover is gated: on touch, :hover sticks after a tap and leaves elements
+   stranded in their hover state until you tap elsewhere. */
+@media (hover: hover) and (pointer: fine) {
+  .nav-links a:hover { color: var(--paper); border-color: var(--accent); }
+  .pill:hover { background: var(--accent-dim); box-shadow: 0 8px 24px rgb(252 163 17 / 0.25); }
+  .pill-inverse:hover { background: var(--ink-2); box-shadow: 0 8px 24px rgb(0 0 0 / 0.35); }
+  .ghost:hover { border-color: var(--accent); background: rgb(20 33 61 / 0.5); }
+}
 
 /* ── HERO ────────────────────────────────────────────────── */
 #hero {
@@ -228,7 +258,7 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   height: 100%;
 }
 .hero-photo, .hero-video { object-fit: cover; }
-.hero-video { opacity: 0; transition: opacity 1s ease; }
+.hero-video { opacity: 0; transition: opacity 1s var(--ease-out); }
 .hero-video.playing { opacity: 1; }
 html.static .hero-video { display: none; }
 #flight { opacity: 0; }
@@ -395,7 +425,7 @@ html.static .hero-video { display: none; }
   inset: 7px;
   border-radius: 50%;
   border: 1.5px solid var(--slate);
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
 }
 .rail-dot.on::before { background: var(--accent); border-color: var(--accent); }
 
@@ -503,10 +533,12 @@ html.static .rail, html.static .hero-stage { display: none; }
   gap: 1.5rem;
   padding: 1.5rem 1.25rem;
   border-bottom: 1px solid rgb(66 94 123 / 0.3);
-  transition: background 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
   border-radius: 10px 10px 0 0;
 }
-.highlight-list li:hover { background: rgb(20 33 61 / 0.45); transform: translateX(0.5rem); }
+@media (hover: hover) and (pointer: fine) {
+  .highlight-list li:hover { background: rgb(20 33 61 / 0.45); translate: 0.5rem 0; }
+}
 .highlight-list strong { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 600; }
 .highlight-list p { font-size: 0.92rem; font-weight: 400; margin-top: 0.3rem; }
 .hl-num {
@@ -533,7 +565,7 @@ html.static .rail, html.static .hero-stage { display: none; }
   border-radius: 14px;
   padding: 1.4rem 1.5rem;
   font-weight: 500;
-  transition: border-color 0.25s ease, translate 0.25s ease;
+  transition: border-color 0.25s var(--ease-out), translate 0.25s var(--ease-out);
 }
 .feature-grid li::before {
   content: counter(feat, decimal-leading-zero);
@@ -543,7 +575,9 @@ html.static .rail, html.static .hero-stage { display: none; }
   color: var(--accent);
   margin-bottom: 0.4rem;
 }
-.feature-grid li:hover { border-color: var(--accent); translate: 0 -3px; }
+@media (hover: hover) and (pointer: fine) {
+  .feature-grid li:hover { border-color: var(--accent); translate: 0 -3px; }
+}
 .attend-row { margin-top: 3rem; }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .chips li {
@@ -552,9 +586,11 @@ html.static .rail, html.static .hero-stage { display: none; }
   border-radius: 99px;
   font-size: 14px;
   font-weight: 500;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
 }
-.chips li:hover { border-color: var(--accent); color: var(--accent); }
+@media (hover: hover) and (pointer: fine) {
+  .chips li:hover { border-color: var(--accent); color: var(--accent); }
+}
 
 /* ── FACULTY ─────────────────────────────────────────────── */
 .faculty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
@@ -571,9 +607,11 @@ html.static .rail, html.static .hero-stage { display: none; }
   border: 1px solid rgb(66 94 123 / 0.35);
   border-radius: 14px;
   padding: 1.75rem;
-  transition: border-color 0.25s ease, translate 0.25s ease;
+  transition: border-color 0.25s var(--ease-out), translate 0.25s var(--ease-out);
 }
-.committee > div:hover { border-color: var(--accent); translate: 0 -3px; }
+@media (hover: hover) and (pointer: fine) {
+  .committee > div:hover { border-color: var(--accent); translate: 0 -3px; }
+}
 .avatar {
   display: inline-flex;
   align-items: center;
@@ -716,9 +754,11 @@ body::after {
 }
 .countdown-band .countdown-grid { border-radius: 18px; padding: 2.25rem 1.5rem; }
 .countdown-band { border-bottom: 0; }
-.feature-grid li:hover, .committee > div:hover {
-  border-color: rgb(252 163 17 / 0.55);
-  box-shadow: 0 16px 48px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(252 163 17 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08);
+@media (hover: hover) and (pointer: fine) {
+  .feature-grid li:hover, .committee > div:hover {
+    border-color: rgb(252 163 17 / 0.55);
+    box-shadow: 0 16px 48px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(252 163 17 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08);
+  }
 }
 .ticker { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgb(20 33 61 / 0.3); }
 
@@ -750,7 +790,7 @@ body::after {
   mix-blend-mode: screen;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s var(--ease-out);
 }
 html.fine-pointer #spot { opacity: 1; }
 html.static #spot, html.static body::after { display: none; }
@@ -773,14 +813,16 @@ html.static #spot, html.static body::after { display: none; }
   opacity: 0;
   translate: 0 1rem;
   pointer-events: none;
-  transition: opacity 0.3s ease, translate 0.3s ease, border-color 0.2s ease;
+  transition: opacity 0.3s var(--ease-out), translate 0.3s var(--ease-out), border-color 0.2s var(--ease-out);
   box-shadow: 0 8px 32px rgb(0 0 0 / 0.4);
 }
 .to-top.show { opacity: 1; translate: 0 0; pointer-events: auto; }
-.to-top:hover { border-color: var(--accent); }
+@media (hover: hover) and (pointer: fine) {
+  .to-top:hover { border-color: var(--accent); }
+}
 
 /* committee tilt is transform-based; give it depth */
-.committee > div { transform-style: preserve-3d; will-change: transform; }
+.committee > div { transform-style: preserve-3d; }
 
 /* ── THREE-HALL PROGRAM GRID ─────────────────────────────── */
 .halls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; margin-bottom: 2.5rem; }

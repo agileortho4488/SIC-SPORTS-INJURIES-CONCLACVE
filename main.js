@@ -177,10 +177,13 @@
     });
   });
 
-  // Sections below the hero rise in quietly (no parallax — restraint)
+  // Sections below the hero fade in. Deliberately opacity-only: the headings,
+  // cards, rows and stats inside each section already animate their own y-rise
+  // at the same trigger point, and a section-level y on top of that was two
+  // overlapping translations on the same content — it read as mush.
   gsap.utils.toArray('section:not(#hero), footer').forEach(sec => {
     gsap.from(sec, {
-      opacity: 0, y: 30, duration: 0.8, ease: 'power2.out',
+      opacity: 0, duration: 0.5, ease: 'power2.out', clearProps: 'all',
       scrollTrigger: { trigger: sec, start: 'top 85%' },
     });
   });
@@ -202,7 +205,7 @@
     });
     h.replaceChildren(frag);
     gsap.from(h.querySelectorAll('.wdi'), {
-      yPercent: 110, duration: 0.7, stagger: 0.07, ease: 'power3.out',
+      yPercent: 110, duration: 0.7, stagger: 0.07, ease: 'power3.out', clearProps: 'all',
       scrollTrigger: { trigger: h, start: 'top 85%' },
     });
   });
@@ -228,7 +231,7 @@
     start: 'top 90%',
     once: true,
     onEnter: batch => gsap.from(batch, {
-      opacity: 0, x: -30, duration: 0.6, stagger: 0.1, ease: 'power2.out',
+      opacity: 0, x: -30, duration: 0.6, stagger: 0.1, ease: 'power2.out', clearProps: 'all',
     }),
   });
 
@@ -237,7 +240,7 @@
     start: 'top 92%',
     once: true,
     onEnter: batch => gsap.from(batch, {
-      opacity: 0, y: 30, duration: 0.6, stagger: 0.08, ease: 'power2.out',
+      opacity: 0, y: 30, duration: 0.6, stagger: 0.08, ease: 'power2.out', clearProps: 'all',
     }),
   });
 
@@ -294,31 +297,48 @@
     const sy = gsap.quickTo(spot, 'y', { duration: 0.35, ease: 'power2.out' });
     addEventListener('mousemove', e => { sx(e.clientX); sy(e.clientY); });
 
-    // magnetic CTAs
+    // Magnetic CTAs.
+    // quickTo, not gsap.to — mousemove fires 60+ times a second and each gsap.to
+    // allocates a fresh tween. quickTo reuses one, which is what it exists for.
     document.querySelectorAll('.pill, .ghost').forEach(el => {
+      const xTo = gsap.quickTo(el, 'x', { duration: 0.3, ease: 'power3.out' });
+      const yTo = gsap.quickTo(el, 'y', { duration: 0.3, ease: 'power3.out' });
+      // Press feedback has to come through GSAP here: GSAP writes
+      // `scale: none` inline, so the CSS :active rule loses on fine pointers.
+      // gsap.to rather than quickTo — quickTo has no fast path for the `scale`
+      // shorthand and silently does nothing, and a press fires once, not 60×/s.
+      const sTo = v => gsap.to(el, { scale: v, duration: 0.12, ease: 'power2.out', overwrite: 'auto' });
       el.addEventListener('mousemove', e => {
         const r = el.getBoundingClientRect();
-        gsap.to(el, {
-          x: (e.clientX - r.left - r.width / 2) * 0.18,
-          y: (e.clientY - r.top - r.height / 2) * 0.3,
-          duration: 0.3,
-        });
+        xTo((e.clientX - r.left - r.width / 2) * 0.18);
+        yTo((e.clientY - r.top - r.height / 2) * 0.3);
       });
-      el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.4, ease: 'elastic.out(1, 0.5)' }));
+      el.addEventListener('mousedown', () => sTo(0.97));
+      el.addEventListener('mouseup', () => sTo(1));
+      // Settle, don't wobble. `elastic.out` bounced the button past its resting
+      // point — playful, but wrong for a surgical conference.
+      el.addEventListener('mouseleave', () => { xTo(0); yTo(0); sTo(1); });
     });
 
-    // committee card tilt
+    // Committee card tilt. Same quickTo treatment; 8° was enough to skew the
+    // doctors' names off-axis, so it comes down to 5°.
     document.querySelectorAll('.committee > div').forEach(card => {
+      gsap.set(card, { transformPerspective: 700 });
+      const ry = gsap.quickTo(card, 'rotateY', { duration: 0.4, ease: 'power3.out' });
+      const rx = gsap.quickTo(card, 'rotateX', { duration: 0.4, ease: 'power3.out' });
+      // the -3px lift lives here rather than in CSS, for the same reason
+      const yTo = gsap.quickTo(card, 'y', { duration: 0.3, ease: 'power3.out' });
+      // promote to its own layer only while it's actually moving
+      card.addEventListener('mouseenter', () => { card.style.willChange = 'transform'; yTo(-3); });
       card.addEventListener('mousemove', e => {
         const r = card.getBoundingClientRect();
-        gsap.to(card, {
-          rotateY: ((e.clientX - r.left) / r.width - 0.5) * 8,
-          rotateX: (0.5 - (e.clientY - r.top) / r.height) * 8,
-          transformPerspective: 700,
-          duration: 0.35,
-        });
+        ry(((e.clientX - r.left) / r.width - 0.5) * 5);
+        rx((0.5 - (e.clientY - r.top) / r.height) * 5);
       });
-      card.addEventListener('mouseleave', () => gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.5 }));
+      card.addEventListener('mouseleave', () => {
+        ry(0); rx(0); yTo(0);
+        setTimeout(() => card.style.willChange = '', 400);
+      });
     });
   }
 })();
