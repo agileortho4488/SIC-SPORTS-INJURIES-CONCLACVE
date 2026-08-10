@@ -16,8 +16,23 @@
   .result.ok { display: block; background: #103A1C; border: 1px solid #2FBF5F; }
   .result.dup { display: block; background: #3A2E10; border: 1px solid var(--accent); }
   .result.bad { display: block; background: #3A1010; border: 1px solid #FF6B6B; }
+  .result.pending { display: block; background: rgb(20 33 61 / 0.55); border: 1px solid rgb(66 94 123 / 0.6); color: var(--mute); }
   .result b { font-family: var(--display); font-size: 1.6rem; display: block; }
   .count { color: var(--mute); font-size: 0.9rem; margin-top: 1rem; text-align: center; }
+
+  /* The scan result is the one moment on the door where ambiguity costs money:
+     two delegates in a row with the same outcome used to repaint an identical
+     panel with no visible change, so staff couldn't tell the second scan from
+     a frozen screen. Every result now plays a short flash, re-triggered per
+     scan via the Web Animations API. Kept at 160ms — this fires hundreds of
+     times a shift and must never feel like a delay. */
+  .pulse-dot {
+    display: inline-block; width: 0.5rem; height: 0.5rem;
+    border-radius: 50%; background: currentColor; margin-right: 0.5rem;
+    animation: pulse 1s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.25; } }
+  @media (prefers-reduced-motion: reduce) { .pulse-dot { animation: none; } }
 </style>
 </head>
 <body>
@@ -33,21 +48,44 @@
 (function () {
   var result = document.getElementById('result');
   var countEl = document.getElementById('count');
-  var scans = 0, busy = false;
+  var scans = 0, busy = false, clearTimer = null;
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function show(cls, title, sub) {
+    clearTimeout(clearTimer);
     result.className = 'result ' + cls;
     result.innerHTML = '<b>' + title + '</b>' + (sub || '');
     if (navigator.vibrate) navigator.vibrate(cls === 'ok' ? 80 : [60, 60, 60]);
+
+    // WAAPI rather than a CSS class toggle: .animate() restarts cleanly on
+    // every call, so back-to-back identical results still visibly flash.
+    // A class toggle would need a forced reflow to re-fire.
+    if (result.animate) {
+      result.animate(
+        calm
+          ? [{ opacity: 0.35 }, { opacity: 1 }]
+          : [{ opacity: 0.4, transform: 'scale(0.97)' }, { opacity: 1, transform: 'scale(1)' }],
+        { duration: 160, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' }
+      );
+    }
+
+    // Never leave a name on screen under the next person in the queue.
+    if (cls !== 'pending') {
+      clearTimer = setTimeout(function () { result.className = 'result'; result.innerHTML = ''; }, 6000);
+    }
   }
 
-  var scanner = new Html5QrcodeScanner('reader', { fps: 8, qrbox: 220 }, false);
-  scanner.render(function (text) {
+  // Named and exposed so the door flow can be rehearsed without a camera —
+  // window.__scan('{"id":"...","sig":"..."}') drives the identical path.
+  function handleScan(text) {
     if (busy) return;
     busy = true;
     var pin = document.getElementById('pin').value;
     var payload;
     try { payload = JSON.parse(text); } catch { show('bad', 'NOT A SIC PASS'); busy = false; return; }
+    // Venue wi-fi can take seconds. Without this the operator sees nothing
+    // between the scan and the answer, and re-presents the same pass.
+    show('pending', '<span class="pulse-dot"></span>CHECKING…');
     fetch('/api/checkin', { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: payload.id, sig: payload.sig, pin: pin }) })
       .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
@@ -58,8 +96,17 @@
         countEl.textContent = scans + ' checked in this session';
         setTimeout(function () { busy = false; }, 1200);
       })
-      .catch(function () { show('bad', 'NETWORK ERROR'); busy = false; });
-  }, function () {});
+      .catch(function () {
+        show('bad', 'NETWORK ERROR', 'Pass not recorded — scan again');
+        // same cool-down as the success path; releasing instantly let a shaky
+        // hand fire several failed scans before the operator could react
+        setTimeout(function () { busy = false; }, 1200);
+      });
+  }
+
+  window.__scan = handleScan;
+  var scanner = new Html5QrcodeScanner('reader', { fps: 8, qrbox: 220 }, false);
+  scanner.render(handleScan, function () {});
 })();
 </script>
 </body>
