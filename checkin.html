@@ -26,13 +26,20 @@
      a frozen screen. Every result now plays a short flash, re-triggered per
      scan via the Web Animations API. Kept at 160ms — this fires hundreds of
      times a shift and must never feel like a delay. */
-  .pulse-dot {
-    display: inline-block; width: 0.5rem; height: 0.5rem;
-    border-radius: 50%; background: currentColor; margin-right: 0.5rem;
-    animation: pulse 1s ease-in-out infinite;
+  /* An indeterminate bar rather than a pulsing dot: this is read at arm's
+     length across a registration desk, where an 8px dot is invisible and a
+     full-width sweep is not. */
+  .scanbar { position: relative; height: 3px; border-radius: 3px; overflow: hidden;
+             background: rgb(66 94 123 / 0.4); margin-top: 0.85rem; }
+  .scanbar::after {
+    content: ''; position: absolute; inset-block: 0; width: 40%;
+    background: var(--accent); border-radius: 3px;
+    animation: sweep 1.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
   }
-  @keyframes pulse { 50% { opacity: 0.25; } }
-  @media (prefers-reduced-motion: reduce) { .pulse-dot { animation: none; } }
+  @keyframes sweep { from { translate: -100% 0; } to { translate: 350% 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .scanbar::after { animation: none; width: 100%; opacity: 0.5; }
+  }
 </style>
 </head>
 <body>
@@ -85,7 +92,7 @@
     try { payload = JSON.parse(text); } catch { show('bad', 'NOT A SIC PASS'); busy = false; return; }
     // Venue wi-fi can take seconds. Without this the operator sees nothing
     // between the scan and the answer, and re-presents the same pass.
-    show('pending', '<span class="pulse-dot"></span>CHECKING…');
+    show('pending', 'CHECKING…', '<div class="scanbar"></div>');
     fetch('/api/checkin', { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: payload.id, sig: payload.sig, pin: pin }) })
       .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
