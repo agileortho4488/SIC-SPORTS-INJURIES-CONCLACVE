@@ -115,7 +115,7 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
 
 .tint-band { background: linear-gradient(180deg, transparent, rgb(27 59 89 / 0.4) 12%, rgb(20 33 61 / 0.4) 88%, transparent); }
 
-.fineprint { margin-top: 2.5rem; font-size: 11px; color: var(--slate); max-width: 60rem; }
+.fineprint { margin-top: 2.5rem; font-size: 12.5px; line-height: 1.6; color: var(--mute); max-width: 60rem; }
 
 .skip-link {
   position: absolute;
