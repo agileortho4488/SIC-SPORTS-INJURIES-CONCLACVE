@@ -6,11 +6,11 @@
   src: url('fonts/bebas-neue.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Instrument Sans';
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url('fonts/inter.woff2') format('woff2');
+  src: url('fonts/instrument-sans.woff2') format('woff2');
 }
 
 /* SIC 2027 — Navy & Gold Elegance.
@@ -28,7 +28,7 @@
   --mute:     #BDC3C7; /* 11.9:1 on ink, 9.3:1 on navy — AAA */
   --silver:   #E5E5E5;
   --display:  'Bebas Neue', 'Arial Narrow', sans-serif;
-  --body:     'Inter', system-ui, sans-serif;
+  --body:     'Instrument Sans', system-ui, sans-serif;
   --slash-angle: -6deg;
   --container: 76rem;
   --nav-h: 4.25rem;
