@@ -9,13 +9,15 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   @font-face { font-family: 'Bebas Neue'; src: url('fonts/bebas-neue.woff2') format('woff2'); }
   @font-face { font-family: 'Archivo'; font-weight: 400 600; src: url('fonts/archivo.woff2') format('woff2'); }
-  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090; --ink: #1A202C; }
+  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --gold-ink: #8A5200; --gold-display: #C77F08; /* 3.25:1 — large display type only */ /* 6.4:1 on white; --gold is 2.0:1 */ --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090; --ink: #1A202C; }
   body { font-family: 'Archivo', sans-serif; background: #444; font-size: 9pt; }
   .pg { width: 210mm; min-height: 297mm; margin: 8px auto; position: relative; background: #FFF; color: var(--ink); padding: 15mm 15mm 18mm; page-break-after: always; }
   .pg.dark { background: linear-gradient(160deg, #000 0%, var(--navy) 70%, var(--night) 100%); color: #FFF; }
   .beb { font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
-  .gold { color: var(--gold); }
-  .label { font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 2mm; }
+  .gold { color: var(--gold-ink); }
+  .pg.dark .gold { color: var(--gold); }
+  .label { font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-ink); font-weight: 600; margin-bottom: 2mm; }
+  .pg.dark .label { color: var(--gold); }
   h2.sec { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 21pt; letter-spacing: 0.02em; margin-bottom: 4mm; color: var(--navy); }
   .pg.dark h2.sec { color: #FFF; }
   h3 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 13pt; color: var(--navy); margin: 6mm 0 2mm; border-bottom: 0.3mm solid var(--gold); padding-bottom: 1.5mm; }
@@ -40,7 +42,7 @@
   /* hall summary cards */
   .halls { display: flex; gap: 4mm; margin: 4mm 0 6mm; }
   .hcard { flex: 1; border: 0.3mm solid #E5E5E5; border-top: 1.2mm solid var(--gold); border-radius: 2mm; padding: 4mm; }
-  .hcard .tag { font-family: 'Bebas Neue', sans-serif; font-size: 11pt; color: var(--gold); }
+  .hcard .tag { font-family: 'Bebas Neue', sans-serif; font-size: 11pt; color: var(--gold-ink); }
   .hcard b { display: block; font-size: 9.5pt; margin: 1mm 0 2mm; }
   .hcard span { font-size: 7.5pt; color: var(--slate); line-height: 1.5; display: block; }
 
@@ -63,7 +65,7 @@
   .decision b { color: var(--navy); font-size: 9.5pt; }
   .decision p { font-size: 8.2pt; margin: 1.5mm 0 0; color: #4A5568; }
   .callout { background: var(--navy); color: #FFF; border-radius: 2mm; padding: 5mm; margin: 4mm 0; }
-  .callout b { color: var(--gold); }
+  .callout b { color: var(--gold); } /* callout is navy — full gold is 10.8:1 here */
   .callout p { font-size: 8.5pt; margin: 0; }
   .srcs { font-size: 6.8pt; color: var(--slate); line-height: 1.5; margin-top: 3mm; }
   .bar { position: fixed; top: 4px; left: 8px; color: #ccc; font-size: 11px; z-index: 5; }

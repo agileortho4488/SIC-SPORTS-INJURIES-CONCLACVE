@@ -9,7 +9,10 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   @font-face { font-family: 'Bebas Neue'; src: url('fonts/bebas-neue.woff2') format('woff2'); }
   @font-face { font-family: 'Archivo'; font-weight: 400 600; src: url('fonts/archivo.woff2') format('woff2'); }
-  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090; }
+  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090;
+           /* gold on WHITE paper is 2.0:1 — unreadable in print. This is the
+              ink-safe gold at 6.4:1. --gold stays for text on navy and for fills. */
+           --gold-ink: #8A5200; --gold-display: #C77F08; /* 3.25:1 — large display type only */ }
   body { font-family: 'Archivo', sans-serif; background: #444; }
   .pg {
     width: 210mm; height: 297mm;
@@ -23,8 +26,12 @@
   }
   .pg.dark { background: linear-gradient(160deg, #000 0%, var(--navy) 70%, var(--night) 100%); color: #FFF; }
   .beb { font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
-  .gold { color: var(--gold); }
-  .label { font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  .gold { color: var(--gold-ink); }
+  .pg.dark .gold, .contact-band .gold { color: var(--gold); } /* these sit on navy */
+  .qr-row .gold { color: var(--gold-display); } /* 20pt bold on white — 3:1 threshold */
+  h2.sec .gold { color: var(--gold-display); } /* 24pt display — 3:1 threshold applies */
+  .label { font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-ink); font-weight: 600; }
+  .pg.dark .label, .mission .label { color: var(--gold); } /* on navy, full gold is 10.8:1 */
   .foot { position: absolute; bottom: 8mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--slate); border-top: 0.3mm solid #E5E5E5; padding-top: 2.5mm; }
   .pg.dark .foot { border-color: rgb(255 255 255 / 0.2); color: var(--ash); }
   .slash { height: 0.8mm; background: var(--gold); width: 34mm; margin: 4mm 0; transform: skewY(-2deg); }
@@ -44,7 +51,7 @@
   h2.sec { font-size: 24pt; margin: 2mm 0 6mm; }
   .committee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
   .person { border: 0.3mm solid #E5E5E5; border-left: 1mm solid var(--gold); padding: 5mm; border-radius: 2mm; }
-  .person .role { font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .person .role { font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-ink); font-weight: 700; }
   .person b { display: block; font-size: 12pt; margin: 1mm 0 0.5mm; }
   .person .desig { font-size: 8.5pt; color: var(--slate); }
   .person p { font-size: 8pt; color: #4A5568; margin-top: 2mm; line-height: 1.55; }
@@ -60,10 +67,13 @@
   .day-head .beb { font-size: 16pt; }
   .day-head span { font-size: 8.5pt; color: var(--slate); letter-spacing: 0.14em; text-transform: uppercase; }
   table.grid { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
-  table.grid th { text-align: left; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 1.6mm 2.5mm; border-bottom: 0.4mm solid var(--navy); }
+  table.grid th { text-align: left; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-ink); padding: 1.6mm 2.5mm; border-bottom: 0.4mm solid var(--navy); }
   table.grid td { padding: 1.7mm 2.5mm; border-bottom: 0.25mm solid #E8E8E8; vertical-align: top; }
   table.grid td.t { white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 9.5pt; color: var(--night); width: 24mm; }
   tr.block td { background: var(--navy); color: #FFF; font-weight: 600; font-size: 8.6pt; letter-spacing: 0.08em; }
+  /* table.grid td.t (0,2,2) outranks tr.block td (0,1,2), so the time column
+     rendered night-blue on navy at 1.4:1 — invisible on the printed page. */
+  table.grid tr.block td.t { color: #FFF; }
   tr.break td { background: #F4F5F7; color: var(--slate); font-style: italic; }
 
   /* tariff */
@@ -81,8 +91,8 @@
   .venue p { font-size: 9.5pt; line-height: 1.7; max-width: 165mm; margin-bottom: 4mm; }
   .facts { display: flex; gap: 6mm; margin-top: 5mm; }
   .facts div { flex: 1; border: 0.3mm solid #E5E5E5; border-radius: 2mm; padding: 5mm; }
-  .facts b { font-family: 'Bebas Neue', sans-serif; font-size: 14pt; color: var(--gold); display: block; }
-  .facts i { font-style: normal; font-size: 8pt; color: var(--slate); }
+  .facts b { font-family: 'Bebas Neue', sans-serif; font-size: 14pt; color: var(--gold-ink); display: block; }
+  .facts i { font-style: normal; font-size: 8pt; color: #5A6472; } /* slate is 4.05:1 on white */
   .contact-band { background: var(--navy); color: #FFF; border-radius: 3mm; padding: 8mm; margin-top: 8mm; display: flex; justify-content: space-between; align-items: center; }
   .contact-band b { font-family: 'Bebas Neue', sans-serif; font-size: 16pt; }
   .contact-band a { color: var(--gold); text-decoration: none; font-size: 10pt; }
