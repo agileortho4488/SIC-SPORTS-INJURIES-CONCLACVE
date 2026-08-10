@@ -503,10 +503,10 @@ html.static .rail, html.static .hero-stage { display: none; }
   gap: 1.5rem;
   padding: 1.5rem 1.25rem;
   border-bottom: 1px solid rgb(66 94 123 / 0.3);
-  transition: background 0.25s ease, padding-left 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
   border-radius: 10px 10px 0 0;
 }
-.highlight-list li:hover { background: rgb(20 33 61 / 0.45); padding-left: 1.75rem; }
+.highlight-list li:hover { background: rgb(20 33 61 / 0.45); transform: translateX(0.5rem); }
 .highlight-list strong { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 600; }
 .highlight-list p { font-size: 0.92rem; font-weight: 400; margin-top: 0.3rem; }
 .hl-num {
@@ -722,16 +722,9 @@ body::after {
 }
 .ticker { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgb(20 33 61 / 0.3); }
 
-/* gradient display type — hero + mission (mask-free elements only) */
-.hero-content h1, .mission-quote {
-  background: linear-gradient(115deg, #FFFFFF 55%, #E5E5E5 75%, #FCA311 105%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-content h1 em, .mission-quote .qmark {
-  -webkit-text-fill-color: var(--accent);
-}
+/* solid display type — gradient text reads as decoration, not meaning */
+.hero-content h1, .mission-quote { color: var(--paper); }
+.hero-content h1 em, .mission-quote .qmark { color: var(--accent); }
 
 /* scroll progress — gold hairline above the nav */
 #progress {
