@@ -630,6 +630,16 @@ html.static .rail, html.static .hero-stage { display: none; }
 /* ── FACULTY ─────────────────────────────────────────────── */
 .faculty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .faculty-note { font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
+.faculty-sub {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  color: var(--accent);
+  margin: 2.5rem 0 1.25rem;
+}
+.faculty-sub:first-of-type { margin-top: 0; }
 
 /* ── COMMITTEE ───────────────────────────────────────────── */
 .committee {
