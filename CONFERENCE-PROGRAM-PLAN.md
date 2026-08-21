@@ -36,10 +36,27 @@ These are deliberately **not** parallel. They are the moments that make it one c
 | **Opening keynote** | Day 1, 09:15 | One big name, everyone hears it |
 | **Return-to-Sport: The Case, Together** — the flagship session, run to the exact Hall A case-block structure (see box below) | Day 1, close of morning | The single decision every profession in the building shares. This is the signature session of SIC 2027 — everyone watches it happen once, together, before Hall A splits the same format into nine parallel cases. |
 | **Medical ethics & good clinical practice** | Day 1, late afternoon | **Mandatory for TSMC CPD accreditation** — the Declaration Proforma requires it. Running it jointly guarantees attendance is captured. |
+| **Concussion — consensus-based practice** | Day 2, late morning | Sideline removal and graded return concern surgeons, physiotherapists and coaches equally — it belongs to both halls, not just one. *(Previously missing from this table despite being in the master grid — fixed here.)* |
 | Athlete fireside chat | Day 2, midday | Draws every audience; strong media moment |
 | Awards & valedictory | Day 2, close | Best paper/poster across both tracks |
 
 Everything else runs in parallel.
+
+**What each of these actually covers** — the grid only carries a title; here is what a delegate is walking into:
+
+- **Inauguration (09:00, ~15 min).** Formal opening — welcome address by the Chairman, brief remarks from Precision Orthopaedics LLP and Apollo Hospitals, and the Return to Sport theme framed for the two days ahead. Ceremonial, not content-bearing — the reason it can't move is protocol, not programme.
+
+- **Opening keynote (09:15, ~45 min).** One marquee name, one talk, a career-spanning view of return to sport rather than a technique deep-dive — the tone-setter for everything that follows. Speaker TBC; this is the single highest-leverage confirmed name to chase first, since it's heard by literally every delegate in the building.
+
+- **Return-to-Sport: The Case, Together (12:45).** Full running order already specified below — the proof-of-concept for Hall A's nine case blocks.
+
+- **Medical ethics & good clinical practice (17:30, ~45 min).** The TSMC-mandated session. Content should cover informed consent in elective sports surgery, managing conflicts of interest with equipment and pharma sponsors — directly relevant given the orthobiologics content in CB and the equipment-sponsorship boundary flagged in Section 7 — and documentation standards. Attendance is captured via the Declaration Proforma, which is *why* this has to be plenary rather than parallel.
+
+- **Concussion — consensus-based practice (Day 2, 12:05, ~30 min).** Built on the Amsterdam 2022 (6th International) consensus statement: the new visible signs mandating immediate removal from play, SCAT6/SCOAT6 in practice, and a graded return-to-play protocol realistic for Indian school and club sport without on-site physician cover.
+
+- **Athlete fireside chat (Day 2, 12:35, ~35 min).** A moderated conversation with a competitive athlete about their own injury and return journey — the patient's side of everything both halls have spent two days debating. Athlete TBC; this is the session most likely to get picked up by local press, so worth securing early.
+
+- **Awards & valedictory (Day 2, 17:00, ~45 min).** Best paper and best poster, one prize per track (surgical / rehab / science, per Section 7's decision on prize categories so entries don't compete across disciplines), chairman's closing remarks, formal close of the inaugural edition.
 
 > **Return-to-Sport: The Case, Together — the exact running order.** This is the same template as every Hall A case block (Section 3), run once for the whole conclave before Hall A splits into parallel cases:
 >
