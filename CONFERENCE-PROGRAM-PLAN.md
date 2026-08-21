@@ -61,8 +61,8 @@ Everything else runs in parallel.
 | 11:20 | **CB2 · ACL rupture in the pivoting athlete** | B2 · Objective testing, screening & technology |
 | 12:45 | **PLENARY — RETURN-TO-SPORT: THE CASE, TOGETHER** *(surgeon -> physio -> S&C -> floor debate, same format as Hall A)* | |
 | 13:30 | Lunch · exhibition | |
-| 14:30 | **CB4 · Rotator cuff in the overhead athlete** | B3 · Tendinopathy & load-driven pain |
-| 15:35 | **CB3 · The torn meniscus — save it or not** | **C1+C2 · Fuelling recovery** — energy availability, REDs & nutrition periodisation on Indian diets |
+| 14:30 | **CB3 · Rotator cuff in the overhead athlete** | B3 · Tendinopathy & load-driven pain |
+| 15:35 | **CB4 · The torn meniscus — save it or not** | **C1+C2 · Fuelling recovery** — energy availability, REDs & nutrition periodisation on Indian diets |
 | 16:40 | Tea | |
 | 17:30 | **PLENARY — Medical ethics & GCP in sports medicine** *(TSMC CPD requirement)* | |
 | 18:15 | Free papers — parallel by track | |
@@ -90,7 +90,7 @@ Everything else runs in parallel.
 
 > **Note:** the research produced more high-quality content than two days can hold — roughly 3 days' worth. Either add a **pre-conference day (28 Jan)** for workshops and the reserve blocks, or cut to the sessions above. The committee should decide this first, because it determines venue booking.
 
-**Why this order, not another:** the two constraints are the fixed plenary/break points (lunch, tea, the ethics session TSMC requires) and joint variety -- shoulder and knee cases alternate through Day 1 (CB1 shoulder -> CB2 knee -> CB4 shoulder -> CB3 knee) rather than grouping, so a delegate who only cares about one joint isn't stuck in the room for two back-to-back blocks on someone else's. Day 2 already has no repeats (hamstring, ankle, hip, spine, hand). CB1 opens because it's the flagship case; CB8 gets the prime post-lunch Day 2 slot because it's the cricket marquee. Nothing else about the order is load-bearing -- say the word if a different sequence reads better once faculty are confirmed.
+**Why this order, not another:** the two constraints are the fixed plenary/break points (lunch, tea, the ethics session TSMC requires) and joint variety -- shoulder and knee cases alternate through Day 1 (CB1 shoulder -> CB2 knee -> CB3 shoulder -> CB4 knee) rather than grouping, so a delegate who only cares about one joint isn't stuck in the room for two back-to-back blocks on someone else's. Day 2 already has no repeats (hamstring, ankle, hip, spine, hand). CB1 opens because it's the flagship case; CB8 gets the prime post-lunch Day 2 slot because it's the cricket marquee. Nothing else about the order is load-bearing -- say the word if a different sequence reads better once faculty are confirmed.
 
 **Correction to this revision:** the redesign around case blocks silently dropped the sports-cardiology/anti-doping content (C13+C14, WADA 2026 updates) that the three-hall draft had explicitly promoted to plenary for exactly this reason -- India leads WADA's violation table three years running, and the surgical audience needs to hear it too. Hall A's nine case blocks fill every available minute with no slack (verified in Section 3), so it can't be a tenth block. Restored as a **Hall B session running during Hall A's Day 2 closing tea break (16:30-17:00)**, which is defensible precisely because Hall B was never audited against Hall A's per-block time budget the way the case blocks were -- it has room a fully-packed Hall A does not.
 
@@ -120,9 +120,9 @@ Talks are capped at 10 min because every major society (AOSSM, ESSKA, ISAKOS) co
 
 **CB2 - ACL rupture in the pivoting athlete** *(Day 1, 11:20)* -- kabaddi or football player, complete ACL tear, meniscal involvement. Surgical debate: graft choice (hamstring vs quadriceps tendon vs BTB), repair-with-augmentation for the right 5%, lateral extra-articular tenodesis or not. Physio: criteria-based RTP, not a 9-month calendar date. S&C: the kabaddi-specific loading pattern -- India's own injury data (89.5% ACL tear rate in injured kabaddi players) makes this the most locally relevant case in the programme.
 
-**CB3 - The torn meniscus -- save it or not** *(Day 1, 15:35)* -- posterior root tear with extrusion in a 30-year-old recreational athlete. Surgical debate: repair vs partial meniscectomy vs "meniscectomy is not a crime" -- the cases where resection is genuinely right. Physio: post-repair protected weight-bearing vs post-meniscectomy accelerated return. S&C: the load-management argument for protecting a repaired meniscus long-term.
+**CB4 - The torn meniscus -- save it or not** *(Day 1, 15:35)* -- posterior root tear with extrusion in a 30-year-old recreational athlete. Surgical debate: repair vs partial meniscectomy vs "meniscectomy is not a crime" -- the cases where resection is genuinely right. Physio: post-repair protected weight-bearing vs post-meniscectomy accelerated return. S&C: the load-management argument for protecting a repaired meniscus long-term.
 
-**CB4 - Rotator cuff in the overhead athlete** *(Day 1, 14:30)* -- masked subscapularis tear in a 45-year-old badminton/tennis player. Surgical debate: repair vs superior capsular reconstruction vs lower trapezius transfer, fatty infiltration as the deciding factor. Physio: the non-operative pathway and when it's failing. S&C: scapular mechanics and the load that caused it in the first place.
+**CB3 - Rotator cuff in the overhead athlete** *(Day 1, 14:30)* -- masked subscapularis tear in a 45-year-old badminton/tennis player. Surgical debate: repair vs superior capsular reconstruction vs lower trapezius transfer, fatty infiltration as the deciding factor. Physio: the non-operative pathway and when it's failing. S&C: scapular mechanics and the load that caused it in the first place.
 
 **CB5 - Hamstring tear & reconditioning** *(Day 2, 08:30)* -- grade 2b hamstring tear in a sprinter/footballer, first vs second occurrence. Surgical/sports-physician debate: conservative vs surgical repair thresholds, MRI's real value for "Monday's decision." Physio: L-protocol vs conventional rehab timelines, lengthened-state training. S&C: sprint reintroduction dosing and the reinjury-risk argument for not rushing return-to-sprint.
 
@@ -223,7 +223,7 @@ A translated Western programme is the failure mode. These threads give SIC 2027 
 
 1. **Two days or two + a pre-conference day?** The research yields ~3 days of strong content. A 28 Jan pre-conference day would hold the hands-on workshops, cadaver/dry-lab work and the reserve blocks. *This decision drives venue booking, so take it first.*
 2. **Hall titles.** The two-hall split is settled; confirm the wording of the titles, particularly whether Hall B leads with "Rehab" or "Return to Sport".
-3. **Faculty count.** Hall A's 9 case blocks need 3 surgeons + 1 physio + 1 S&C coach each = **45 Hall-A seats** (fewer with deliberate reuse — a strong CB1 surgeon can also sit on CB4's panel, and Dr. Debasis Chatterjee could plausibly fill both CB6 and CB9), plus Hall B's ~50–65 lecture slots. Section 8 has at least one named candidate for every block; the honest remaining gap is a fast-bowler-stress-fracture clinician for CB8, and second/third surgical opinions for CB5–CB7/CB9 beyond the first name given.
+3. **Faculty count.** Hall A's 9 case blocks need 3 surgeons + 1 physio + 1 S&C coach each = **45 Hall-A seats** (fewer with deliberate reuse — a strong CB1 surgeon can also sit on CB3's panel, and Dr. Debasis Chatterjee could plausibly fill both CB6 and CB9), plus Hall B's ~50–65 lecture slots. Section 8 has at least one named candidate for every block; the honest remaining gap is a fast-bowler-stress-fracture clinician for CB8, and second/third surgical opinions for CB5–CB7/CB9 beyond the first name given.
 4. **Which debates run.** Two per hall per day is the ceiling — more and they stop feeling like events.
 5. **Ethics/GCP session** — confirm it stays in the grid as a plenary session. **TSMC's Declaration Proforma requires it** for CPD accreditation.
 6. **Workshop ticketing.** Hands-on sessions must be capped and ticketed at registration, with per-station rosters. Uncapped "hands-on" becomes a lecture with mats on the floor.
@@ -280,7 +280,7 @@ This is the single best-evidenced case in the programme. The ISAKOS Regional Sum
 
 ---
 
-### CB3 -- The torn meniscus -- save it or not
+### CB4 -- The torn meniscus -- save it or not
 
 - **[IN] Dr. Naman Goel** -- presented meniscal root tear classification and technique at ISKSAA 2025. *Topic-verified.*
 
@@ -288,10 +288,10 @@ This is the single best-evidenced case in the programme. The ISAKOS Regional Sum
 
 ---
 
-### CB4 -- Rotator cuff in the overhead athlete
+### CB3 -- Rotator cuff in the overhead athlete
 
 - **[IN] Dr. Deepak Joshi** -- presented balloon spacer technique for massive cuff repair at ISKSAA 2025. *Topic-verified.*
-- **[IN] Dr. Naman Goel** -- also presented massive cuff tear with patch augmentation at ISKSAA 2025 (can substitute here instead of CB3 if scheduling requires). *Topic-verified.*
+- **[IN] Dr. Naman Goel** -- also presented massive cuff tear with patch augmentation at ISKSAA 2025 (can substitute here instead of CB4 if scheduling requires). *Topic-verified.*
 
 **Third surgeon:** open. **Physiotherapist / S&C:** shared general pool, as CB2 -- a shoulder case, so if Nitin Patel or Ramji Srinivasan (CB1/CB8) are already confirmed for a bowler's shoulder, they are the strongest fit here too and worth asking for a third slot.
 
