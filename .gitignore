@@ -3,3 +3,6 @@ node_modules/
 .claude/
 Thumbs.db
 .DS_Store
+
+# Local dev data store written by the API outside Vercel (api/_lib.js); never commit
+.data.json

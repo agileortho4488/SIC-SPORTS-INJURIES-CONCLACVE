@@ -1,0 +1,13 @@
+# Internal committee and operations documents. They stay in the repo for the
+# organisers, but must never be served on the public site: they contain invited
+# (unconfirmed) faculty names with candid internal notes, and budget/ops material.
+/program-plan.html
+/CONFERENCE-PROGRAM-PLAN.md
+/OPERATIONS-PLAN.md
+/LAUNCH-CHECKLIST.md
+/downloads/SIC-2027-Program-Plan-DRAFT.pdf
+
+# Local development only. On Vercel the API stores data in /tmp, not this file,
+# and it holds registration-shaped records (name, email, mobile, council reg no).
+/.data.json
+/scripts/
