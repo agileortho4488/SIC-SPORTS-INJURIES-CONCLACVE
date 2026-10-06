@@ -6,3 +6,6 @@ Thumbs.db
 
 # Local dev data store written by the API outside Vercel (api/_lib.js); never commit
 .data.json
+
+# Impeccable build screenshots (regenerated on each build)
+.impeccable/review/
