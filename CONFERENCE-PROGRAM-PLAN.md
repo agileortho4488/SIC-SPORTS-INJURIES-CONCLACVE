@@ -1,6 +1,6 @@
 # SIC 2027 — Two-Hall Scientific Program Plan
 
-**Hyderabad Sports Injuries Conclave · 29th & 30th January 2027**
+**Hyderabad Sports Injuries Conclave · 30th & 31st January 2027**
 Draft for the Scientific Committee · prepared from a review of IASCON 2025/26, IASMCON 2025, ISKSAA, ISAKOS 2025, AOSSM 2025, ESSKA 2026, IFSPT/World Physiotherapy, NSCA, and the IOC/WADA/ACSM consensus literature. Every source is listed at the end of each hall section.
 
 > **Structure finalised:** two halls, decided by the Chairman. Return to sport is the through-line. Sports science, nutrition and athlete health are **not** a third room — they sit inside Hall B, next to the people who act on them. This document was originally drafted as three halls; section 5 explains what that costs.
@@ -66,7 +66,7 @@ Everything else runs in parallel.
 
 ## 2. Master grid
 
-### DAY 1 — Friday 29 January 2027
+### DAY 1 — Saturday 30 January 2027
 
 | Time | Hall A — Case-Based Debate | Hall B — Rehab, Physio, S&C, Science |
 |---|---|---|
@@ -85,7 +85,7 @@ Everything else runs in parallel.
 | 18:17 | Free papers — all podium free papers, both halls in parallel *(~14 talks at 8+2 min; see Section 11)* | |
 | 19:32 | Faculty dinner | |
 
-### DAY 2 — Saturday 30 January 2027
+### DAY 2 — Sunday 31 January 2027
 
 | Time | Hall A — Case-Based Debate | Hall B — Rehab, Physio, S&C, Science |
 |---|---|---|
@@ -103,9 +103,9 @@ Everything else runs in parallel.
 
 **Reserve sessions** (drop in if faculty confirm, or move to a pre-conference day): CB10 Elbow OCD in the overhead athlete/gymnast, CB11 Acute traumatic full-thickness rotator cuff tear, CB12 SLAP tear in the overhead athlete, CB13 Acute ATFL repair — the first-time high-grade ankle sprain, CB14 Distal biceps tendon rupture, CB15 Revision ACL reconstruction — the case that came back, **CB16 Achilles tendon rupture**, **CB17 Patellofemoral instability**, **CB18 Multiligament knee injury / knee dislocation**, **CB19 Syndesmosis injury**, **CB20 Subtle Lisfranc injury**, **CB21 Focal cartilage defect of the knee**, **CB22 Grade III AC joint dislocation**, B4 Adjuncts under scrutiny, **C3 Hydration & heat**, **C4 Supplements & ergogenic aids**, **C8 Exercise physiology & performance testing**, **C9 Wearables, AI & monitoring**, C5 Gut health, C6 Female athlete health, C7 Youth athlete, C10 Recovery & sleep, C11 Sports psychology.
 
-> **What the second hall costs.** Three halls offered ~48 parallel slots over two days; two halls offer ~32. Four sessions that were programmed in the three-hall draft — **C3 heat, C4 supplements, C8 exercise physiology, C9 wearables** — are now in reserve, and C1/C2 and C13/C14 are merged. C3 and C4 are the two the committee should look hardest at: heat policy and supplement contamination are the most India-specific, most immediately useful blocks in the whole science stream. A pre-conference day on 28 Jan would recover all four.
+> **What the second hall costs.** Three halls offered ~48 parallel slots over two days; two halls offer ~32. Four sessions that were programmed in the three-hall draft — **C3 heat, C4 supplements, C8 exercise physiology, C9 wearables** — are now in reserve, and C1/C2 and C13/C14 are merged. C3 and C4 are the two the committee should look hardest at: heat policy and supplement contamination are the most India-specific, most immediately useful blocks in the whole science stream. A pre-conference day on 29 Jan would recover all four.
 
-> **Note:** the research produced more high-quality content than two days can hold — roughly 3 days' worth. Either add a **pre-conference day (28 Jan)** for workshops and the reserve blocks, or cut to the sessions above. The committee should decide this first, because it determines venue booking.
+> **Note:** the research produced more high-quality content than two days can hold — roughly 3 days' worth. Either add a **pre-conference day (29 Jan)** for workshops and the reserve blocks, or cut to the sessions above. The committee should decide this first, because it determines venue booking.
 
 **Why this order, not another:** the two constraints are the fixed plenary/break points (lunch, tea, the ethics session TSMC requires) and joint variety -- shoulder and knee cases alternate through Day 1 (CB1 shoulder -> CB2 knee -> CB3 shoulder -> CB4 knee) rather than grouping, so a delegate who only cares about one joint isn't stuck in the room for two back-to-back blocks on someone else's. Day 2 already has no repeats (hamstring, ankle, hip, spine, hand). CB1 opens because it's the flagship case; CB8 gets the prime post-lunch Day 2 slot because it's the cricket marquee. Nothing else about the order is load-bearing -- say the word if a different sequence reads better once faculty are confirmed.
 
@@ -270,7 +270,7 @@ A translated Western programme is the failure mode. These threads give SIC 2027 
 
 ## 7. Decisions the Scientific Committee must take
 
-1. **Two days or two + a pre-conference day?** The research yields ~3 days of strong content. A 28 Jan pre-conference day would hold the hands-on workshops, cadaver/dry-lab work and the reserve blocks. *This decision drives venue booking, so take it first.*
+1. **Two days or two + a pre-conference day?** The research yields ~3 days of strong content. A 29 Jan pre-conference day would hold the hands-on workshops, cadaver/dry-lab work and the reserve blocks. *This decision drives venue booking, so take it first.*
 2. **Hall titles.** The two-hall split is settled; confirm the wording of the titles, particularly whether Hall B leads with "Rehab" or "Return to Sport".
 3. **Faculty count.** Hall A's 9 case blocks need 3 surgeons + 1 physio + 1 S&C coach each = **45 Hall-A seats** (fewer with deliberate reuse — a strong CB1 surgeon can also sit on CB3's panel, and Dr. Debasis Chatterjee could plausibly fill both CB6 and CB9), plus Hall B's ~50–65 lecture slots. Section 8 has at least one named candidate for every block; the honest remaining gap is a fast-bowler-stress-fracture clinician for CB8, and second/third surgical opinions for CB5–CB7/CB9 beyond the first name given.
 4. **Which debates run.** Two per hall per day is the ceiling — more and they stop feeling like events.
@@ -282,7 +282,7 @@ A translated Western programme is the failure mode. These threads give SIC 2027 
 10. **Which four reserve blocks return.** See the note in section 2 — C3 heat and C4 supplements are the strongest candidates if a pre-conference day is approved.
 11. **Faculty outreach sequencing.** CB1 (shoulder instability) is fully staffed with verified names and should be the first block confirmed — a confirmed CB1 surgeon becomes the strongest recruiting tool for everyone else. Physiotherapy and S&C now have real candidates for every block (Section 8), mostly current IPL franchise medical/conditioning staff. **One seat remains genuinely open after two research passes: a surgeon or sports physician for CB8 (fast bowler's lumbar stress fracture)** — this needs a personal introduction through the committee's own network, not further cold search. Do not publish any name on the public site or brochure until that person has personally confirmed — see the site's existing "faculty announcement to follow" convention.
 12. **Podium free-paper capacity.** Moving the Day 2 Hall B slot to the Young Surgeon Forum Final (Section 11) leaves one podium session: Day 1, both halls, ~14 talks at the promised 8+2 min. Anything beyond goes to e-poster -- the abstracts page already reserves the committee's right to allocate. If abstract volume runs high, the fallback is a further podium block on a pre-conference day.
-13. **Define "young consultant"** for Young Surgeon Forum eligibility before abstracts open (suggested: 5 years or less after the specialist degree, on 29 Jan 2027). The abstracts page uses the phrase without defining it.
+13. **Define "young consultant"** for Young Surgeon Forum eligibility before abstracts open (suggested: 5 years or less after the specialist degree, on 30 Jan 2027). The abstracts page uses the phrase without defining it.
 14. **Registration for doctors over 65.** The TSMC/TGMC organiser declaration asks organisers to consider free registration for doctors over 65; the registration page currently has no such provision. Decide and publish before registration opens.
 15. **Confirm the TGMC CPD permission fee.** Earlier planning notes carried Rs 10,000 for a two-day event; the TGMC CPD Committee minutes of 18 Feb 2024 record **Rs 50,000 for a national conference** and 2 credit hours per 8-hour day. Confirm with the council before budgeting.
 16. **Get TGMC's position on industry involvement in writing** (Section 12) -- no published TGMC rule on product names, sponsored content or disclosure was found, and NMC is reported to be tightening rules on sponsored CME.

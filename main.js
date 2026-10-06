@@ -4,7 +4,7 @@
 
 /* Countdown — plain content update, runs in every mode */
 (function () {
-  const target = new Date('2027-01-29T09:00:00+05:30').getTime();
+  const target = new Date('2027-01-30T09:00:00+05:30').getTime();
   const cells = {};
   document.querySelectorAll('[data-cd]').forEach(el => cells[el.dataset.cd] = el);
   if (!cells.d) return;

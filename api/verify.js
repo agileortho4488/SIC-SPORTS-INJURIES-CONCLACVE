@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
     const sig = L.sign(id);
     const base = process.env.SITE_URL || 'https://www.sportsinjuries.care';
     L.sendMail(rec.email, 'SIC 2027 — registration confirmed',
-      `<p>Dear ${rec.name},</p><p>Your registration <b>${id}</b> for SIC 2027 (29th &amp; 30th January 2027, Hyderabad) is confirmed.</p>
+      `<p>Dear ${rec.name},</p><p>Your registration <b>${id}</b> for SIC 2027 (30th &amp; 31st January 2027, Hyderabad) is confirmed.</p>
        <p><a href="${base}/pass.html?id=${id}&sig=${sig}">Download your delegate pass with QR code</a> — you will need it at check-in.</p>
        <p>— Organizing Committee, SIC 2027</p>`);
     return L.json(res, 200, { ok: true, id, sig });
