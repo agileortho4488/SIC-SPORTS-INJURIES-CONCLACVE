@@ -80,7 +80,7 @@ Everything else runs in parallel.
 | 13:26 | Lunch · exhibition | |
 | 14:26 | **CB3 · Rotator cuff in the overhead athlete** | B3 · Tendinopathy & load-driven pain |
 | 15:34 | **CB4 · The torn meniscus — save it or not** | **C1+C2 · Fuelling recovery** — energy availability, REDs & nutrition periodisation on Indian diets |
-| 16:42 | Tea | |
+| 16:42 | Tea · exhibition | |
 | 17:32 | **PLENARY — Medical ethics & GCP in sports medicine** *(TSMC CPD requirement)* | |
 | 18:17 | Free papers — all podium free papers, both halls in parallel *(~14 talks at 8+2 min; see Section 11)* | |
 | 19:32 | Faculty dinner | |

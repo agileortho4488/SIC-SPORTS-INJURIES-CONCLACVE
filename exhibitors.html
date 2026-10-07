@@ -31,23 +31,37 @@
   .page-head .crumb { margin-bottom: 1rem; }
   .page-head .crumb a { color: var(--mute); text-decoration: none; }
   .page-head .crumb a:hover { color: var(--accent); }
-  .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1.25rem; }
+  .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
   .tier {
     background: rgb(28 46 74 / 0.38);
     border: 1px solid rgb(255 255 255 / 0.09);
     border-radius: 14px;
     padding: 1.75rem;
   }
-  /* four cards (three stalls + session support) sit on one row on desktop instead of orphaning one */
-  .tier-grid.four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  /* fixed column counts (breakpoints below) so no card is ever left alone on a row */
+  .tier-grid.four { grid-template-columns: repeat(4, 1fr); }
+  .tier-grid.four .tier { padding: 1.75rem 1.5rem; }
+  .tier-grid.four .tier h3 { font-size: 1.45rem; }
   .tier.lead { border-color: rgb(255 90 31 / 0.6); }
-  .tier h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .tier h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.6rem; line-height: 1.1; margin-bottom: 0.25rem; }
   .tier .label { margin-bottom: 1rem; }
   .tier ul { list-style: none; }
   .tier li { padding: 0.45rem 0; border-bottom: 1px solid rgb(66 94 123 / 0.25); font-size: 0.95rem; color: var(--mute); }
   .tier li:last-child { border-bottom: 0; }
   .note-band { background: rgb(28 46 74 / 0.3); border-block: 1px solid rgb(28 46 74 / 0.6); }
   .note-band p { max-width: 52rem; }
+  @media (max-width: 1199px) { .tier-grid.four { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 860px) { .tier-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .tier-grid.four { grid-template-columns: 1fr; } }
+  /* exhibitor lead form on the dark register band */
+  .lead-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; max-width: 56rem; margin: 0 auto; text-align: left; }
+  .lead-form label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--mute); margin-bottom: 0.4rem; }
+  .lead-form input, .lead-form select { width: 100%; padding: 0.85rem 1rem; background: rgb(28 46 74 / 0.6); border: 1px solid rgb(66 94 123 / 0.6); border-radius: 10px; color: var(--paper); font-family: var(--body); font-size: 0.95rem; }
+  .lead-form input:focus-visible, .lead-form select:focus-visible { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .lead-actions { grid-column: 1 / -1; text-align: center; margin-top: 0.5rem; }
+  .lead-actions .fineprint { margin-top: 0.9rem; font-size: 0.85rem; color: var(--mute); }
+  button.pill { border: 0; cursor: pointer; font-family: var(--body); }
+  .hp { position: absolute; left: -5000px; }
 </style>
 </head>
 <body>
@@ -97,7 +111,7 @@
     <div class="about-grid">
       <div class="why-copy">
         <p>HSC 2027 brings together the clinicians who choose, use and recommend sports-injury products every day — orthopaedic and arthroscopy surgeons, sports physicians, physiotherapists, and strength &amp; conditioning professionals, alongside the next generation of postgraduate trainees.</p>
-        <p>In association with Apollo Hospitals, Financial District, the conclave pairs a focused scientific programme with a dedicated trade exhibition, live surgical video sessions, and hands-on engagement between faculty and industry.</p>
+        <p>In association with Apollo Hospitals, Financial District, the conclave pairs a focused scientific programme with a single exhibition hall that both scientific halls empty into at every shared break — surgeons, physiotherapists and S&amp;C coaches walking the same floor.</p>
       </div>
       <div class="why-grid">
         <div class="why-stat"><b>2 DAYS</b><i>30th &amp; 31st January 2027 — Saturday &amp; Sunday, Hyderabad</i></div>
@@ -145,9 +159,10 @@
         <h3>Platinum Sponsor</h3>
         <p class="label">ONE PARTNER</p>
         <ul>
-          <li>First-position stall at the exhibition entrance</li>
-          <li>Product session in the exhibition area at lunch, outside CPD hours</li>
-          <li>Named as Platinum Sponsor across website, programme &amp; signage</li>
+          <li>First position in the sponsor row at the exhibition entrance</li>
+          <li>Product session in the exhibition area at Saturday lunch, outside the CPD programme</li>
+          <li>Named first as Platinum Sponsor across website, programme &amp; signage</li>
+          <li>Back cover of the printed programme</li>
           <li>Company representative passes</li>
         </ul>
       </div>
@@ -155,9 +170,10 @@
         <h3>Gold Sponsor</h3>
         <p class="label">ONE PARTNER</p>
         <ul>
-          <li>Second-position premium stall</li>
-          <li>Product demonstration slot in the exhibition area during a break</li>
+          <li>Corner stand in the sponsor row</li>
+          <li>Product session in the exhibition area at Sunday lunch, outside the CPD programme</li>
           <li>Named as Gold Sponsor across website, programme &amp; signage</li>
+          <li>Inside front cover of the programme</li>
           <li>Company representative passes</li>
         </ul>
       </div>
@@ -165,12 +181,14 @@
         <h3>Silver Sponsor</h3>
         <p class="label">ONE PARTNER</p>
         <ul>
-          <li>Premium stall in the front row</li>
+          <li>Stand in the sponsor row</li>
           <li>Named as Silver Sponsor across website, programme &amp; signage</li>
+          <li>Inside back cover of the programme &amp; a delegate-kit insert</li>
           <li>Company representative passes</li>
         </ul>
       </div>
     </div>
+    <p class="mute" style="margin-top:1.25rem">Every sponsor also keeps first right to the same level at HSC 2028, and receives a verified attendance report after the conclave.</p>
   </div>
 </section>
 
@@ -186,9 +204,9 @@
     <div class="tier-grid four">
       <div class="tier">
         <h3>Premium Stall</h3>
-        <p class="label">PREMIUM ROW</p>
+        <p class="label">BEHIND THE SPONSOR ROW</p>
         <ul>
-          <li>Largest stall size, near the hall entrances</li>
+          <li>Largest stall size, in the row directly behind the sponsor row</li>
           <li>Listing in conclave materials</li>
           <li>Exhibitor badges</li>
         </ul>
@@ -212,12 +230,12 @@
         </ul>
       </div>
       <div class="tier">
-        <h3>Session Support</h3>
-        <p class="label">QUOTED SEPARATELY</p>
+        <h3>More Ways to Partner</h3>
+        <p class="label">SEE THE PROSPECTUS</p>
         <ul>
-          <li>Workshop &amp; symposium support</li>
-          <li>Delegate kits</li>
-          <li>Quoted separately from sponsorship and stalls</li>
+          <li>Hands-on skills stations in the exhibition hall</li>
+          <li>Delegate kit, kit inserts &amp; programme pages</li>
+          <li>Registration area &amp; charging stations</li>
         </ul>
       </div>
     </div>
@@ -227,16 +245,62 @@
 <section class="note-band">
   <div class="container">
     <p class="label">PROSPECTUS &amp; PRICING</p>
-    <p>Sponsorship and stall pricing is set out in the exhibitor &amp; partnership prospectus, sent on request. Final stall sizes follow the venue floor plan. Stalls are allocated in the order bookings are confirmed. Product sessions and demonstrations sit in the exhibition area, outside the CPD programme, so the scientific sessions stay independent.</p>
+    <p>Sponsorship and stall pricing is set out in the exhibitor &amp; partnership prospectus — <a href="#enquire">download it below</a>; final stall sizes follow the venue floor plan, and stalls are allocated in the order bookings are confirmed. Product sessions and demonstrations sit in the exhibition area, outside the CPD programme. There are no sponsored sessions, logos or seat covers inside the scientific halls, no company-hosted meals and no delegate gifts — the programme stays independent and your compliance sign-off stays simple.</p>
   </div>
 </section>
 
 <section class="register-band" id="enquire">
   <div class="container">
     <p class="reg-label">EXHIBITOR &amp; PARTNERSHIP ENQUIRIES</p>
-    <h2 class="display">RESERVE YOUR PLACE EARLY</h2>
-    <p class="reg-copy">Write to the organizing committee with your company name, category and the sponsorship level or stall size you want — we will respond with the prospectus as soon as it is released.</p>
-    <a class="pill pill-inverse" href="mailto:precisionortho4488@gmail.com?subject=HSC%202027%20—%20Exhibitor%20enquiry&body=Company%3A%0ACategory%3A%0ASponsorship%20level%20or%20stall%20size%3A%0AContact%20person%3A%0APhone%3A">ENQUIRE AS AN EXHIBITOR&ensp;→</a>
+    <h2 class="display">GET THE EXHIBITOR PROSPECTUS</h2>
+    <p class="reg-copy">Sponsorship levels, stall sizes, pricing and terms in one document. Download it now; the organising committee will contact you to confirm availability and send the booking form.</p>
+    <form class="lead-form" id="exForm" action="https://formsubmit.co/precisionortho4488@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="HSC 2027 — Exhibitor lead">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.sportsinjuries.care/exhibitor-thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div><label for="x-company">Company</label><input id="x-company" name="company" required autocomplete="organization"></div>
+      <div><label for="x-name">Your name</label><input id="x-name" name="name" required autocomplete="name"></div>
+      <div><label for="x-email">Work email</label><input id="x-email" type="email" name="email" required autocomplete="email"></div>
+      <div><label for="x-mobile">Mobile</label><input id="x-mobile" type="tel" name="mobile" required autocomplete="tel"></div>
+      <div><label for="x-cat">Product category</label>
+        <select id="x-cat" name="category" required>
+          <option value="">Select…</option>
+          <option>Arthroscopy Systems &amp; Implants</option>
+          <option>Orthobiologics &amp; Regenerative Medicine</option>
+          <option>Robotics &amp; Surgical Navigation</option>
+          <option>Rehabilitation &amp; Physiotherapy Equipment</option>
+          <option>Imaging &amp; Diagnostics</option>
+          <option>Braces, Orthotics &amp; Sports Supports</option>
+          <option>Sports Nutrition &amp; Recovery</option>
+          <option>Digital Health &amp; Practice Software</option>
+          <option>Publishers &amp; Education Partners</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div><label for="x-int">Interested in</label>
+        <select id="x-int" name="interest" required>
+          <option value="">Select…</option>
+          <optgroup label="Sponsorship — one partner each">
+            <option>Platinum Sponsor</option>
+            <option>Gold Sponsor</option>
+            <option>Silver Sponsor</option>
+          </optgroup>
+          <optgroup label="Exhibition stall">
+            <option>Premium Stall</option>
+            <option>Standard Stall</option>
+            <option>Compact Stall</option>
+          </optgroup>
+          <option>Skills station, kit or programme page</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="lead-actions">
+        <button class="pill pill-inverse" type="submit">DOWNLOAD THE PROSPECTUS&ensp;↓</button>
+        <p class="fineprint">Your details go only to the HSC 2027 organising committee.</p>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -264,6 +328,18 @@
   </div>
 </footer>
 
+<script>
+// Back-up copy of the lead; FormSubmit's email to the organiser is the primary record.
+document.getElementById('exForm').addEventListener('submit', function () {
+  var f = this;
+  var payload = JSON.stringify({
+    name: f.name.value, email: f.email.value, mobile: f.mobile.value,
+    category: f.category.value, company: f.company.value, interest: f.interest.value,
+    source: 'exhibitor',
+  });
+  try { navigator.sendBeacon('/api/lead', new Blob([payload], { type: 'application/json' })); } catch (e) {}
+});
+</script>
 <script src="nav.js" defer></script>
 </body>
 </html>

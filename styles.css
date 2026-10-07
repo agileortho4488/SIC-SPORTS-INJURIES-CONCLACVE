@@ -704,20 +704,25 @@ html.static .rail, html.static .hero-stage { display: none; }
 .committee .bio { margin-top: 0.75rem; font-size: 0.88rem; color: var(--mute); }
 
 /* ── REGISTER BAND ───────────────────────────────────────── */
+/* A full-bleed orange field was too loud; the orange stays on the edge, the label and the button. */
 .register-band {
-  background: var(--accent);
-  color: var(--ink);
+  background: linear-gradient(180deg, var(--ink-2), var(--ink));
+  border-top: 3px solid var(--accent);
+  color: var(--paper);
   text-align: center;
 }
-.register-band .display { color: var(--ink); margin-bottom: 1rem; }
+.register-band .display { color: var(--paper); margin-bottom: 1rem; }
 .reg-label {
   font-size: 12px;
   letter-spacing: 0.22em;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  color: rgb(0 0 0 / 0.65);
+  color: var(--accent);
 }
-.reg-copy { max-width: 34rem; margin: 0 auto 2rem; color: rgb(0 0 0 / 0.75); }
+.reg-copy { max-width: 34rem; margin: 0 auto 2rem; color: var(--mute); }
+/* every band CTA is written as .pill-inverse (ink, made for the old orange field); on the dark band it becomes the orange pill */
+.register-band .pill-inverse { background: var(--accent); color: var(--ink); }
+.register-band .pill-inverse:hover { background: var(--accent-dim); box-shadow: 0 8px 24px rgb(255 90 31 / 0.25); }
 
 /* ── VENUE ───────────────────────────────────────────────── */
 .venue-copy p + p { margin-top: 1.25rem; }

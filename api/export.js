@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
       [r.id, r.name, r.email, r.mobile, r.category, r.source, r.created_at].map(esc2).join(','))).join('\n');
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-    res.setHeader('Content-Disposition', 'attachment; filename="sic2027-leads.csv"');
+    res.setHeader('Content-Disposition', 'attachment; filename="hsc2027-leads.csv"');
     return res.end(csv2);
   }
   const rows = await L.allRegs();
@@ -23,6 +23,6 @@ module.exports = async (req, res) => {
   )).join('\n');
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-  res.setHeader('Content-Disposition', 'attachment; filename="sic2027-delegates.csv"');
+  res.setHeader('Content-Disposition', 'attachment; filename="hsc2027-delegates.csv"');
   res.end(csv);
 };

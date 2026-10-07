@@ -16,6 +16,10 @@ module.exports = async (req, res) => {
       `<p>Dear ${rec.name},</p><p>Your registration <b>${id}</b> for HSC 2027 (30th &amp; 31st January 2027, Hyderabad) is confirmed.</p>
        <p><a href="${base}/pass.html?id=${id}&sig=${sig}">Download your delegate pass with QR code</a> — you will need it at check-in.</p>
        <p>— Organizing Committee, HSC 2027</p>`);
+    // Every confirmed registration also lands in the organiser's inbox, not just the delegate's.
+    L.sendMail(process.env.ORGANISER_EMAIL || 'precisionortho4488@gmail.com', `HSC 2027 — new paid registration ${id}`,
+      `<p><b>${rec.name}</b> (${rec.category || 'category not given'}) — ${rec.email}, ${rec.mobile || 'no mobile'}</p>
+       <p>Registration ${id}, Razorpay payment ${razorpay_payment_id}.</p>`);
     return L.json(res, 200, { ok: true, id, sig });
   } catch {
     return L.json(res, 500, { error: 'Verification failed' });

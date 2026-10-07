@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Exhibitor Prospectus — HSC 2027</title>
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' rx='52' fill='%230A1424'/%3E%3Cg transform='translate(0,-8)'%3E%3Crect x='48' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Crect x='156' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M48 86C48 66 58 58 66 44C74 58 84 66 84 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M156 86C156 66 166 58 174 44C182 58 192 66 192 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M84 156C104 118 132 108 156 112L156 124C134 122 108 146 84 178Z' fill='%23FF5A1F'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { display: grid; place-items: center; min-height: 100svh; padding: 1.5rem; text-align: center; }
+  .card { max-width: 32rem; }
+  .card h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 3.2rem); margin-bottom: 1rem; }
+  .card p { color: var(--mute); margin-bottom: 2rem; }
+  .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="card">
+  <p class="label">HSC 2027 · EXHIBITOR &amp; PARTNERSHIP PROSPECTUS</p>
+  <h1>YOUR PROSPECTUS<br>IS <span style="color:var(--accent)">DOWNLOADING</span></h1>
+  <p>If it doesn't begin automatically, use the button below. The organising committee now has your details and will contact you to confirm availability and send the booking form. Each sponsorship level is open to one partner, and stall positions go in the order bookings are confirmed.</p>
+  <div class="actions">
+    <a class="pill" href="downloads/HSC-2027-Exhibitor-Prospectus.pdf" download>DOWNLOAD PROSPECTUS&ensp;↓</a>
+    <a class="ghost" href="exhibitors.html">BACK TO EXHIBITORS</a>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var a = document.createElement('a');
+    a.href = 'downloads/HSC-2027-Exhibitor-Prospectus.pdf';
+    a.download = '';
+    document.body.appendChild(a);
+    a.click();
+  }, 800);
+</script>
+</body>
+</html>
