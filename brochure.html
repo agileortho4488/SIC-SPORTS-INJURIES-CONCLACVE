@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
-<title>SIC 2027 — Scientific Brochure (print to PDF, A4)</title>
+<title>HSC 2027 — Scientific Brochure (print to PDF, A4)</title>
 <style>
   @page { size: A4 portrait; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  @font-face { font-family: 'Bebas Neue'; src: url('fonts/bebas-neue.woff2') format('woff2'); }
-  @font-face { font-family: 'Archivo'; font-weight: 400 600; src: url('fonts/archivo.woff2') format('woff2'); }
-  :root { --navy: #14213D; --night: #1B3B59; --gold: #FCA311; --saffron: #FDD400; --ash: #BDC3C7; --slate: #708090;
-           /* gold on WHITE paper is 2.0:1 — unreadable in print. This is the
-              ink-safe gold at 6.4:1. --gold stays for text on navy and for fills. */
-           --gold-ink: #8A5200; --gold-display: #C77F08; /* 3.25:1 — large display type only */ }
-  body { font-family: 'Archivo', sans-serif; background: #444; }
+  @font-face { font-family: 'Barlow Condensed'; font-weight: 400 700; src: url('fonts/barlow-condensed-700.woff2') format('woff2'); }
+  @font-face { font-family: 'Barlow'; font-weight: 400; src: url('fonts/barlow-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Barlow'; font-weight: 500; src: url('fonts/barlow-500.woff2') format('woff2'); }
+  @font-face { font-family: 'Barlow'; font-weight: 600; src: url('fonts/barlow-600.woff2') format('woff2'); }
+  :root { --navy: #0A1424; --night: #1B3B59; --accent: #FF5A1F; --accent-2: #FF8A4C; --ash: #BDC3C7; --slate: #708090;
+           /* the accent on WHITE paper is 3.1:1 — too weak for print body copy. This is the
+              ink-safe orange at 6.6:1. --accent stays for text on navy and for fills. */
+           --accent-ink: #A8350D; --accent-display: #D9480F; /* 3.25:1 — large display type only */ }
+  body { font-family: 'Barlow', sans-serif; background: #444; }
   .pg {
     width: 210mm; height: 297mm;
     margin: 8px auto;
@@ -25,16 +27,16 @@
     page-break-after: always;
   }
   .pg.dark { background: linear-gradient(160deg, #000 0%, var(--navy) 70%, var(--night) 100%); color: #FFF; }
-  .beb { font-family: 'Bebas Neue', sans-serif; font-weight: 400; }
-  .gold { color: var(--gold-ink); }
-  .pg.dark .gold, .contact-band .gold { color: var(--gold); } /* these sit on navy */
-  .qr-row .gold { color: var(--gold-display); } /* 20pt bold on white — 3:1 threshold */
-  h2.sec .gold { color: var(--gold-display); } /* 24pt display — 3:1 threshold applies */
-  .label { font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-ink); font-weight: 600; }
-  .pg.dark .label, .mission .label { color: var(--gold); } /* on navy, full gold is 10.8:1 */
+  .beb { font-family: 'Barlow Condensed', sans-serif; font-weight: 400; }
+  .accent { color: var(--accent-ink); }
+  .pg.dark .accent, .contact-band .accent { color: var(--accent); } /* these sit on navy */
+  .qr-row .accent { color: var(--accent-display); } /* 20pt bold on white — 3:1 threshold */
+  h2.sec .accent { color: var(--accent-display); } /* 24pt display — 3:1 threshold applies */
+  .label { font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; }
+  .pg.dark .label, .mission .label { color: var(--accent); } /* on the ink, the full accent is 5.9:1 */
   .foot { position: absolute; bottom: 8mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--slate); border-top: 0.3mm solid #E5E5E5; padding-top: 2.5mm; }
   .pg.dark .foot { border-color: rgb(255 255 255 / 0.2); color: var(--ash); }
-  .slash { height: 0.8mm; background: var(--gold); width: 34mm; margin: 4mm 0; transform: skewY(-2deg); }
+  .slash { height: 0.8mm; background: var(--accent); width: 34mm; margin: 4mm 0; transform: skewY(-2deg); }
 
   /* cover */
   .cover { display: flex; flex-direction: column; }
@@ -43,22 +45,22 @@
   .cover .strap { font-size: 10pt; letter-spacing: 0.18em; color: var(--ash); text-transform: uppercase; margin-top: 6mm; }
   .cover .dates { font-size: 22pt; margin-top: 14mm; }
   .cover .meta { margin-top: auto; display: flex; gap: 12mm; }
-  .cover .meta div b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 15pt; }
+  .cover .meta div b { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 15pt; }
   .cover .meta div i { font-style: normal; font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash); }
-  .draftmark { position: absolute; top: 12mm; right: 16mm; border: 0.5mm solid var(--saffron); color: var(--saffron); font-size: 8pt; font-weight: 700; letter-spacing: 0.14em; padding: 1.5mm 4mm; border-radius: 2mm; }
-  .pg:not(.dark) .draftmark { border-color: #C77F08; color: #C77F08; }
+  .draftmark { position: absolute; top: 12mm; right: 16mm; border: 0.5mm solid var(--accent-2); color: var(--accent-2); font-size: 8pt; font-weight: 700; letter-spacing: 0.14em; padding: 1.5mm 4mm; border-radius: 2mm; }
+  .pg:not(.dark) .draftmark { border-color: #D9480F; color: #D9480F; }
 
   h2.sec { font-size: 24pt; margin: 2mm 0 6mm; }
   .committee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
-  .person { border: 0.3mm solid #E5E5E5; border-left: 1mm solid var(--gold); padding: 5mm; border-radius: 2mm; }
-  .person .role { font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-ink); font-weight: 700; }
+  .person { border: 0.3mm solid #E5E5E5; border-left: 1mm solid var(--accent); padding: 5mm; border-radius: 2mm; }
+  .person .role { font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-ink); font-weight: 700; }
   .person b { display: block; font-size: 12pt; margin: 1mm 0 0.5mm; }
   .person .desig { font-size: 8.5pt; color: var(--slate); }
   .person p { font-size: 8pt; color: #4A5568; margin-top: 2mm; line-height: 1.55; }
 
   .about p { font-size: 10pt; line-height: 1.7; max-width: 165mm; margin-bottom: 4mm; }
-  .mission { background: var(--navy); color: #FFF; border-radius: 3mm; padding: 8mm; font-size: 12pt; line-height: 1.55; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; text-transform: uppercase; margin: 6mm 0; }
-  .mission span { color: var(--gold); }
+  .mission { background: var(--navy); color: #FFF; border-radius: 3mm; padding: 8mm; font-size: 12pt; line-height: 1.55; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.02em; text-transform: uppercase; margin: 6mm 0; }
+  .mission span { color: var(--accent); }
   .hl { columns: 2; column-gap: 8mm; font-size: 9pt; }
   .hl li { break-inside: avoid; margin: 0 0 3mm 5mm; line-height: 1.5; }
 
@@ -67,9 +69,9 @@
   .day-head .beb { font-size: 16pt; }
   .day-head span { font-size: 8.5pt; color: var(--slate); letter-spacing: 0.14em; text-transform: uppercase; }
   table.grid { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
-  table.grid th { text-align: left; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-ink); padding: 1.6mm 2.5mm; border-bottom: 0.4mm solid var(--navy); }
+  table.grid th { text-align: left; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-ink); padding: 1.6mm 2.5mm; border-bottom: 0.4mm solid var(--navy); }
   table.grid td { padding: 1.7mm 2.5mm; border-bottom: 0.25mm solid #E8E8E8; vertical-align: top; }
-  table.grid td.t { white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 9.5pt; color: var(--night); width: 24mm; }
+  table.grid td.t { white-space: nowrap; font-family: 'Barlow Condensed', sans-serif; font-size: 9.5pt; color: var(--night); width: 24mm; }
   table.grid .sub { display: block; font-size: 6.6pt; color: var(--slate); margin-top: 0.6mm; line-height: 1.3; }
   tr.block td { background: var(--navy); color: #FFF; font-weight: 600; font-size: 8.6pt; letter-spacing: 0.08em; }
   /* table.grid td.t (0,2,2) outranks tr.block td (0,1,2), so the time column
@@ -86,17 +88,17 @@
   .notes li { margin-left: 5mm; margin-bottom: 1.5mm; }
   .qr-row { display: flex; gap: 10mm; align-items: center; margin-top: 8mm; }
   #qr { background: #FFF; padding: 3mm; border: 0.3mm solid #E5E5E5; border-radius: 2mm; }
-  .qr-row .cta b { font-family: 'Bebas Neue', sans-serif; font-size: 15pt; display: block; }
+  .qr-row .cta b { font-family: 'Barlow Condensed', sans-serif; font-size: 15pt; display: block; }
   .qr-row .cta span { font-size: 8.5pt; color: var(--slate); }
 
   .venue p { font-size: 9.5pt; line-height: 1.7; max-width: 165mm; margin-bottom: 4mm; }
   .facts { display: flex; gap: 6mm; margin-top: 5mm; }
   .facts div { flex: 1; border: 0.3mm solid #E5E5E5; border-radius: 2mm; padding: 5mm; }
-  .facts b { font-family: 'Bebas Neue', sans-serif; font-size: 14pt; color: var(--gold-ink); display: block; }
+  .facts b { font-family: 'Barlow Condensed', sans-serif; font-size: 14pt; color: var(--accent-ink); display: block; }
   .facts i { font-style: normal; font-size: 8pt; color: #5A6472; } /* slate is 4.05:1 on white */
   .contact-band { background: var(--navy); color: #FFF; border-radius: 3mm; padding: 8mm; margin-top: 8mm; display: flex; justify-content: space-between; align-items: center; }
-  .contact-band b { font-family: 'Bebas Neue', sans-serif; font-size: 16pt; }
-  .contact-band a { color: var(--gold); text-decoration: none; font-size: 10pt; }
+  .contact-band b { font-family: 'Barlow Condensed', sans-serif; font-size: 16pt; }
+  .contact-band a { color: var(--accent); text-decoration: none; font-size: 10pt; }
   .bar { position: fixed; top: 4px; left: 8px; color: #ccc; font-size: 11px; z-index: 5; }
   @media print { .bar { display: none; } body { background: #fff; } .pg { margin: 0; } }
 </style>
@@ -109,10 +111,10 @@
   <span class="draftmark">DRAFT — FOR COMMITTEE REVIEW</span>
   <p class="lockup">In association with Apollo Hospitals · Financial District, Hyderabad</p>
   <div class="slash"></div>
-  <p class="label">SIC 2027 · INAUGURAL EDITION · SCIENTIFIC BROCHURE</p>
-  <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="gold">2027</span></h1>
+  <p class="label">HSC 2027 · INAUGURAL EDITION · SCIENTIFIC BROCHURE</p>
+  <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="accent">2027</span></h1>
   <p class="strap">Evidence · Innovation · Excellence in Sports Injuries</p>
-  <p class="dates beb gold">30TH &amp; 31ST JANUARY 2027 · SATURDAY &amp; SUNDAY</p>
+  <p class="dates beb accent">30TH &amp; 31ST JANUARY 2027 · SATURDAY &amp; SUNDAY</p>
   <div class="meta">
     <div><b>VENUE TBA</b><i>Hyderabad, Telangana</i></div>
     <div><b>CME APPLIED</b><i>Credit points — TSMC</i></div>
@@ -126,7 +128,7 @@
   <p class="label">ABOUT THE CONCLAVE</p>
   <h2 class="sec beb">INDIA IS PLAYING MORE.<br>INJURIES ARE RISING FASTER.</h2>
   <p>From the IPL and Pro Kabaddi to Khelo India and weekend marathons, more Indians are competing than ever — and sports injury care has to keep pace. The gap is not enthusiasm; it is coordinated, evidence-based treatment: accurate early assessment, modern arthroscopic and preservation surgery, structured rehabilitation, and objective return-to-play decisions.</p>
-  <p>SIC 2027 exists to close that gap — bringing the surgeons, sports physicians, physiotherapists and sports scientists who share one athlete into one room, across two focused days in Hyderabad.</p>
+  <p>HSC 2027 exists to close that gap — bringing the surgeons, sports physicians, physiotherapists and sports scientists who share one athlete into one room, across two focused days in Hyderabad.</p>
   <div class="mission">"Our mission: to advance evidence-based sports injury care in India — uniting surgeons, sports physicians, physiotherapists and sports scientists to take every athlete safely from injury <span>back to peak performance.</span>"</div>
   <p class="label">CONFERENCE HIGHLIGHTS</p>
   <ul class="hl">
@@ -140,7 +142,7 @@
   </ul>
   <p class="label" style="margin-top:5mm">WHO SHOULD ATTEND</p>
   <p style="font-size:9pt">Orthopaedic Surgeons · Sports Physicians · Physiotherapists · S&amp;C Coaches · PG Students</p>
-  <div class="foot"><span>SIC 2027 — Hyderabad Sports Injuries Conclave</span><span>Page 2</span></div>
+  <div class="foot"><span>HSC 2027 — Hyderabad Sports Injuries Conclave</span><span>Page 2</span></div>
 </div>
 
 <!-- PAGE 3 — COMMITTEE -->
@@ -160,14 +162,14 @@
   <p style="font-size:9pt;color:#4A5568;margin-top:4mm">Designations and committee roles will be announced shortly.</p>
   <p class="label" style="margin-top:8mm">FACULTY</p>
   <p style="font-size:9.5pt; color:#4A5568">International and national faculty announcement to follow. No placeholders — names are published as they are confirmed, on the conclave website.</p>
-  <div class="foot"><span>SIC 2027 — Hyderabad Sports Injuries Conclave</span><span>Page 3</span></div>
+  <div class="foot"><span>HSC 2027 — Hyderabad Sports Injuries Conclave</span><span>Page 3</span></div>
 </div>
 
 <!-- PAGE 4 — PROGRAM DAY 1 -->
 <div class="pg">
   <span class="draftmark">INDICATIVE — FINAL GRID PENDING SCIENTIFIC COMMITTEE</span>
   <p class="label">SCIENTIFIC PROGRAM &middot; TWO PARALLEL HALLS</p>
-  <h2 class="sec beb">DAY 1 &mdash; <span class="gold">SATURDAY, 30TH JANUARY 2027</span></h2>
+  <h2 class="sec beb">DAY 1 &mdash; <span class="accent">SATURDAY, 30TH JANUARY 2027</span></h2>
   <p style="font-size:8.5pt;margin-bottom:4mm"><strong>Return to sport</strong> is the theme running through both days. Two halls run in parallel &mdash; surgery, and rehabilitation with strength &amp; conditioning &mdash; with sports science and nutrition woven into the sessions where they apply, and joint plenary sessions bringing the conclave together.</p>
   <table class="grid">
     <tr><th>Time</th><th>Hall A &mdash; Case-Based Debate</th><th>Hall B &mdash; Rehab, Physio &amp; S&amp;C</th></tr>
@@ -192,7 +194,7 @@
 <div class="pg">
   <span class="draftmark">INDICATIVE — FINAL GRID PENDING SCIENTIFIC COMMITTEE</span>
   <p class="label">SCIENTIFIC PROGRAM &middot; TWO PARALLEL HALLS</p>
-  <h2 class="sec beb">DAY 2 &mdash; <span class="gold">SUNDAY, 31ST JANUARY 2027</span></h2>
+  <h2 class="sec beb">DAY 2 &mdash; <span class="accent">SUNDAY, 31ST JANUARY 2027</span></h2>
   <table class="grid">
     <tr><th>Time</th><th>Hall A &mdash; Case-Based Debate</th><th>Hall B &mdash; Rehab, Physio &amp; S&amp;C</th></tr>
     <tr><td class="t">08:30</td><td>Hamstring tear &amp; reconditioning<span class="sub">Conservative vs surgical repair · sprint reintroduction</span></td><td>Field-based RTP testing &amp; hamstring <em>(hands-on)</em></td></tr>
@@ -232,13 +234,13 @@
   <div class="qr-row">
     <div id="qr"></div>
     <div class="cta">
-      <b class="gold">SCAN TO JOIN THE PRIORITY LIST</b>
+      <b class="accent">SCAN TO JOIN THE PRIORITY LIST</b>
       <span>Be first when registration opens — fee announcement, early-bird window and abstract portal, straight to your inbox.</span>
     </div>
   </div>
   <div class="contact-band">
     <div>
-      <b>SIC <span class="gold">2027</span></b><br>
+      <b>HSC <span class="accent">2027</span></b><br>
       <span style="font-size:8pt; letter-spacing:0.16em; text-transform:uppercase; color:var(--ash)">30th &amp; 31st January 2027 · Hyderabad</span>
     </div>
     <div style="text-align:right">
@@ -246,7 +248,7 @@
       <span style="font-size:8pt; color:var(--ash)">Organised by Precision Orthopaedics LLP · In association with Apollo Hospitals, Financial District</span>
     </div>
   </div>
-  <div class="foot"><span>SIC 2027 — Hyderabad Sports Injuries Conclave · Scientific Brochure (draft)</span><span>Page 6</span></div>
+  <div class="foot"><span>HSC 2027 — Hyderabad Sports Injuries Conclave · Scientific Brochure (draft)</span><span>Page 6</span></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>

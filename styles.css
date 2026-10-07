@@ -1,34 +1,51 @@
 @font-face {
-  font-family: 'Bebas Neue';
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  /* Static 700 face declared across the whole range: every display rule in this
+     sheet still says font-weight 400 (a Bebas-era habit), and a range keeps those
+     rendering in the real bold condensed instead of a synthesised one. */
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('fonts/barlow-condensed-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('fonts/bebas-neue.woff2') format('woff2');
+  src: url('fonts/barlow-400.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Archivo';
+  font-family: 'Barlow';
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 500;
   font-display: swap;
-  src: url('fonts/archivo.woff2') format('woff2');
+  src: url('fonts/barlow-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/barlow-600.woff2') format('woff2');
 }
 
-/* SIC 2027 — Navy & Gold Elegance.
-   NOTE: printed poster is still lime; align poster or revert tokens before launch. */
+/* HSC 2027 — brand ink & orange, taken from the logo pack:
+   ink #0A1424, accent #FF5A1F, Barlow Condensed display / Barlow text. */
 :root {
-  --ink:      #000000;
-  --ink-2:    #14213D; /* navy — panels, borders, raised surfaces */
-  --accent:     #FCA311; /* gold — 10.8:1 on ink, AAA */
-  --accent-dim: #C77F08;
-  --accent-2:   #FDD400; /* saffron — flight captions only */
+  --ink:      #0A1424; /* brand ink — the ground the reverse lockup sits on */
+  --ink-2:    #1C2E4A; /* one step up from the ink — panels, borders, raised surfaces */
+  --accent:     #FF5A1F; /* brand orange — 6.0:1 against the ink */
+  --accent-dim: #CC4618;
+  --accent-2:   #FF8A4C; /* lighter orange — flight captions and time columns only */
   --fjord:    #425E7B;
   --night:    #1B3B59;
   --slate:    #708090;
   --paper:    #FFFFFF;
   --mute:     #BDC3C7; /* 11.9:1 on ink, 9.3:1 on navy — AAA */
   --silver:   #E5E5E5;
-  --display:  'Bebas Neue', 'Arial Narrow', sans-serif;
-  --body:     'Archivo', system-ui, sans-serif;
+  --display:  'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --body:     'Barlow', system-ui, sans-serif;
   /* the built-in CSS easings are too weak to read as intentional —
      these are the strong variants motion work actually needs */
   --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
@@ -113,7 +130,7 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   translate: 0 0.2rem;
 }
 
-.tint-band { background: linear-gradient(180deg, transparent, rgb(27 59 89 / 0.4) 12%, rgb(20 33 61 / 0.4) 88%, transparent); }
+.tint-band { background: linear-gradient(180deg, transparent, rgb(27 59 89 / 0.4) 12%, rgb(28 46 74 / 0.4) 88%, transparent); }
 
 .fineprint { margin-top: 2.5rem; font-size: 12.5px; line-height: 1.6; color: var(--mute); max-width: 60rem; }
 
@@ -151,7 +168,7 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   background: rgb(0 0 0 / 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgb(20 33 61 / 0.8);
+  border-bottom: 1px solid rgb(28 46 74 / 0.8);
 }
 .nav-inner {
   max-width: var(--container);
@@ -163,18 +180,33 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   justify-content: space-between;
   gap: 2rem;
 }
-.brand { display: inline-flex; align-items: baseline; gap: 0.3rem; text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.brand-logo { height: 1.7rem; width: auto; display: block; flex: none; }
 .brand-mark {
   font-family: var(--display);
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.55rem;
+  line-height: 1;
   color: var(--paper);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
+/* The 2027 chip is part of the logotype, so it keeps the lockup's white-on-orange
+   rather than the ink text the pills use. */
 .brand-year {
   font-family: var(--display);
-  font-size: 1.5rem;
-  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.82rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 0.22em 0.4em;
+  border-radius: 0.28em;
+  align-self: center;
 }
+.foot-brand .brand-logo { height: 2rem; }
+.foot-brand .brand-mark { font-size: 1.85rem; }
+.foot-brand .brand-year { font-size: 0.95rem; }
 .nav-links { display: flex; gap: clamp(1rem, 2.5vw, 2.25rem); }
 .nav-links a {
   color: var(--mute);
@@ -204,7 +236,7 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
   flex: none;
   border: 1px solid rgb(66 94 123 / 0.5);
   border-radius: 10px;
-  background: rgb(20 33 61 / 0.5);
+  background: rgb(28 46 74 / 0.5);
   color: var(--paper);
   cursor: pointer;
   transition: border-color var(--swap) var(--ease-out), background var(--swap) var(--ease-out),
@@ -270,9 +302,9 @@ section { padding-block: clamp(4.5rem, 11vh, 8rem); }
    stranded in their hover state until you tap elsewhere. */
 @media (hover: hover) and (pointer: fine) {
   .nav-links a:hover { color: var(--paper); border-color: var(--accent); }
-  .pill:hover { background: var(--accent-dim); box-shadow: 0 8px 24px rgb(252 163 17 / 0.25); }
+  .pill:hover { background: var(--accent-dim); box-shadow: 0 8px 24px rgb(255 90 31 / 0.25); }
   .pill-inverse:hover { background: var(--ink-2); box-shadow: 0 8px 24px rgb(0 0 0 / 0.35); }
-  .ghost:hover { border-color: var(--accent); background: rgb(20 33 61 / 0.5); }
+  .ghost:hover { border-color: var(--accent); background: rgb(28 46 74 / 0.5); }
 }
 
 /* ── HERO ────────────────────────────────────────────────── */
@@ -299,7 +331,7 @@ html.static .hero-video { display: none; }
 #flight { opacity: 0; }
 .hero-scrim {
   background:
-    linear-gradient(100deg, rgb(0 0 0 / 0.92) 0%, rgb(0 0 0 / 0.55) 45%, rgb(20 33 61 / 0.25) 100%),
+    linear-gradient(100deg, rgb(0 0 0 / 0.92) 0%, rgb(0 0 0 / 0.55) 45%, rgb(28 46 74 / 0.25) 100%),
     linear-gradient(180deg, rgb(0 0 0 / 0.6) 0%, transparent 25%, transparent 70%, rgb(0 0 0 / 0.85) 100%);
 }
 
@@ -349,7 +381,7 @@ html.static .hero-video { display: none; }
   bottom: 18%;
   height: 3px;
   transform: rotate(var(--slash-angle));
-  background: rgb(252 163 17 / 0.18);
+  background: rgb(255 90 31 / 0.18);
 }
 .hero-slash-fill {
   height: 100%;
@@ -471,7 +503,7 @@ html.static .rail, html.static .hero-stage { display: none; }
   overflow: clip;
   border-block: 1px solid var(--ink-2);
   padding: 0.85rem 0;
-  background: rgb(20 33 61 / 0.25);
+  background: rgb(28 46 74 / 0.25);
 }
 .ticker-track { display: inline-flex; white-space: nowrap; animation: tick 26s linear infinite; }
 .ticker-track span {
@@ -483,7 +515,7 @@ html.static .rail, html.static .hero-stage { display: none; }
 @keyframes tick { to { transform: translateX(-50%); } }
 
 /* ── COUNTDOWN ───────────────────────────────────────────── */
-.countdown-band { padding-block: clamp(3rem, 7vh, 4.5rem); border-bottom: 1px solid rgb(20 33 61 / 0.6); }
+.countdown-band { padding-block: clamp(3rem, 7vh, 4.5rem); border-bottom: 1px solid rgb(28 46 74 / 0.6); }
 .countdown-grid { text-align: center; }
 .countdown {
   display: flex;
@@ -572,7 +604,7 @@ html.static .rail, html.static .hero-stage { display: none; }
   border-radius: 10px 10px 0 0;
 }
 @media (hover: hover) and (pointer: fine) {
-  .highlight-list li:hover { background: rgb(20 33 61 / 0.45); translate: 0.5rem 0; }
+  .highlight-list li:hover { background: rgb(28 46 74 / 0.45); translate: 0.5rem 0; }
 }
 .highlight-list strong { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 600; }
 .highlight-list p { font-size: 0.92rem; font-weight: 400; margin-top: 0.3rem; }
@@ -712,7 +744,7 @@ html.static .rail, html.static .hero-stage { display: none; }
 .venue-facts i { font-style: normal; font-size: 0.85rem; color: var(--mute); }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
-footer { border-top: 1px solid rgb(20 33 61 / 0.8); padding-top: clamp(3rem, 7vh, 4.5rem); }
+footer { border-top: 1px solid rgb(28 46 74 / 0.8); padding-top: clamp(3rem, 7vh, 4.5rem); }
 .foot-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -721,7 +753,7 @@ footer { border-top: 1px solid rgb(20 33 61 / 0.8); padding-top: clamp(3rem, 7vh
 }
 .foot-brand { margin-bottom: 0.75rem; }
 .foot-bottom {
-  border-top: 1px solid rgb(20 33 61 / 0.6);
+  border-top: 1px solid rgb(28 46 74 / 0.6);
   padding-block: 1.5rem;
   font-size: 12px;
 }
@@ -756,7 +788,7 @@ footer { border-top: 1px solid rgb(20 33 61 / 0.8); padding-top: clamp(3rem, 7vh
     padding: 0.5rem clamp(1.25rem, 4vw, 3rem) 1.5rem;
     /* solid, not translucent: this gets read on a phone in daylight, and at
        any alpha the hero headline ghosted through behind the link labels */
-    background: #04070E;
+    background: #060D18;
     border-bottom: 1px solid rgb(66 94 123 / 0.4);
     box-shadow: 0 24px 48px rgb(0 0 0 / 0.5);
     max-height: calc(100svh - var(--nav-h));
@@ -823,7 +855,7 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(42rem 42rem at 82% 12%, rgb(252 163 17 / 0.07), transparent 65%),
+    radial-gradient(42rem 42rem at 82% 12%, rgb(255 90 31 / 0.07), transparent 65%),
     radial-gradient(50rem 50rem at 8% 78%, rgb(66 94 123 / 0.16), transparent 65%);
   pointer-events: none;
 }
@@ -845,7 +877,7 @@ body::after {
 .committee > div,
 .venue-facts li,
 .countdown-band .countdown-grid {
-  background: rgb(20 33 61 / 0.38);
+  background: rgb(28 46 74 / 0.38);
   backdrop-filter: blur(14px) saturate(150%);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid rgb(255 255 255 / 0.09);
@@ -855,17 +887,17 @@ body::after {
 .countdown-band { border-bottom: 0; }
 @media (hover: hover) and (pointer: fine) {
   .feature-grid li:hover, .committee > div:hover {
-    border-color: rgb(252 163 17 / 0.55);
-    box-shadow: 0 16px 48px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(252 163 17 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08);
+    border-color: rgb(255 90 31 / 0.55);
+    box-shadow: 0 16px 48px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(255 90 31 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08);
   }
 }
-.ticker { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgb(20 33 61 / 0.3); }
+.ticker { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgb(28 46 74 / 0.3); }
 
 /* solid display type — gradient text reads as decoration, not meaning */
 .hero-content h1, .mission-quote { color: var(--paper); }
 .hero-content h1 em, .mission-quote .qmark { color: var(--accent); }
 
-/* scroll progress — gold hairline above the nav */
+/* scroll progress — accent hairline above the nav */
 #progress {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -885,7 +917,7 @@ body::after {
   margin: -280px 0 0 -280px;
   z-index: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(252 163 17 / 0.09), transparent 65%);
+  background: radial-gradient(circle, rgb(255 90 31 / 0.09), transparent 65%);
   mix-blend-mode: screen;
   pointer-events: none;
   opacity: 0;
@@ -903,7 +935,7 @@ html.static #spot, html.static body::after { display: none; }
   width: 3rem; height: 3rem;
   border-radius: 50%;
   border: 1px solid rgb(255 255 255 / 0.12);
-  background: rgb(20 33 61 / 0.5);
+  background: rgb(28 46 74 / 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: var(--accent);
@@ -925,7 +957,7 @@ html.static #spot, html.static body::after { display: none; }
 
 /* ── THREE-HALL PROGRAM GRID ─────────────────────────────── */
 .halls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
-.hall-card { background: rgb(20 33 61 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 14px; padding: 1.25rem; }
+.hall-card { background: rgb(28 46 74 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 14px; padding: 1.25rem; }
 .hall-tag { font-family: var(--display); font-size: 0.95rem; color: var(--accent); letter-spacing: 0.1em; }
 .hall-card b { display: block; margin: 0.35rem 0; font-size: 1.02rem; }
 .hall-card p { font-size: 0.85rem; }
@@ -934,8 +966,8 @@ table.halls-grid { width: 100%; min-width: 46rem; border-collapse: collapse; fon
 table.halls-grid th { text-align: left; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding: 0.75rem; border-bottom: 1px solid var(--fjord); }
 table.halls-grid td { padding: 0.85rem 0.75rem; border-bottom: 1px solid rgb(66 94 123 / 0.28); vertical-align: top; }
 table.halls-grid td.t { font-family: var(--display); color: var(--accent-2); white-space: nowrap; width: 5rem; }
-table.halls-grid td.joint { background: rgb(252 163 17 / 0.1); border-left: 2px solid var(--accent); font-weight: 600; }
-table.halls-grid tr.break td { background: rgb(20 33 61 / 0.3); color: var(--mute); font-style: italic; }
+table.halls-grid td.joint { background: rgb(255 90 31 / 0.1); border-left: 2px solid var(--accent); font-weight: 600; }
+table.halls-grid tr.break td { background: rgb(28 46 74 / 0.3); color: var(--mute); font-style: italic; }
 
 /* committee shown as names first — roles to follow */
 .committee-names { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }

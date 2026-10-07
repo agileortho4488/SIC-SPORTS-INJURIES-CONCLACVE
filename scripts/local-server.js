@@ -22,4 +22,4 @@ http.createServer(async (req, res) => {
   if (!fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.statusCode = 404; return res.end('not found'); }
   res.setHeader('Content-Type', MIME[path.extname(p)] || 'application/octet-stream');
   fs.createReadStream(p).pipe(res);
-}).listen(port, () => console.log('SIC local server http://localhost:' + port + (process.env.RAZORPAY_KEY_ID ? ' (LIVE payment mode)' : ' (DEMO mode)')));
+}).listen(port, () => console.log('HSC local server http://localhost:' + port + (process.env.RAZORPAY_KEY_ID ? ' (LIVE payment mode)' : ' (DEMO mode)')));

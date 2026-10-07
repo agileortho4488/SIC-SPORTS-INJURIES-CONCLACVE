@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="HSC 2027">
+  <title>Hyderabad Sports Injuries Conclave</title>
+  <rect x="48" y="84" width="36" height="136" rx="4" fill="#0A1424"/>
+  <rect x="156" y="84" width="36" height="136" rx="4" fill="#0A1424"/>
+  <path d="M48 86 C48 66 58 58 66 44 C74 58 84 66 84 86 Z" fill="#0A1424"/>
+  <path d="M156 86 C156 66 166 58 174 44 C182 58 192 66 192 86 Z" fill="#0A1424"/>
+  <path d="M84 156 C104 118 132 108 156 112 L156 124 C134 122 108 146 84 178 Z" fill="#FF5A1F"/>
+</svg>

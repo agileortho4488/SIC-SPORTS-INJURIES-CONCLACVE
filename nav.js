@@ -1,4 +1,4 @@
-/* SIC 2027 — mobile navigation.
+/* HSC 2027 — mobile navigation.
    Standalone and dependency-free on purpose: only index.html loads GSAP/Lenis,
    but all seven pages need a working menu, and the menu must survive
    prefers-reduced-motion (where main.js returns early before doing anything). */

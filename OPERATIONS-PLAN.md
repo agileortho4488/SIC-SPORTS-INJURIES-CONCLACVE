@@ -1,4 +1,4 @@
-# SIC 2027 — Automated Delegate Operations Plan
+# HSC 2027 — Automated Delegate Operations Plan
 
 How the conference runs itself: every stage of the delegate lifecycle, what is sent
 automatically, and which system does it. Researched against Indian platform capabilities

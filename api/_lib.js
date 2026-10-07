@@ -1,4 +1,4 @@
-// SIC 2027 registration system — shared lib.
+// HSC 2027 registration system — shared lib.
 // Storage: Postgres when POSTGRES_URL is set (Vercel/Neon/E2E — any Postgres),
 // else a JSON file store (DEMO ONLY: ephemeral on Vercel, fine locally).
 const crypto = require('crypto');
@@ -111,7 +111,7 @@ async function sendMail(to, subject, html) {
   await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: process.env.MAIL_FROM || 'SIC 2027 <onboarding@resend.dev>', to, subject, html }),
+    body: JSON.stringify({ from: process.env.MAIL_FROM || 'HSC 2027 <onboarding@resend.dev>', to, subject, html }),
   }).catch(() => {});
   return true;
 }

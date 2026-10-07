@@ -12,13 +12,13 @@ module.exports = async (req, res) => {
     // Doctors need council details for TSMC CME credit submission
     if (category === 'consultant' && (!council || !council_reg_no)) return L.json(res, 400, { error: 'Medical council name and registration number are required for CME credits' });
 
-    const id = 'SIC' + Date.now().toString(36).toUpperCase() + Math.floor(Math.random() * 900 + 100);
+    const id = 'HSC' + Date.now().toString(36).toUpperCase() + Math.floor(Math.random() * 900 + 100);
     const amount = L.CATEGORIES[category].amount;
 
     if (L.TEST_MODE) {
       await L.saveReg({ id, name, email, mobile, category, council, council_reg_no, amount, order_id: 'test', status: 'test' });
       const sig = L.sign(id);
-      L.sendMail(email, 'SIC 2027 — registration received (demo)', `<p>Dear ${name}, your demo registration ${id} is recorded. Pass: <a href="https://www.sportsinjuries.care/pass.html?id=${id}&sig=${sig}">view pass</a></p>`);
+      L.sendMail(email, 'HSC 2027 — registration received (demo)', `<p>Dear ${name}, your demo registration ${id} is recorded. Pass: <a href="https://www.sportsinjuries.care/pass.html?id=${id}&sig=${sig}">view pass</a></p>`);
       return L.json(res, 200, { test: true, id, sig });
     }
 

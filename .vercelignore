@@ -5,7 +5,7 @@
 /CONFERENCE-PROGRAM-PLAN.md
 /OPERATIONS-PLAN.md
 /LAUNCH-CHECKLIST.md
-/downloads/SIC-2027-Program-Plan-DRAFT.pdf
+/downloads/HSC-2027-Program-Plan-DRAFT.pdf
 
 # Local development only. On Vercel the API stores data in /tmp, not this file,
 # and it holds registration-shaped records (name, email, mobile, council reg no).

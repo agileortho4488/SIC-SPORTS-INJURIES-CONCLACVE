@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Registration — SIC 2027 · DRAFT</title>
-<link rel="preload" as="font" type="font/woff2" href="fonts/bebas-neue.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/archivo.woff2" crossorigin>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Cpath d='M8 44 56 32' stroke='%23FCA311' stroke-width='6'/%3E%3Ctext x='32' y='28' font-family='Arial Black,sans-serif' font-size='20' font-style='italic' font-weight='900' fill='%23FFFFFF' text-anchor='middle'%3ESIC%3C/text%3E%3C/svg%3E">
+<title>Registration — HSC 2027 · DRAFT</title>
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' rx='52' fill='%230A1424'/%3E%3Cg transform='translate(0,-8)'%3E%3Crect x='48' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Crect x='156' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M48 86C48 66 58 58 66 44C74 58 84 66 84 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M156 86C156 66 166 58 174 44C182 58 192 66 192 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M84 156C104 118 132 108 156 112L156 124C134 122 108 146 84 178Z' fill='%23FF5A1F'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .page-head { padding: calc(var(--nav-h) + clamp(3rem, 8vh, 5rem)) 0 clamp(2.5rem, 6vh, 4rem); border-bottom: 1px solid rgb(20 33 61 / 0.6); background: linear-gradient(180deg, rgb(27 59 89 / 0.35), transparent); }
+  .page-head { padding: calc(var(--nav-h) + clamp(3rem, 8vh, 5rem)) 0 clamp(2.5rem, 6vh, 4rem); border-bottom: 1px solid rgb(28 46 74 / 0.6); background: linear-gradient(180deg, rgb(27 59 89 / 0.35), transparent); }
   .page-head h1 { font-family: var(--display); text-transform: uppercase; font-weight: 400; line-height: 1.04; font-size: clamp(2.4rem, 5.5vw, 4.2rem); }
   .page-head .crumb { margin-bottom: 1rem; }
   .page-head .crumb a { color: var(--mute); text-decoration: none; }
@@ -20,13 +20,13 @@
   .fee-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); }
   .fee-table td b { font-family: var(--display); font-size: 1.15rem; font-weight: 400; }
   .tba { color: var(--slate); }
-  .table-wrap { overflow-x: auto; background: rgb(20 33 61 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 14px; padding: 0.5rem 1rem; }
+  .table-wrap { overflow-x: auto; background: rgb(28 46 74 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 14px; padding: 0.5rem 1rem; }
   .policy li { padding: 0.5rem 0; color: var(--mute); }
   .policy { list-style: none; max-width: 52rem; }
   .policy li::before { content: '— '; color: var(--accent); }
   .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1rem; max-width: 60rem; }
   .form-grid label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--mute); margin-bottom: 0.4rem; }
-  .form-grid input, .form-grid select { width: 100%; padding: 0.8rem 1rem; background: rgb(20 33 61 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-family: var(--body); font-size: 0.95rem; }
+  .form-grid input, .form-grid select { width: 100%; padding: 0.8rem 1rem; background: rgb(28 46 74 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-family: var(--body); font-size: 0.95rem; }
   .form-grid input:focus, .form-grid select:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
   .form-actions { margin-top: 1.5rem; }
   button.pill { border: 0; cursor: pointer; font-family: var(--body); }
@@ -37,7 +37,7 @@
 
 <header class="nav" id="top">
   <div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="SIC 2027 — home"><span class="brand-mark">SIC</span> <span class="brand-year">2027</span></a>
+    <a class="brand" href="index.html" aria-label="HSC 2027 — home"><img class="brand-logo" src="assets/hsc-mark-reverse.svg" alt="" width="240" height="240" decoding="async"><span class="brand-mark">HSC</span><span class="brand-year">2027</span></a>
     <nav class="nav-links" id="navMenu" aria-label="Sections">
       <a href="index.html#about">About</a>
       <a href="index.html#highlights">Highlights</a>
@@ -58,7 +58,7 @@
 
 <div class="page-head">
   <div class="container">
-    <p class="lockup crumb"><a href="index.html">SIC 2027</a> &nbsp;/&nbsp; Registration</p>
+    <p class="lockup crumb"><a href="index.html">HSC 2027</a> &nbsp;/&nbsp; Registration</p>
     <p class="label">REGISTRATION</p>
     <h1>REGISTRATION<br>OPENING SOON</h1>
   </div>
@@ -122,7 +122,7 @@
       </div>
     </header>
     <p style="max-width: 52rem;">CME credit points have been applied for with the Telangana State Medical Council. As per current TSMC requirements, the delegate list — with each doctor's <strong>state medical council registration number</strong> and <strong>registered mobile number</strong> — must be submitted in advance for credit hours to be awarded. Registration will therefore ask for your council registration details; please keep them handy.</p>
-    <p class="fineprint">Under NMC guidelines, renewal of medical registration requires accumulated CME/CPD credit hours — applications for renewal in 2027 require 24 credit hours in Telangana. Credit points for SIC 2027 remain "applied" until confirmed in writing by TSMC.</p>
+    <p class="fineprint">Under NMC guidelines, renewal of medical registration requires accumulated CME/CPD credit hours — applications for renewal in 2027 require 24 credit hours in Telangana. Credit points for HSC 2027 remain "applied" until confirmed in writing by TSMC.</p>
   </div>
 </section>
 
@@ -150,7 +150,7 @@
     <h2 class="display">BE FIRST WHEN IT OPENS</h2>
     <p class="reg-copy">Join the priority list — you will receive the registration link and early-bird window before public announcement.</p>
     <form class="form-grid" action="https://formsubmit.co/precisionortho4488@gmail.com" method="POST" style="margin: 0 auto; text-align: left;">
-      <input type="hidden" name="_subject" value="SIC 2027 — Priority registration interest">
+      <input type="hidden" name="_subject" value="HSC 2027 — Priority registration interest">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_captcha" value="false">
       <div><label for="f-name">Full name</label><input id="f-name" name="name" required></div>
@@ -178,7 +178,7 @@
 <footer>
   <div class="container foot-grid">
     <div>
-      <p class="brand foot-brand"><span class="brand-mark">SIC</span> <span class="brand-year">2027</span></p>
+      <p class="brand foot-brand"><img class="brand-logo" src="assets/hsc-mark-reverse.svg" alt="" width="240" height="240" decoding="async"><span class="brand-mark">HSC</span><span class="brand-year">2027</span></p>
       <p class="mute">Hyderabad Sports Injuries Conclave · Inaugural Edition<br>Evidence · Innovation · Excellence in Sports Injuries</p>
     </div>
     <div>

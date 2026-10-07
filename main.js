@@ -1,4 +1,4 @@
-/* SIC 2027 — hero scroll flight.
+/* HSC 2027 — hero scroll flight.
    Layers: photo backdrop → frame-sequence canvas (scrubbed) → beat captions → poster overlay.
    The typographic beats run even before frames finish loading; the canvas joins when decoded. */
 

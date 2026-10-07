@@ -1,7 +1,7 @@
-# SIC 2027 — Launch Checklist
+# HSC 2027 — Launch Checklist
 
 Everything staged and what remains to flip each piece live.
-Live site: https://www.sportsinjuries.care · Repo: agileortho4488/SIC-SPORTS-INJURIES-CONCLACVE
+Live site: https://www.sportsinjuries.care · Repo: agileortho4488/HSC-SPORTS-INJURIES-CONCLACVE
 
 ## Staged pages (built, unlisted, `noindex`, draft-banner)
 
@@ -36,7 +36,7 @@ When live: the "registration opens" buttons across the site point to the Konfhub
 ## Still pending (business, not code)
 
 1. **Domain** — register sic2027.in (+ .com); attach in Vercel → Settings → Domains; put URL on next poster print.
-2. **Poster/site color alignment** — poster is lime, site is navy/gold. Pick one before the next print run.
+2. **Poster/site color alignment** — resolved Oct 2026: the HSC logo pack set ink `#0A1424` and orange `#FF5A1F` for the site, brochure, save-the-date and prospectus. Any older lime poster stock is obsolete.
 3. **Hero media** — current photo/video are AI placeholders with green lighting; replace with an Apollo shoot or regenerate when credits allow.
 4. **Faculty page** — build when 15–20 names confirmed (copy exhibitors.html structure).
 5. **Doctor bios** — each committee member should confirm their credentials paragraph on the site.

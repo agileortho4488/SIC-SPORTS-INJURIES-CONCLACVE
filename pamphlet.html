@@ -3,22 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
-<title>SIC 2027 — Save the Date (1080×1350 source)</title>
+<title>HSC 2027 — Save the Date (1080×1350 source)</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  @font-face{font-family:'Bebas Neue';src:url('fonts/bebas-neue.woff2') format('woff2');font-display:block}
-  @font-face{font-family:'Archivo';font-weight:400 600;src:url('fonts/archivo.woff2') format('woff2');font-display:block}
+  @font-face { font-family: 'Barlow Condensed'; font-weight: 400 700; src: url('fonts/barlow-condensed-700.woff2') format('woff2'); }
+  @font-face { font-family: 'Barlow'; font-weight: 400; src: url('fonts/barlow-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Barlow'; font-weight: 500; src: url('fonts/barlow-500.woff2') format('woff2'); }
+  @font-face { font-family: 'Barlow'; font-weight: 600; src: url('fonts/barlow-600.woff2') format('woff2'); }
   :root{
-    --navy:#14213D;      /* ground */
-    --deep:#0D1628;      /* ground, lower */
-    --gold:#FCA311;      /* the date, and nothing competes with it */
+    --navy:#0A1424;      /* ground */
+    --deep:#060E1A;      /* ground, lower */
+    --accent:#FF5A1F;      /* the date, and nothing competes with it */
     --paper:#FFFFFF;
     --mist:#C6CCD6;      /* 8.9:1 on navy */
     --mute:#AEB6C2;      /* 6.8:1 on navy */
   }
   html,body{background:#2a2a2a}
-  body{font-family:'Archivo',sans-serif;display:flex;justify-content:center;padding:24px}
-  .beb{font-family:'Bebas Neue',sans-serif;font-weight:400}
+  body{font-family:'Barlow',sans-serif;display:flex;justify-content:center;padding:24px}
+  .beb{font-family:'Barlow Condensed',sans-serif;font-weight:400}
 
   /* the artifact: one sheet, 4:5, sized for a phone screen and an email attachment */
   .sheet{
@@ -28,20 +30,22 @@
   }
 
   /* ── upper field: the athlete, the name ── */
-  .pic{height:648px;flex:none;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+  .pic{height:648px;flex:none;position:relative;overflow:hidden;border-bottom:3px solid var(--accent)}
   .pic img{width:100%;height:100%;object-fit:cover;object-position:52% 28%;filter:contrast(1.08) saturate(1.04)}
   .pic::after{content:'';position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(11,16,32,.72) 0%,rgba(11,16,32,.12) 38%,rgba(11,16,32,.62) 78%,rgba(13,22,40,.88) 100%)}
+  .pic img.logomark{position:absolute;left:64px;top:46px;width:104px;height:104px;object-fit:contain;
+    filter:drop-shadow(0 2px 14px rgba(0,0,0,.55));z-index:2}
   .name{position:absolute;left:64px;right:64px;bottom:52px;z-index:2}
   .name h1{font-size:98px;line-height:.86;letter-spacing:.005em;text-shadow:0 2px 24px rgba(0,0,0,.6)}
-  .name h1 .yr{color:var(--gold)}
+  .name h1 .yr{color:var(--accent)}
   .name p{margin-top:20px;font-size:21px;letter-spacing:.2em;text-transform:uppercase;color:#E6E9ED}
 
   /* ── lower field: the date, at the scale of the whole message ── */
   .when{flex:1;padding:44px 64px 0;display:flex;flex-direction:column}
   .d{display:flex;align-items:baseline;gap:22px}
-  .d .n{font-size:258px;line-height:.74;color:var(--gold);letter-spacing:-.01em}
-  .d .sep{width:26px;height:26px;border-radius:50%;background:var(--gold);margin-bottom:40px;flex:none}
+  .d .n{font-size:258px;line-height:.74;color:var(--accent);letter-spacing:-.01em}
+  .d .sep{width:26px;height:26px;border-radius:50%;background:var(--accent);margin-bottom:40px;flex:none}
   .mon{margin-top:10px;font-size:52px;letter-spacing:.14em}
   .where{margin-top:18px;font-size:23px;letter-spacing:.11em;text-transform:uppercase;color:var(--mist)}
 
@@ -63,17 +67,17 @@
 </head>
 <body>
 <!--
-  DIRECTION CONTRACT — SIC 2027 save-the-date
+  DIRECTION CONTRACT — HSC 2027 save-the-date
   THESIS: the date is the message; this sheet refuses the pamphlet habit of
   selling the programme (hall lists, topic bullets, sport thumbnails) on an
   artifact nobody reads closely.
-  OWN-WORLD: navy-to-deep ground; Bebas at poster scale over Archivo small
+  OWN-WORLD: ink-to-deep ground; the HSC mark reversed at the top edge; Barlow Condensed at poster scale over Barlow small
   print; one athlete photograph; no cards, no panels, nothing floating — two
-  fields split by one gold edge, the only gold that is not the date.
+  fields split by one accent edge, the only accent that is not the date.
   STORY: a surgeon scrolling WhatsApp recognises the conclave, registers
   30-31 January, and scrolls on knowing when it is.
   FIRST VIEWPORT: photograph and name fill the upper 48%; below the hard edge
-  "30.31" in gold at 258px anchors the lower field, month and weekday beneath,
+  "30.31" in the accent at 258px anchors the lower field, month and weekday beneath,
   QR and attributions at the bottom edge, 18-30px.
   FORM: two-field split banner; candidate 7 of the grounded list; seed 2a4a1b88.
   FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
@@ -82,6 +86,7 @@
 <div class="sheet">
   <div class="pic">
     <img src="assets/act-cricket.jpg" alt="A fast bowler at the point of release under floodlights.">
+    <img class="logomark" src="assets/hsc-mark-reverse.svg" alt="" width="240" height="240">
     <div class="name">
     <h1 class="beb">HYDERABAD<br>SPORTS INJURIES<br>CONCLAVE <span class="yr">2027</span></h1>
       <p>Inaugural edition &nbsp;·&nbsp; Return to Sport</p>

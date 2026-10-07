@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Register — SIC 2027</title>
-<link rel="preload" as="font" type="font/woff2" href="fonts/bebas-neue.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/archivo.woff2" crossorigin>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Cpath d='M8 44 56 32' stroke='%23FCA311' stroke-width='6'/%3E%3Ctext x='32' y='28' font-family='Arial Black,sans-serif' font-size='20' font-style='italic' font-weight='900' fill='%23FFFFFF' text-anchor='middle'%3ESIC%3C/text%3E%3C/svg%3E">
+<title>Register — HSC 2027</title>
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' rx='52' fill='%230A1424'/%3E%3Cg transform='translate(0,-8)'%3E%3Crect x='48' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Crect x='156' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M48 86C48 66 58 58 66 44C74 58 84 66 84 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M156 86C156 66 166 58 174 44C182 58 192 66 192 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M84 156C104 118 132 108 156 112L156 124C134 122 108 146 84 178Z' fill='%23FF5A1F'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .page-head { padding: calc(var(--nav-h) + clamp(3rem, 8vh, 5rem)) 0 clamp(2rem, 5vh, 3rem); border-bottom: 1px solid rgb(20 33 61 / 0.6); background: linear-gradient(180deg, rgb(27 59 89 / 0.35), transparent); }
+  .page-head { padding: calc(var(--nav-h) + clamp(3rem, 8vh, 5rem)) 0 clamp(2rem, 5vh, 3rem); border-bottom: 1px solid rgb(28 46 74 / 0.6); background: linear-gradient(180deg, rgb(27 59 89 / 0.35), transparent); }
   .page-head h1 { font-family: var(--display); text-transform: uppercase; font-weight: 400; line-height: 1.04; font-size: clamp(2.4rem, 5.5vw, 4rem); }
   .demo-strip { position: sticky; top: var(--nav-h); z-index: 40; background: var(--accent-2); color: #000; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; padding: 0.5rem 1rem; }
-  .reg-card { max-width: 44rem; margin: 0 auto; background: rgb(20 33 61 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 16px; padding: clamp(1.5rem, 4vw, 2.5rem); }
+  .reg-card { max-width: 44rem; margin: 0 auto; background: rgb(28 46 74 / 0.38); border: 1px solid rgb(255 255 255 / 0.09); border-radius: 16px; padding: clamp(1.5rem, 4vw, 2.5rem); }
   .fld { margin-bottom: 1.1rem; }
   .fld label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--mute); margin-bottom: 0.4rem; }
   .fld input, .fld select { width: 100%; padding: 0.85rem 1rem; background: rgb(0 0 0 / 0.4); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-family: var(--body); font-size: 1rem; }
@@ -31,7 +31,7 @@
 
 <header class="nav" id="top">
   <div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="SIC 2027 — home"><span class="brand-mark">SIC</span> <span class="brand-year">2027</span></a>
+    <a class="brand" href="index.html" aria-label="HSC 2027 — home"><img class="brand-logo" src="assets/hsc-mark-reverse.svg" alt="" width="240" height="240" decoding="async"><span class="brand-mark">HSC</span><span class="brand-year">2027</span></a>
     <nav class="nav-links" id="navMenu" aria-label="Sections">
       <a href="index.html#about">About</a>
       <a href="program.html">Program</a>
@@ -51,7 +51,7 @@
 <div class="page-head">
   <div class="container">
     <p class="label">DELEGATE REGISTRATION</p>
-    <h1>REGISTER FOR SIC 2027</h1>
+    <h1>REGISTER FOR HSC 2027</h1>
   </div>
 </div>
 
@@ -116,9 +116,9 @@
       if (d.test) { location.href = 'pass.html?id=' + d.id + '&sig=' + d.sig; return; }
       var rzp = new Razorpay({
         key: d.key_id, order_id: d.order_id, amount: d.amount, currency: 'INR',
-        name: 'SIC 2027', description: 'Delegate registration',
+        name: 'HSC 2027', description: 'Delegate registration',
         prefill: { name: payload.name, email: payload.email, contact: payload.mobile },
-        theme: { color: '#FCA311' },
+        theme: { color: '#FF5A1F' },
         handler: async function (resp) {
           var v = await fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: d.id, razorpay_order_id: resp.razorpay_order_id, razorpay_payment_id: resp.razorpay_payment_id, razorpay_signature: resp.razorpay_signature }) });

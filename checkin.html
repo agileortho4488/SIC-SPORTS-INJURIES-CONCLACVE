@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Check-In Scanner — SIC 2027 (staff)</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000000'/%3E%3Cpath d='M8 44 56 32' stroke='%23FCA311' stroke-width='6'/%3E%3Ctext x='32' y='28' font-family='Arial Black,sans-serif' font-size='20' font-style='italic' font-weight='900' fill='%23FFFFFF' text-anchor='middle'%3ESIC%3C/text%3E%3C/svg%3E">
+<title>Check-In Scanner — HSC 2027 (staff)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' rx='52' fill='%230A1424'/%3E%3Cg transform='translate(0,-8)'%3E%3Crect x='48' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Crect x='156' y='84' width='36' height='136' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M48 86C48 66 58 58 66 44C74 58 84 66 84 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M156 86C156 66 166 58 174 44C182 58 192 66 192 86Z' fill='%23FFFFFF'/%3E%3Cpath d='M84 156C104 118 132 108 156 112L156 124C134 122 108 146 84 178Z' fill='%23FF5A1F'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <style>
   body { max-width: 30rem; margin: 0 auto; padding: 1.5rem; }
   h1 { font-family: var(--display); font-size: 1.8rem; margin: 0.5rem 0 1rem; }
   #reader { border-radius: 14px; overflow: clip; border: 1px solid rgb(66 94 123 / 0.5); }
-  .fld input { width: 100%; padding: 0.85rem 1rem; background: rgb(20 33 61 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-size: 1.1rem; }
+  .fld input { width: 100%; padding: 0.85rem 1rem; background: rgb(28 46 74 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: var(--paper); font-size: 1.1rem; }
   .result { margin-top: 1rem; padding: 1.25rem; border-radius: 14px; text-align: center; display: none; }
   .result.ok { display: block; background: #103A1C; border: 1px solid #2FBF5F; }
   .result.dup { display: block; background: #3A2E10; border: 1px solid var(--accent); }
   .result.bad { display: block; background: #3A1010; border: 1px solid #FF6B6B; }
-  .result.pending { display: block; background: rgb(20 33 61 / 0.55); border: 1px solid rgb(66 94 123 / 0.6); color: var(--mute); }
+  .result.pending { display: block; background: rgb(28 46 74 / 0.55); border: 1px solid rgb(66 94 123 / 0.6); color: var(--mute); }
   .result b { font-family: var(--display); font-size: 1.6rem; display: block; }
   .count { color: var(--mute); font-size: 0.9rem; margin-top: 1rem; text-align: center; }
 
@@ -44,7 +44,7 @@
 </head>
 <body>
 
-<h1>SIC 2027 — CHECK-IN</h1>
+<h1>HSC 2027 — CHECK-IN</h1>
 <div class="fld"><input id="pin" type="password" placeholder="Staff PIN" inputmode="numeric"></div>
 <div id="reader"></div>
 <div class="result" id="result"></div>
@@ -89,7 +89,7 @@
     busy = true;
     var pin = document.getElementById('pin').value;
     var payload;
-    try { payload = JSON.parse(text); } catch { show('bad', 'NOT A SIC PASS'); busy = false; return; }
+    try { payload = JSON.parse(text); } catch { show('bad', 'NOT A HSC PASS'); busy = false; return; }
     // Venue wi-fi can take seconds. Without this the operator sees nothing
     // between the scan and the answer, and re-presents the same pass.
     show('pending', 'CHECKING…', '<div class="scanbar"></div>');

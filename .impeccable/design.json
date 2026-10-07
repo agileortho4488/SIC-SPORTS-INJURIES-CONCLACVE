@@ -1,56 +1,353 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-06T00:00:00Z",
-  "title": "Design System: SIC 2027 — Hyderabad Sports Injuries Conclave",
+  "title": "Design System: HSC 2027 — Hyderabad Sports Injuries Conclave",
   "extensions": {
     "colorMeta": {
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#000000", "tonalRamp": ["#000000", "#0A0A0A", "#141414", "#1F1F1F", "#2E2E2E", "#4D4D4D", "#808080", "#C4C4C4"] },
-      "navy": { "role": "neutral", "displayName": "Conclave Navy", "canonical": "#14213D", "aliases": ["--ink-2", "--navy"], "tonalRamp": ["#070B16", "#0D1628", "#14213D", "#1C2D52", "#2A4176", "#4765A6", "#7C97CC", "#C3D0E6"] },
-      "navy-deep": { "role": "neutral", "displayName": "Deep Navy", "canonical": "#0D1628", "tonalRamp": ["#05080F", "#0A1120", "#0D1628", "#142039", "#1E304F", "#34507C", "#6A84B2", "#B8C6DD"] },
-      "night": { "role": "neutral", "displayName": "Night", "canonical": "#1B3B59", "tonalRamp": ["#0A1823", "#102538", "#16314A", "#1B3B59", "#275578", "#3B7AA6", "#6EA7CD", "#B6D4E8"] },
-      "fjord": { "role": "neutral", "displayName": "Fjord", "canonical": "#425E7B", "purpose": "Hairline borders at 0.3-0.5 alpha; gradient partner.", "tonalRamp": ["#141D27", "#1F2C3B", "#2B3D52", "#374D66", "#425E7B", "#5E80A4", "#90AAC6", "#C8D6E4"] },
-      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#708090", "tonalRamp": ["#1B2026", "#2A313A", "#3A444F", "#4C5765", "#5E6B7B", "#708090", "#9BA6B2", "#CDD4DB"] },
-      "gold": { "role": "primary", "displayName": "Conclave Gold", "canonical": "#FCA311", "purpose": "The only accent. 10.8:1 on navy and on ink; ~2:1 on white, so never ink on a light ground.", "tonalRamp": ["#2E1C00", "#4E3000", "#714500", "#965C00", "#BC7400", "#E08C00", "#FCA311", "#FFD189"] },
-      "gold-display": { "role": "primary", "displayName": "Display Gold", "canonical": "#C77F08", "aliases": ["--accent-dim", "--gold-display"], "purpose": "Primary-pill hover on dark; display type at 24pt+ on white (3.25:1).", "tonalRamp": ["#241700", "#3E2800", "#5A3A00", "#784E00", "#976300", "#B67700", "#C77F08", "#E8B257"] },
-      "gold-ink": { "role": "primary", "displayName": "Ink-Safe Gold", "canonical": "#8A5200", "purpose": "Gold body text and small labels on white paper (6.4:1).", "tonalRamp": ["#1A0F00", "#2E1B00", "#452800", "#5D3600", "#744400", "#8A5200", "#C0761A", "#E8AF6B"] },
-      "saffron": { "role": "secondary", "displayName": "Saffron", "canonical": "#FDD400", "purpose": "Provisional-state signal only: flight captions, draft strips, draft marks. Not a second accent.", "tonalRamp": ["#302800", "#514300", "#755F00", "#9A7E00", "#BF9C00", "#E3BA00", "#FDD400", "#FFEB85"] },
-      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#FFFFFF", "tonalRamp": ["#262626", "#404040", "#595959", "#737373", "#A6A6A6", "#D9D9D9", "#F2F2F2", "#FFFFFF"] },
-      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#C6CCD6", "purpose": "Secondary text on the poster's navy ground (8.9:1).", "tonalRamp": ["#1E2229", "#2F353F", "#434B57", "#5A636F", "#78818D", "#9AA3AF", "#C6CCD6", "#EBEEF2"] },
-      "mute": { "role": "neutral", "displayName": "Ash", "canonical": "#BDC3C7", "aliases": ["--mute"], "purpose": "Secondary text on dark grounds site-wide (9.3:1 on navy).", "tonalRamp": ["#1D2022", "#2D3133", "#414648", "#575D60", "#737A7D", "#949B9F", "#BDC3C7", "#E6E9EB"] },
-      "silver": { "role": "neutral", "displayName": "Silver", "canonical": "#E5E5E5", "purpose": "Hairline rules on light print pages.", "tonalRamp": ["#242424", "#383838", "#4F4F4F", "#696969", "#8A8A8A", "#B0B0B0", "#E5E5E5", "#F7F7F7"] }
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0A1424",
+        "tonalRamp": [
+          "#0A1424",
+          "#0A0A0A",
+          "#141414",
+          "#1F1F1F",
+          "#2E2E2E",
+          "#4D4D4D",
+          "#808080",
+          "#C4C4C4"
+        ]
+      },
+      "navy": {
+        "role": "neutral",
+        "displayName": "Conclave Navy",
+        "canonical": "#1C2E4A",
+        "aliases": [
+          "--ink-2",
+          "--navy"
+        ],
+        "tonalRamp": [
+          "#070B16",
+          "#060E1A",
+          "#1C2E4A",
+          "#1C2D52",
+          "#2A4176",
+          "#4765A6",
+          "#7C97CC",
+          "#C3D0E6"
+        ]
+      },
+      "navy-deep": {
+        "role": "neutral",
+        "displayName": "Deep Navy",
+        "canonical": "#060E1A",
+        "tonalRamp": [
+          "#05080F",
+          "#0A1120",
+          "#060E1A",
+          "#142039",
+          "#1E304F",
+          "#34507C",
+          "#6A84B2",
+          "#B8C6DD"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#1B3B59",
+        "tonalRamp": [
+          "#0A1823",
+          "#102538",
+          "#16314A",
+          "#1B3B59",
+          "#275578",
+          "#3B7AA6",
+          "#6EA7CD",
+          "#B6D4E8"
+        ]
+      },
+      "fjord": {
+        "role": "neutral",
+        "displayName": "Fjord",
+        "canonical": "#425E7B",
+        "purpose": "Hairline borders at 0.3-0.5 alpha; gradient partner.",
+        "tonalRamp": [
+          "#141D27",
+          "#1F2C3B",
+          "#2B3D52",
+          "#374D66",
+          "#425E7B",
+          "#5E80A4",
+          "#90AAC6",
+          "#C8D6E4"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#708090",
+        "tonalRamp": [
+          "#1B2026",
+          "#2A313A",
+          "#3A444F",
+          "#4C5765",
+          "#5E6B7B",
+          "#708090",
+          "#9BA6B2",
+          "#CDD4DB"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Conclave Orange",
+        "canonical": "#FF5A1F",
+        "purpose": "The only accent, from the HSC mark. 5.9:1 on the ink; 3.1:1 on white, so never ink on a light ground.",
+        "tonalRamp": [
+          "#290B00",
+          "#471300",
+          "#6B1C00",
+          "#942700",
+          "#C23300",
+          "#F03F00",
+          "#FF5A1F",
+          "#FFB499"
+        ]
+      },
+      "accent-display": {
+        "role": "primary",
+        "displayName": "Display Orange",
+        "canonical": "#D9480F",
+        "aliases": [
+          "--accent-dim",
+          "--accent-display"
+        ],
+        "purpose": "Primary-pill hover on dark; display type at 24pt+ on white (4.3:1).",
+        "tonalRamp": [
+          "#260D03",
+          "#431605",
+          "#642107",
+          "#8A2E0A",
+          "#B53C0D",
+          "#E04A0F",
+          "#D9480F",
+          "#F8B9A0"
+        ]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Ink-Safe Orange",
+        "canonical": "#A8350D",
+        "purpose": "Accent body text and small labels on white paper (6.6:1).",
+        "tonalRamp": [
+          "#260C03",
+          "#421505",
+          "#631F08",
+          "#892B0B",
+          "#B4390E",
+          "#DE4611",
+          "#A8350D",
+          "#F8B7A0"
+        ]
+      },
+      "accent-2": {
+        "role": "secondary",
+        "displayName": "Signal Orange",
+        "canonical": "#FF8A4C",
+        "purpose": "Provisional-state signal only: flight captions, draft strips, draft marks. Not a second accent.",
+        "tonalRamp": [
+          "#290E00",
+          "#471900",
+          "#6B2500",
+          "#943300",
+          "#C24300",
+          "#F05300",
+          "#FF8A4C",
+          "#FFBC99"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#737373",
+          "#A6A6A6",
+          "#D9D9D9",
+          "#F2F2F2",
+          "#FFFFFF"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#C6CCD6",
+        "purpose": "Secondary text on the poster's navy ground (8.9:1).",
+        "tonalRamp": [
+          "#1E2229",
+          "#2F353F",
+          "#434B57",
+          "#5A636F",
+          "#78818D",
+          "#9AA3AF",
+          "#C6CCD6",
+          "#EBEEF2"
+        ]
+      },
+      "mute": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "#BDC3C7",
+        "aliases": [
+          "--mute"
+        ],
+        "purpose": "Secondary text on dark grounds site-wide (9.3:1 on navy).",
+        "tonalRamp": [
+          "#1D2022",
+          "#2D3133",
+          "#414648",
+          "#575D60",
+          "#737A7D",
+          "#949B9F",
+          "#BDC3C7",
+          "#E6E9EB"
+        ]
+      },
+      "silver": {
+        "role": "neutral",
+        "displayName": "Silver",
+        "canonical": "#E5E5E5",
+        "purpose": "Hairline rules on light print pages.",
+        "tonalRamp": [
+          "#242424",
+          "#383838",
+          "#4F4F4F",
+          "#696969",
+          "#8A8A8A",
+          "#B0B0B0",
+          "#E5E5E5",
+          "#F7F7F7"
+        ]
+      }
     },
     "typographyMeta": {
-      "poster": { "displayName": "Poster", "purpose": "Save-the-date scale only — 258px date numerals, 98px conclave name. Tracking goes to zero or negative." },
-      "display": { "displayName": "Display", "purpose": "Section headings across the site." },
-      "headline": { "displayName": "Headline", "purpose": "Page and hero H1, one per page." },
-      "title": { "displayName": "Title", "purpose": "Mission quotes and pull statements set in Bebas as a block." },
-      "body": { "displayName": "Body", "purpose": "All running prose. Measure held by the 76rem container and 52-62rem max-widths." },
-      "label": { "displayName": "Label", "purpose": "Table headers, form labels, meta rows, breadcrumbs. Gold on dark, ink-safe gold on light." }
+      "poster": {
+        "displayName": "Poster",
+        "purpose": "Save-the-date scale only — 258px date numerals, 98px conclave name. Tracking goes to zero or negative."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Section headings across the site."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page and hero H1, one per page."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Mission quotes and pull statements set in Barlow Condensed as a block."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running prose. Measure held by the 76rem container and 52-62rem max-widths."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table headers, form labels, meta rows, breadcrumbs. The accent on dark, ink-safe orange on light."
+      }
     },
     "shadows": [
-      { "name": "gold-hover-glow", "value": "0 8px 24px rgb(252 163 17 / 0.25)", "purpose": "Primary pill on hover, fine pointers only." },
-      { "name": "dark-hover-lift", "value": "0 8px 24px rgb(0 0 0 / 0.35)", "purpose": "Inverse pill on hover." },
-      { "name": "band-lift", "value": "0 8px 32px rgb(0 0 0 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.06)", "purpose": "The countdown slab; the inset top highlight is what makes it read as a slab." },
-      { "name": "band-lift-focus", "value": "0 16px 48px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(252 163 17 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08)", "purpose": "Countdown band at its emphasised breakpoint." },
-      { "name": "floating-panel", "value": "0 24px 48px rgb(0 0 0 / 0.5)", "purpose": "Mobile nav sheet — the one element genuinely above the page." }
+      {
+        "name": "accent-hover-glow",
+        "value": "0 8px 24px rgb(255 90 31 / 0.25)",
+        "purpose": "Primary pill on hover, fine pointers only."
+      },
+      {
+        "name": "dark-hover-lift",
+        "value": "0 8px 24px rgb(0 0 0 / 0.35)",
+        "purpose": "Inverse pill on hover."
+      },
+      {
+        "name": "band-lift",
+        "value": "0 8px 32px rgb(0 0 0 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.06)",
+        "purpose": "The countdown slab; the inset top highlight is what makes it read as a slab."
+      },
+      {
+        "name": "band-lift-focus",
+        "value": "0 16px 48px rgb(0 0 0 / 0.5), 0 0 0 1px rgb(255 90 31 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08)",
+        "purpose": "Countdown band at its emphasised breakpoint."
+      },
+      {
+        "name": "floating-panel",
+        "value": "0 24px 48px rgb(0 0 0 / 0.5)",
+        "purpose": "Mobile nav sheet — the one element genuinely above the page."
+      }
     ],
     "motion": [
-      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Default easing for state changes and entrances; the built-in easings read as unintentional." },
-      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Symmetric moves." },
-      { "name": "press", "value": "120ms", "purpose": "Press feedback on anything tappable (scale 0.97-0.98)." },
-      { "name": "swap", "value": "200ms", "purpose": "Colour and border state change." },
-      { "name": "slash-angle", "value": "-6deg", "purpose": "The gold slash motif's rotation on the hero; print uses skewY(-2deg)." },
-      { "name": "reduced-motion", "value": "transition-property: opacity, color, background-color, border-color, box-shadow, outline-color; duration 150ms", "purpose": "Reduced motion means gentler, not zero — movement is dropped, fades are kept." }
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Default easing for state changes and entrances; the built-in easings read as unintentional."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Symmetric moves."
+      },
+      {
+        "name": "press",
+        "value": "120ms",
+        "purpose": "Press feedback on anything tappable (scale 0.97-0.98)."
+      },
+      {
+        "name": "swap",
+        "value": "200ms",
+        "purpose": "Colour and border state change."
+      },
+      {
+        "name": "slash-angle",
+        "value": "-6deg",
+        "purpose": "The accent slash motif's rotation on the hero; print uses skewY(-2deg)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition-property: opacity, color, background-color, border-color, box-shadow, outline-color; duration 150ms",
+        "purpose": "Reduced motion means gentler, not zero — movement is dropped, fades are kept."
+      }
     ],
     "breakpoints": [
-      { "name": "lap", "value": "60rem" },
-      { "name": "phone", "value": "44rem" },
-      { "name": "short", "value": "800px (max-height)" },
-      { "name": "fine-pointer", "value": "(hover: hover) and (pointer: fine)" }
+      {
+        "name": "lap",
+        "value": "60rem"
+      },
+      {
+        "name": "phone",
+        "value": "44rem"
+      },
+      {
+        "name": "short",
+        "value": "800px (max-height)"
+      },
+      {
+        "name": "fine-pointer",
+        "value": "(hover: hover) and (pointer: fine)"
+      }
     ],
     "canvases": [
-      { "name": "save-the-date", "value": "1080x1350px (4:5)", "purpose": "WhatsApp and email circulation; judged first at ~240px wide." },
-      { "name": "brochure", "value": "A4 portrait, 16mm margins", "purpose": "Print-to-PDF scientific brochure." }
+      {
+        "name": "save-the-date",
+        "value": "1080x1350px (4:5)",
+        "purpose": "WhatsApp and email circulation; judged first at ~240px wide."
+      },
+      {
+        "name": "brochure",
+        "value": "A4 portrait, 16mm margins",
+        "purpose": "Print-to-PDF scientific brochure."
+      }
     ]
   },
   "components": [
@@ -58,110 +355,146 @@
       "name": "Primary Pill",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The one call to action; gold fill, black text, fully rounded.",
+      "description": "The one call to action; accent fill, ink text, fully rounded.",
       "html": "<a class=\"ds-pill\" href=\"#\">JOIN THE LIST</a>",
-      "css": ".ds-pill { display: inline-block; padding: 0.7em 1.7em; border-radius: 99px; background: #FCA311; color: #000; font-family: 'Archivo', system-ui, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-decoration: none; transition: translate 200ms cubic-bezier(0.23,1,0.32,1), scale 120ms cubic-bezier(0.23,1,0.32,1), background 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms cubic-bezier(0.23,1,0.32,1); } .ds-pill:hover { background: #C77F08; box-shadow: 0 8px 24px rgb(252 163 17 / 0.25); } .ds-pill:active { scale: 0.97; } .ds-pill:focus-visible { outline: 2px solid #FCA311; outline-offset: 3px; }"
+      "css": ".ds-pill { display: inline-block; padding: 0.7em 1.7em; border-radius: 99px; background: #FF5A1F; color: #0A1424; font-family: 'Barlow', system-ui, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-decoration: none; transition: translate 200ms cubic-bezier(0.23,1,0.32,1), scale 120ms cubic-bezier(0.23,1,0.32,1), background 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms cubic-bezier(0.23,1,0.32,1); } .ds-pill:hover { background: #D9480F; box-shadow: 0 8px 24px rgb(255 90 31 / 0.25); } .ds-pill:active { scale: 0.97; } .ds-pill:focus-visible { outline: 2px solid #FF5A1F; outline-offset: 3px; }"
     },
     {
       "name": "Inverse Pill",
       "kind": "button",
       "refersTo": "button-inverse",
-      "description": "The primary action when it sits on the gold register band.",
+      "description": "The primary action when it sits on the accent register band.",
       "html": "<a class=\"ds-pill-inverse\" href=\"#\">REGISTER INTEREST</a>",
-      "css": ".ds-pill-inverse { display: inline-block; padding: 0.7em 1.7em; border-radius: 99px; background: #000; color: #FFF; font-family: 'Archivo', system-ui, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-decoration: none; transition: scale 120ms cubic-bezier(0.23,1,0.32,1), background 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms cubic-bezier(0.23,1,0.32,1); } .ds-pill-inverse:hover { background: #14213D; box-shadow: 0 8px 24px rgb(0 0 0 / 0.35); } .ds-pill-inverse:active { scale: 0.97; }"
+      "css": ".ds-pill-inverse { display: inline-block; padding: 0.7em 1.7em; border-radius: 99px; background: #0A1424; color: #FFF; font-family: 'Barlow', system-ui, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-decoration: none; transition: scale 120ms cubic-bezier(0.23,1,0.32,1), background 200ms cubic-bezier(0.23,1,0.32,1), box-shadow 200ms cubic-bezier(0.23,1,0.32,1); } .ds-pill-inverse:hover { background: #1C2E4A; box-shadow: 0 8px 24px rgb(0 0 0 / 0.35); } .ds-pill-inverse:active { scale: 0.97; }"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "The secondary action: slate hairline, no fill, gold on hover.",
+      "description": "The secondary action: slate hairline, no fill, accent on hover.",
       "html": "<a class=\"ds-ghost\" href=\"#\">VIEW PROGRAMME</a>",
-      "css": ".ds-ghost { display: inline-block; padding: 0.7em 1.7em; border-radius: 99px; border: 1px solid #708090; color: #FFF; font-family: 'Archivo', system-ui, sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 0.14em; text-decoration: none; transition: border-color 200ms cubic-bezier(0.23,1,0.32,1), background 200ms cubic-bezier(0.23,1,0.32,1), scale 120ms cubic-bezier(0.23,1,0.32,1); } .ds-ghost:hover { border-color: #FCA311; background: rgb(20 33 61 / 0.5); } .ds-ghost:active { scale: 0.97; }"
+      "css": ".ds-ghost { display: inline-block; padding: 0.7em 1.7em; border-radius: 99px; border: 1px solid #708090; color: #FFF; font-family: 'Barlow', system-ui, sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 0.14em; text-decoration: none; transition: border-color 200ms cubic-bezier(0.23,1,0.32,1), background 200ms cubic-bezier(0.23,1,0.32,1), scale 120ms cubic-bezier(0.23,1,0.32,1); } .ds-ghost:hover { border-color: #FF5A1F; background: rgb(28 46 74 / 0.5); } .ds-ghost:active { scale: 0.97; }"
     },
     {
       "name": "Content Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "The site's raised surface: navy fill, fjord hairline, 14px, lifts 3px to gold on hover.",
+      "description": "The site's raised surface: #1C2E4A fill, fjord hairline, 14px, lifts 3px to the accent on hover.",
       "html": "<div class=\"ds-card\"><b>TWO HALLS</b><i>Surgery and rehabilitation, running in parallel</i></div>",
-      "css": ".ds-card { background: #14213D; border: 1px solid rgb(66 94 123 / 0.35); border-radius: 14px; padding: 1.5rem 1.75rem; color: #FFF; font-family: 'Archivo', system-ui, sans-serif; transition: border-color 250ms cubic-bezier(0.23,1,0.32,1), translate 250ms cubic-bezier(0.23,1,0.32,1); } .ds-card b { display: block; font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 2.2rem; color: #FCA311; margin-bottom: 0.3rem; } .ds-card i { font-style: normal; color: #BDC3C7; font-size: 0.92rem; } .ds-card:hover { border-color: #FCA311; translate: 0 -3px; }"
+      "css": ".ds-card { background: #1C2E4A; border: 1px solid rgb(66 94 123 / 0.35); border-radius: 14px; padding: 1.5rem 1.75rem; color: #FFF; font-family: 'Barlow', system-ui, sans-serif; transition: border-color 250ms cubic-bezier(0.23,1,0.32,1), translate 250ms cubic-bezier(0.23,1,0.32,1); } .ds-card b { display: block; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 2.2rem; color: #FF5A1F; margin-bottom: 0.3rem; } .ds-card i { font-style: normal; color: #BDC3C7; font-size: 0.92rem; } .ds-card:hover { border-color: #FF5A1F; translate: 0 -3px; }"
     },
     {
       "name": "Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Non-interactive audience or topic label; hairline pill that warms to gold on hover.",
+      "description": "Non-interactive audience or topic label; hairline pill that warms to the accent on hover.",
       "html": "<span class=\"ds-chip\">Physiotherapists</span>",
-      "css": ".ds-chip { display: inline-block; padding: 0.6em 1.4em; border: 1px solid #708090; border-radius: 99px; color: #FFF; font-family: 'Archivo', system-ui, sans-serif; font-size: 14px; font-weight: 500; transition: border-color 200ms cubic-bezier(0.23,1,0.32,1), color 200ms cubic-bezier(0.23,1,0.32,1); } .ds-chip:hover { border-color: #FCA311; color: #FCA311; }"
+      "css": ".ds-chip { display: inline-block; padding: 0.6em 1.4em; border: 1px solid #708090; border-radius: 99px; color: #FFF; font-family: 'Barlow', system-ui, sans-serif; font-size: 14px; font-weight: 500; transition: border-color 200ms cubic-bezier(0.23,1,0.32,1), color 200ms cubic-bezier(0.23,1,0.32,1); } .ds-chip:hover { border-color: #FF5A1F; color: #FF5A1F; }"
     },
     {
       "name": "Field",
       "kind": "input",
       "refersTo": "input",
-      "description": "Form input with its label; focus is always the gold ring, never a browser default.",
+      "description": "Form input with its label; focus is always the accent ring, never a browser default.",
       "html": "<label class=\"ds-field-label\" for=\"ds-f1\">Full name</label><input class=\"ds-field\" id=\"ds-f1\" type=\"text\" placeholder=\"Dr A. Rao\">",
-      "css": ".ds-field-label { display: block; font-family: 'Archivo', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: #BDC3C7; margin-bottom: 0.4rem; } .ds-field { width: 100%; padding: 0.8rem 1rem; background: rgb(20 33 61 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: #FFF; font-family: 'Archivo', system-ui, sans-serif; font-size: 0.95rem; } .ds-field::placeholder { color: #708090; } .ds-field:focus { outline: 2px solid #FCA311; border-color: #FCA311; }"
+      "css": ".ds-field-label { display: block; font-family: 'Barlow', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: #BDC3C7; margin-bottom: 0.4rem; } .ds-field { width: 100%; padding: 0.8rem 1rem; background: rgb(28 46 74 / 0.5); border: 1px solid rgb(66 94 123 / 0.5); border-radius: 10px; color: #FFF; font-family: 'Barlow', system-ui, sans-serif; font-size: 0.95rem; } .ds-field::placeholder { color: #708090; } .ds-field:focus { outline: 2px solid #FF5A1F; border-color: #FF5A1F; }"
     },
     {
       "name": "Navigation Bar",
       "kind": "nav",
       "refersTo": null,
-      "description": "Fixed 4.25rem bar: blurred near-black, gold year in the lockup, gold underline on the active link.",
-      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-brand-mark\">SIC</span> <span class=\"ds-brand-year\">2027</span></a><nav class=\"ds-nav-links\"><a href=\"#\" class=\"ds-active\">Program</a><a href=\"#\">Abstracts</a><a href=\"#\">Registration</a></nav></header>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; height: 4.25rem; padding-inline: 1.5rem; background: rgb(0 0 0 / 0.72); backdrop-filter: blur(14px); border-bottom: 1px solid rgb(20 33 61 / 0.8); } .ds-brand { display: inline-flex; align-items: baseline; gap: 0.3rem; text-decoration: none; font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; font-size: 1.5rem; } .ds-brand-mark { color: #FFF; letter-spacing: 0.02em; } .ds-brand-year { color: #FCA311; } .ds-nav-links { display: flex; gap: 2.25rem; } .ds-nav-links a { color: #BDC3C7; text-decoration: none; font-family: 'Archivo', system-ui, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding: 0.4rem 0; border-bottom: 2px solid transparent; transition: color 200ms cubic-bezier(0.23,1,0.32,1), border-color 200ms cubic-bezier(0.23,1,0.32,1); } .ds-nav-links a:hover, .ds-nav-links a.ds-active { color: #FFF; border-color: #FCA311; }"
+      "description": "Fixed 4.25rem bar: blurred ink, the HSC mark and an accent 2027 chip in the lockup, accent underline on the active link.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-brand-mark\">HSC</span> <span class=\"ds-brand-year\">2027</span></a><nav class=\"ds-nav-links\"><a href=\"#\" class=\"ds-active\">Program</a><a href=\"#\">Abstracts</a><a href=\"#\">Registration</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; height: 4.25rem; padding-inline: 1.5rem; background: rgb(10 20 36 / 0.72); backdrop-filter: blur(14px); border-bottom: 1px solid rgb(28 46 74 / 0.8); } .ds-brand { display: inline-flex; align-items: baseline; gap: 0.3rem; text-decoration: none; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 1.5rem; } .ds-brand-mark { color: #FFF; letter-spacing: 0.02em; } .ds-brand-year { color: #FF5A1F; } .ds-nav-links { display: flex; gap: 2.25rem; } .ds-nav-links a { color: #BDC3C7; text-decoration: none; font-family: 'Barlow', system-ui, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding: 0.4rem 0; border-bottom: 2px solid transparent; transition: color 200ms cubic-bezier(0.23,1,0.32,1), border-color 200ms cubic-bezier(0.23,1,0.32,1); } .ds-nav-links a:hover, .ds-nav-links a.ds-active { color: #FFF; border-color: #FF5A1F; }"
     },
     {
       "name": "Numbered Section Header",
       "kind": "custom",
       "refersTo": null,
-      "description": "The site's section opener: a stroked Bebas numeral beside a gold kicker and a display heading.",
+      "description": "The site's section opener: a stroked Barlow Condensed numeral beside an accent kicker and a display heading.",
       "html": "<header class=\"ds-sec-head\"><span class=\"ds-sec-num\" aria-hidden=\"true\">01</span><div><p class=\"ds-sec-kicker\">CATEGORIES &amp; FEES</p><h2 class=\"ds-sec-title\">DELEGATE CATEGORIES</h2></div></header>",
-      "css": ".ds-sec-head { display: flex; align-items: flex-start; gap: 1.5rem; } .ds-sec-num { font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; font-size: 4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px #FCA311; flex: none; translate: 0 0.2rem; } .ds-sec-kicker { font-family: 'Archivo', system-ui, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; color: #FCA311; font-weight: 600; margin-bottom: 0.6rem; } .ds-sec-title { font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.04; font-size: 3.2rem; color: #FFF; }"
+      "css": ".ds-sec-head { display: flex; align-items: flex-start; gap: 1.5rem; } .ds-sec-num { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px #FF5A1F; flex: none; translate: 0 0.2rem; } .ds-sec-kicker { font-family: 'Barlow', system-ui, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; color: #FF5A1F; font-weight: 600; margin-bottom: 0.6rem; } .ds-sec-title { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.04; font-size: 3.2rem; color: #FFF; }"
     },
     {
       "name": "Save-the-Date Date Block",
       "kind": "custom",
       "refersTo": "poster-sheet",
-      "description": "The signature of the circulating sheet: poster-scale gold numerals, a gold dot separator, month and weekday beneath. No panel, no radius.",
+      "description": "The signature of the circulating sheet: poster-scale accent numerals, an accent dot separator, month and weekday beneath. No panel, no radius.",
       "html": "<div class=\"ds-when\"><div class=\"ds-d\"><span class=\"ds-n\">30</span><span class=\"ds-sep\"></span><span class=\"ds-n\">31</span></div><div class=\"ds-mon\">JANUARY 2027</div><div class=\"ds-where\">Saturday &amp; Sunday &nbsp;&middot;&nbsp; Hyderabad</div></div>",
-      "css": ".ds-when { background: linear-gradient(180deg, #14213D 0%, #0D1628 100%); padding: 44px 64px; border-top: 3px solid #FCA311; color: #FFF; font-family: 'Archivo', system-ui, sans-serif; } .ds-d { display: flex; align-items: baseline; gap: 22px; } .ds-n { font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 160px; line-height: 0.74; color: #FCA311; letter-spacing: -0.01em; } .ds-sep { width: 18px; height: 18px; border-radius: 50%; background: #FCA311; margin-bottom: 26px; flex: none; } .ds-mon { font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; margin-top: 10px; font-size: 34px; letter-spacing: 0.14em; } .ds-where { margin-top: 14px; font-size: 15px; letter-spacing: 0.11em; text-transform: uppercase; color: #C6CCD6; }"
+      "css": ".ds-when { background: linear-gradient(180deg, #1C2E4A 0%, #060E1A 100%); padding: 44px 64px; border-top: 3px solid #FF5A1F; color: #FFF; font-family: 'Barlow', system-ui, sans-serif; } .ds-d { display: flex; align-items: baseline; gap: 22px; } .ds-n { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 160px; line-height: 0.74; color: #FF5A1F; letter-spacing: -0.01em; } .ds-sep { width: 18px; height: 18px; border-radius: 50%; background: #FF5A1F; margin-bottom: 26px; flex: none; } .ds-mon { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; margin-top: 10px; font-size: 34px; letter-spacing: 0.14em; } .ds-where { margin-top: 14px; font-size: 15px; letter-spacing: 0.11em; text-transform: uppercase; color: #C6CCD6; }"
     }
   ],
   "narrative": {
     "northStar": "Floodlight on a Night Field",
-    "overview": "Everything in this identity happens on a dark ground, and one warm light picks out the thing that matters. The ground is navy, nearly black at the top of the stack and never neutral grey; the light is a single gold. Nothing else glows. That is the whole system, and every surface — the website, the printed brochure, the badge, the save-the-date sheet — is a different distance from the same floodlit field.\n\nThe density is editorial rather than brochure-like: large uppercase Bebas Neue carrying names, numbers and dates, and Archivo doing all the actual talking underneath it in small, widely-tracked lines. Surfaces are built from hairline borders over tinted navy, not from drop shadows; depth comes from tone and from a 1px edge, and movement is short and firm (120ms press, 200ms state change) rather than bouncy. Photography is real — athletes, not illustration. The organiser has rejected AI-generated decorative artwork for this project and that rejection is binding on every future surface.\n\nThe one tension the system carries deliberately: the website leans dense (numbered sections, stat cards, chips, a countdown band), while circulating material leans austere. The 2027 save-the-date resolves that tension by stripping the panel vocabulary out entirely. Both are the same world; they differ in how much of it is spoken aloud.",
+    "overview": "Everything in this identity happens on a dark ground, and one warm light picks out the thing that matters. The ground is the brand ink, never neutral grey; the light is a single orange. Nothing else glows. That is the whole system, and every surface — the website, the printed brochure, the badge, the save-the-date sheet — is a different distance from the same floodlit field.\n\nThe density is editorial rather than brochure-like: large uppercase Barlow Condensed carrying names, numbers and dates, and Barlow doing all the actual talking underneath it in small, widely-tracked lines. Surfaces are built from hairline borders over tinted navy, not from drop shadows; depth comes from tone and from a 1px edge, and movement is short and firm (120ms press, 200ms state change) rather than bouncy. Photography is real — athletes, not illustration. The organiser has rejected AI-generated decorative artwork for this project and that rejection is binding on every future surface.\n\nThe one tension the system carries deliberately: the website leans dense (numbered sections, stat cards, chips, a countdown band), while circulating material leans austere. The 2027 save-the-date resolves that tension by stripping the panel vocabulary out entirely. Both are the same world; they differ in how much of it is spoken aloud.",
     "keyCharacteristics": [
-      "Dark ground always; light grounds exist only in print and switch the gold.",
+      "Dark ground always; light grounds exist only in print and switch to the ink-safe accent.",
       "Exactly one accent, used sparingly enough that it still reads as a signal.",
-      "Bebas shouts, Archivo speaks; neither does the other's job.",
+      "Barlow Condensed shouts, Barlow speaks; neither does the other's job.",
       "Hairline borders on tinted navy instead of elevation.",
       "Real photography, never generated decoration.",
       "Built to be inherited: swap the year, the system still holds."
     ],
     "rules": [
-      { "name": "The One Light Rule", "body": "There is one accent on any surface, and it marks the single thing the reader must leave with. On the save-the-date that is the date — gold appears on the numerals, on the year in the title, and on the 3px edge that splits the sheet, and nowhere else.", "section": "colors" },
-      { "name": "The Ink-Safe Gold Rule", "body": "#FCA311 on white measures about 2:1 and is never used for text on a light ground. Small text and labels on white take #8A5200; display type at 24pt or larger may take #C77F08. Full gold on white is permitted only as a fill (a rule, a band, a border), never as ink.", "section": "colors" },
-      { "name": "The Saffron Is A Warning Rule", "body": "#FDD400 means provisional. If a surface is final, it has no saffron on it.", "section": "colors" },
-      { "name": "The Two-Voice Rule", "body": "Bebas carries names, numbers, dates and single-line shouts. Archivo carries anything that is a sentence. A paragraph never goes in Bebas, and a date never goes in Archivo.", "section": "typography" },
-      { "name": "The Inverse Tracking Rule", "body": "Tracking moves opposite to size. Small uppercase Archivo takes 0.14-0.24em; Bebas at display scale takes 0.02-0.03em; Bebas at poster scale takes 0 to -0.01em. Uniform tracking across the ramp is a defect.", "section": "typography" },
-      { "name": "The Thumbnail Test", "body": "Anything that circulates is judged at roughly 240px wide in a chat list before it is judged at full size. If the name and the date are not readable there, the composition is wrong — not the font size.", "section": "layout" },
-      { "name": "The Border-Not-Shadow Rule", "body": "To raise a surface, change its tone and give it a 1px fjord hairline. Reach for a shadow only when the element is responding to the pointer or is literally overlaying the page.", "section": "elevation" },
-      { "name": "The Four Radii Rule", "body": "10px controls, 14px cards, 99px pills, 50% circles. A new radius value is a design decision, not a tweak.", "section": "shapes" },
-      { "name": "The Edge-Not-Box Departure", "body": "The save-the-date drops the card and panel vocabulary entirely: zero radius, no borders, no shadows, nothing floating — two fields split by a single 3px gold edge. This is a deliberate departure for circulating artefacts, where panel chrome reads as clutter at thumbnail size. It does not retire the site's panel language, and it does not license removing borders from site cards.", "section": "shapes" }
+      {
+        "name": "The One Light Rule",
+        "body": "There is one accent on any surface, and it marks the single thing the reader must leave with. On the save-the-date that is the date — the accent appears on the numerals, on the year in the title, and on the 3px edge that splits the sheet, and nowhere else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-Safe Accent Rule",
+        "body": "#FF5A1F on white measures 3.1:1 and is never used for running text on a light ground. Small text and labels on white take #A8350D (6.6:1); display type at 24pt or larger may take #D9480F (4.3:1). The full accent on white is permitted only as a fill (a rule, a band, a border), never as ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Signal Orange Is A Warning Rule",
+        "body": "#FF8A4C means provisional. If a surface is final, it has none on it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Barlow Condensed carries names, numbers, dates and single-line shouts. Barlow carries anything that is a sentence. A paragraph never goes in the condensed face, and a date never goes in the text face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Inverse Tracking Rule",
+        "body": "Tracking moves opposite to size. Small uppercase Barlow takes 0.14-0.24em; Barlow Condensed at display scale takes 0.02-0.03em; at poster scale it takes 0 to -0.01em. Uniform tracking across the ramp is a defect.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thumbnail Test",
+        "body": "Anything that circulates is judged at roughly 240px wide in a chat list before it is judged at full size. If the name and the date are not readable there, the composition is wrong — not the font size.",
+        "section": "layout"
+      },
+      {
+        "name": "The Border-Not-Shadow Rule",
+        "body": "To raise a surface, change its tone and give it a 1px fjord hairline. Reach for a shadow only when the element is responding to the pointer or is literally overlaying the page.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Four Radii Rule",
+        "body": "10px controls, 14px cards, 99px pills, 50% circles. A new radius value is a design decision, not a tweak.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Edge-Not-Box Departure",
+        "body": "The save-the-date drops the card and panel vocabulary entirely: zero radius, no borders, no shadows, nothing floating — two fields split by a single 3px accent edge. This is a deliberate departure for circulating artefacts, where panel chrome reads as clutter at thumbnail size. It does not retire the site's panel language, and it does not license removing borders from site cards.",
+        "section": "shapes"
+      }
     ],
     "dos": [
       "Do keep one accent per surface, and spend it on the single thing the reader must remember.",
-      "Do use #8A5200 for gold text on white and #C77F08 only at 24pt or larger; full #FCA311 on white is a fill, never ink.",
+      "Do use #A8350D for accent text on white and #D9480F only at 24pt or larger; full #FF5A1F on white is a fill, never ink.",
       "Do build raised surfaces from navy plus a 1px fjord hairline, and save shadow for hover and genuinely floating elements.",
       "Do gate every hover state behind (hover: hover) and (pointer: fine).",
       "Do keep reduced-motion gentle: drop movement, keep colour and opacity fades.",
       "Do animate translate / scale as independent properties, not transform.",
       "Do check any circulating artefact at roughly 240px wide before calling it finished.",
-      "Do keep the year as the gold element in the lockup, so a new edition inherits the identity by changing one number."
+      "Do keep the year as the accent chip in the lockup, so a new edition inherits the identity by changing one number."
     ],
     "donts": [
-      "Don't introduce a third hue. Saffron is a provisional-state signal, not a second accent, and nothing else enters the palette.",
-      "Don't set running prose in Bebas Neue, or a date in Archivo.",
+      "Don't introduce a third hue. Signal orange is a provisional-state signal, not a second accent, and nothing else enters the palette.",
+      "Don't set running prose in Barlow Condensed, or a date in Barlow.",
       "Don't apply uniform letter-spacing across the type ramp — tracking falls as size rises.",
       "Don't add a radius value outside 10px / 14px / 99px / 50%.",
       "Don't put a resting shadow on a card.",

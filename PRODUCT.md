@@ -14,7 +14,7 @@ web
 
 ## Product Purpose
 
-SIC 2027 — the Hyderabad Sports Injuries Conclave — is a two-day sports-injury meeting on **30 & 31 January 2027 (Saturday and Sunday)** in Hyderabad, inaugural edition, themed **Return to Sport**. Organised by Precision Orthopaedics LLP, in association with Apollo Hospitals, Financial District.
+HSC 2027 — the Hyderabad Sports Injuries Conclave — is a two-day sports-injury meeting on **30 & 31 January 2027 (Saturday and Sunday)** in Hyderabad, inaugural edition, themed **Return to Sport**. Organised by Precision Orthopaedics LLP, in association with Apollo Hospitals, Financial District.
 
 Success for the conclave is a meeting clinicians judge worth travelling to. Success for the pamphlet is narrower and confirmed by the organiser: **save the date** — the reader registers the name, the dates and the city, and remembers the conclave is happening. It is not a registration driver and not a sponsor pitch.
 
@@ -40,9 +40,9 @@ At the time it circulates: registration is not open, the venue is not announced,
 
 ## Brand Commitments
 
-- Names: **SIC 2027**, **Hyderabad Sports Injuries Conclave**. Strapline **Evidence · Innovation · Excellence**. Theme **Return to Sport**.
-- Palette is settled: navy `#14213D` with gold `#FCA311`. Ink-safe gold variants exist for light backgrounds because full gold fails contrast on white.
-- Typefaces are settled: **Bebas Neue** display, **Archivo** body, both self-hosted.
+- Names: **HSC 2027**, **Hyderabad Sports Injuries Conclave**. The conclave was abbreviated SIC until Oct 2026; the logo settled it as HSC. Strapline **Evidence · Innovation · Excellence**. Theme **Return to Sport**.
+- Palette is settled: ink `#0A1424` with orange `#FF5A1F`, taken from the HSC logo pack (Oct 2026). Ink-safe variants exist for light backgrounds because the full accent is only 3.1:1 on white.
+- Typefaces are settled: **Barlow Condensed** display, **Barlow** body, both self-hosted, matching the logo lockup.
 - Attribution: "in association with Apollo Hospitals, Financial District" — association, not host. Organised by Precision Orthopaedics LLP (a separate entity from Agile Ortho; never use that branding here).
 - Contact is `precisionortho4488@gmail.com`; site is `sportsinjuries.care`.
 - The organiser rejected AI-generated decorative artwork for this project; do not reintroduce it.
@@ -63,4 +63,4 @@ At the time it circulates: registration is not open, the venue is not announced,
 
 ## Accessibility & Inclusion
 
-No formal standard was set by the organiser, but two project-specific requirements are established: text must stay legible against the photographic backgrounds used in brand material, and the gold must switch to its ink-safe variant on light backgrounds, where full gold measures about 2:1 against white.
+No formal standard was set by the organiser, but two project-specific requirements are established: text must stay legible against the photographic backgrounds used in brand material, and the accent must switch to its ink-safe variant on light backgrounds, where the full orange measures 3.1:1 against white.
