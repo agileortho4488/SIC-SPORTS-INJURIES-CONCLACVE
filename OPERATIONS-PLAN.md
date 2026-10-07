@@ -14,7 +14,7 @@ priority list        payment + GST          brochure release         badge print
 ```
 
 ### Stage 1 — Discover (live today)
-- Website (this repo) + poster → priority-list form (FormSubmit → info@precisionortho.care).
+- Website (this repo) + poster → priority-list form (FormSubmit → precisionortho4488@gmail.com).
 - Priority list gets the registration link before public announcement.
 
 ### Stage 2 — Register (KonfHub event page)

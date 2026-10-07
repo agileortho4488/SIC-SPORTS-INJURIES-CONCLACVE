@@ -44,7 +44,7 @@ At the time it circulates: registration is not open, the venue is not announced,
 - Palette is settled: navy `#14213D` with gold `#FCA311`. Ink-safe gold variants exist for light backgrounds because full gold fails contrast on white.
 - Typefaces are settled: **Bebas Neue** display, **Archivo** body, both self-hosted.
 - Attribution: "in association with Apollo Hospitals, Financial District" — association, not host. Organised by Precision Orthopaedics LLP (a separate entity from Agile Ortho; never use that branding here).
-- Contact is `info@precisionortho.care`; site is `sportsinjuries.care`.
+- Contact is `precisionortho4488@gmail.com`; site is `sportsinjuries.care`.
 - The organiser rejected AI-generated decorative artwork for this project; do not reintroduce it.
 
 ## Evidence on Hand
