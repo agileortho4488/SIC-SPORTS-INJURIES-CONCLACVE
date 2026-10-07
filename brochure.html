@@ -53,6 +53,7 @@
 
   h2.sec { font-size: 24pt; margin: 2mm 0 6mm; }
   .committee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .committee-grid > .person:first-child { grid-column: 1 / -1; } /* Chairman on his own row; members pair evenly */
   .person { border: 0.3mm solid #E5E5E5; border-left: 1mm solid var(--accent); padding: 5mm; border-radius: 2mm; }
   .person .role { font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-ink); font-weight: 700; }
   .person b { display: block; font-size: 12pt; margin: 1mm 0 0.5mm; }
@@ -159,6 +160,7 @@
     <div class="person"><span class="role">Committee Member</span><b>Dr Harsha Vardhana Reddy</b></div>
     <div class="person"><span class="role">Committee Member</span><b>Dr Aakanksh</b></div>
     <div class="person"><span class="role">Committee Member</span><b>Dr Akshay</b></div>
+    <div class="person"><span class="role">Committee Member</span><b>Dr Madhava Rao Nekkanti</b></div>
   </div>
   <p style="font-size:9pt;color:#4A5568;margin-top:4mm">Designations and committee roles will be announced shortly.</p>
   <p class="label" style="margin-top:8mm">FACULTY</p>

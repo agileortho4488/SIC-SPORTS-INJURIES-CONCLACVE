@@ -53,7 +53,18 @@
   @media (max-width: 1199px) { .tier-grid.four { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 860px) { .tier-grid { grid-template-columns: 1fr; } }
   @media (max-width: 640px) { .tier-grid.four { grid-template-columns: 1fr; } }
-  /* exhibitor lead form on the dark register band */
+  /* page head: heading on the left, the prospectus form beside it (stacks on narrow screens) */
+  .head-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 31rem); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  @media (max-width: 960px) { .head-grid { grid-template-columns: 1fr; } }
+  .head-copy { margin-top: 1.25rem; max-width: 32rem; color: var(--mute); font-size: 1.05rem; }
+  .lead-card { background: rgb(28 46 74 / 0.55); border: 1px solid rgb(255 90 31 / 0.45); border-radius: 16px; padding: clamp(1.25rem, 3vw, 1.85rem); scroll-margin-top: calc(var(--nav-h) + 1rem); }
+  .lead-card .label { margin-bottom: 0.5rem; }
+  .lead-sub { color: var(--mute); font-size: 0.92rem; margin-bottom: 1.25rem; }
+  .lead-card .lead-form { grid-template-columns: 1fr 1fr; max-width: none; }
+  .lead-card .lead-form > div:nth-of-type(5), .lead-card .lead-form > div:nth-of-type(6) { grid-column: 1 / -1; }
+  @media (max-width: 520px) { .lead-card .lead-form { grid-template-columns: 1fr; } }
+  .lead-card .lead-actions { text-align: left; }
+  /* exhibitor lead form */
   .lead-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; max-width: 56rem; margin: 0 auto; text-align: left; }
   .lead-form label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--mute); margin-bottom: 0.4rem; }
   .lead-form input, .lead-form select { width: 100%; padding: 0.85rem 1rem; background: rgb(28 46 74 / 0.6); border: 1px solid rgb(66 94 123 / 0.6); border-radius: 10px; color: var(--paper); font-family: var(--body); font-size: 0.95rem; }
@@ -85,15 +96,69 @@
       <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i></span>
       <span class="sr-only">Menu</span>
     </button>
-    <a class="pill nav-cta" href="index.html#register">SAVE THE DATE</a>
+    <a class="pill nav-cta" href="#enquire">GET PROSPECTUS</a>
   </div>
 </header>
 
 <div class="page-head">
-  <div class="container">
-    <p class="lockup crumb"><a href="index.html">HSC 2027</a> &nbsp;/&nbsp; Exhibitors &amp; Partners</p>
-    <p class="label">TRADE EXHIBITION</p>
-    <h1>EXHIBITORS &amp;<br>PARTNERS</h1>
+  <div class="container head-grid">
+    <div>
+      <p class="lockup crumb"><a href="index.html">HSC 2027</a> &nbsp;/&nbsp; Exhibitors &amp; Partners</p>
+      <p class="label">TRADE EXHIBITION</p>
+      <h1>EXHIBITORS &amp;<br>PARTNERS</h1>
+      <p class="head-copy">One partner at each sponsorship level, three stall sizes, and one exhibition hall that surgeons, physiotherapists and S&amp;C coaches share at every break.</p>
+    </div>
+    <div class="lead-card" id="enquire">
+      <p class="label">GET THE EXHIBITOR PROSPECTUS</p>
+      <p class="lead-sub">Pricing, stall sizes and terms. Download it now; the organising committee will contact you to confirm availability and send the booking form.</p>
+    <form class="lead-form" id="exForm" action="https://formsubmit.co/precisionortho4488@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="HSC 2027 — Exhibitor lead">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.sportsinjuries.care/exhibitor-thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div><label for="x-company">Company</label><input id="x-company" name="company" required autocomplete="organization"></div>
+      <div><label for="x-name">Your name</label><input id="x-name" name="name" required autocomplete="name"></div>
+      <div><label for="x-email">Work email</label><input id="x-email" type="email" name="email" required autocomplete="email"></div>
+      <div><label for="x-mobile">Mobile</label><input id="x-mobile" type="tel" name="mobile" required autocomplete="tel"></div>
+      <div><label for="x-cat">Product category</label>
+        <select id="x-cat" name="category" required>
+          <option value="">Select…</option>
+          <option>Arthroscopy Systems &amp; Implants</option>
+          <option>Orthobiologics &amp; Regenerative Medicine</option>
+          <option>Robotics &amp; Surgical Navigation</option>
+          <option>Rehabilitation &amp; Physiotherapy Equipment</option>
+          <option>Imaging &amp; Diagnostics</option>
+          <option>Braces, Orthotics &amp; Sports Supports</option>
+          <option>Sports Nutrition &amp; Recovery</option>
+          <option>Digital Health &amp; Practice Software</option>
+          <option>Publishers &amp; Education Partners</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div><label for="x-int">Interested in</label>
+        <select id="x-int" name="interest" required>
+          <option value="">Select…</option>
+          <optgroup label="Sponsorship — one partner each">
+            <option>Platinum Sponsor</option>
+            <option>Gold Sponsor</option>
+            <option>Silver Sponsor</option>
+          </optgroup>
+          <optgroup label="Exhibition stall">
+            <option>Premium Stall</option>
+            <option>Standard Stall</option>
+            <option>Compact Stall</option>
+          </optgroup>
+          <option>Skills station, kit or programme page</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="lead-actions">
+        <button class="pill" type="submit">DOWNLOAD THE PROSPECTUS&ensp;↓</button>
+        <p class="fineprint">Your details go only to the HSC 2027 organising committee.</p>
+      </div>
+    </form>
+    </div>
   </div>
 </div>
 
@@ -245,62 +310,16 @@
 <section class="note-band">
   <div class="container">
     <p class="label">PROSPECTUS &amp; PRICING</p>
-    <p>Sponsorship and stall pricing is set out in the exhibitor &amp; partnership prospectus — <a href="#enquire">download it below</a>; final stall sizes follow the venue floor plan, and stalls are allocated in the order bookings are confirmed. Product sessions and demonstrations sit in the exhibition area, outside the CPD programme. There are no sponsored sessions, logos or seat covers inside the scientific halls, no company-hosted meals and no delegate gifts — the programme stays independent and your compliance sign-off stays simple.</p>
+    <p>Sponsorship and stall pricing is set out in the exhibitor &amp; partnership prospectus — <a href="#enquire">download it here</a>; final stall sizes follow the venue floor plan, and stalls are allocated in the order bookings are confirmed. Product sessions and demonstrations sit in the exhibition area, outside the CPD programme. There are no sponsored sessions, logos or seat covers inside the scientific halls, no company-hosted meals and no delegate gifts — the programme stays independent and your compliance sign-off stays simple.</p>
   </div>
 </section>
 
-<section class="register-band" id="enquire">
+<section class="register-band">
   <div class="container">
     <p class="reg-label">EXHIBITOR &amp; PARTNERSHIP ENQUIRIES</p>
-    <h2 class="display">GET THE EXHIBITOR PROSPECTUS</h2>
-    <p class="reg-copy">Sponsorship levels, stall sizes, pricing and terms in one document. Download it now; the organising committee will contact you to confirm availability and send the booking form.</p>
-    <form class="lead-form" id="exForm" action="https://formsubmit.co/precisionortho4488@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="HSC 2027 — Exhibitor lead">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://www.sportsinjuries.care/exhibitor-thanks.html">
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div><label for="x-company">Company</label><input id="x-company" name="company" required autocomplete="organization"></div>
-      <div><label for="x-name">Your name</label><input id="x-name" name="name" required autocomplete="name"></div>
-      <div><label for="x-email">Work email</label><input id="x-email" type="email" name="email" required autocomplete="email"></div>
-      <div><label for="x-mobile">Mobile</label><input id="x-mobile" type="tel" name="mobile" required autocomplete="tel"></div>
-      <div><label for="x-cat">Product category</label>
-        <select id="x-cat" name="category" required>
-          <option value="">Select…</option>
-          <option>Arthroscopy Systems &amp; Implants</option>
-          <option>Orthobiologics &amp; Regenerative Medicine</option>
-          <option>Robotics &amp; Surgical Navigation</option>
-          <option>Rehabilitation &amp; Physiotherapy Equipment</option>
-          <option>Imaging &amp; Diagnostics</option>
-          <option>Braces, Orthotics &amp; Sports Supports</option>
-          <option>Sports Nutrition &amp; Recovery</option>
-          <option>Digital Health &amp; Practice Software</option>
-          <option>Publishers &amp; Education Partners</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div><label for="x-int">Interested in</label>
-        <select id="x-int" name="interest" required>
-          <option value="">Select…</option>
-          <optgroup label="Sponsorship — one partner each">
-            <option>Platinum Sponsor</option>
-            <option>Gold Sponsor</option>
-            <option>Silver Sponsor</option>
-          </optgroup>
-          <optgroup label="Exhibition stall">
-            <option>Premium Stall</option>
-            <option>Standard Stall</option>
-            <option>Compact Stall</option>
-          </optgroup>
-          <option>Skills station, kit or programme page</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div class="lead-actions">
-        <button class="pill pill-inverse" type="submit">DOWNLOAD THE PROSPECTUS&ensp;↓</button>
-        <p class="fineprint">Your details go only to the HSC 2027 organising committee.</p>
-      </div>
-    </form>
+    <h2 class="display">RESERVE YOUR PLACE EARLY</h2>
+    <p class="reg-copy">Each sponsorship level is open to one partner, and stall positions go in the order bookings are confirmed.</p>
+    <a class="pill pill-inverse" href="#enquire">GET THE PROSPECTUS&ensp;↑</a>
   </div>
 </section>
 

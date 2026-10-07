@@ -975,7 +975,10 @@ table.halls-grid td.joint { background: rgb(255 90 31 / 0.1); border-left: 2px s
 table.halls-grid tr.break td { background: rgb(28 46 74 / 0.3); color: var(--mute); font-style: italic; }
 
 /* committee shown as names first — roles to follow */
-.committee-names { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+/* nine people: 3 x 3 on desktop; at two columns the Chairman takes his own row so members pair evenly */
+.committee-names { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 55.99rem) { .committee-names { grid-template-columns: 1fr 1fr; } .committee-names > div:first-child { grid-column: 1 / -1; } }
+@media (max-width: 35.99rem) { .committee-names { grid-template-columns: 1fr; } }
 .committee-names > div { padding: 1.35rem; }
 .committee-names .avatar { width: 2.75rem; height: 2.75rem; font-size: 0.82rem; margin-bottom: 0.75rem; }
 .committee-names dt.tbd { color: var(--slate); }
