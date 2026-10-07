@@ -38,6 +38,8 @@
     border-radius: 14px;
     padding: 1.75rem;
   }
+  /* four cards (three stalls + session support) sit on one row on desktop instead of orphaning one */
+  .tier-grid.four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
   .tier.lead { border-color: rgb(255 90 31 / 0.6); }
   .tier h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.6rem; margin-bottom: 0.25rem; }
   .tier .label { margin-bottom: 1rem; }
@@ -134,42 +136,66 @@
     <header class="sec-head">
       <span class="sec-num" aria-hidden="true">03</span>
       <div>
-        <p class="label">PARTNERSHIP LEVELS</p>
-        <h2 class="display">WAYS TO PARTNER</h2>
+        <p class="label">SPONSORSHIP</p>
+        <h2 class="display">ONE PARTNER<br>AT EACH LEVEL</h2>
       </div>
     </header>
     <div class="tier-grid">
       <div class="tier lead">
-        <h3>Platinum Partner</h3>
-        <p class="label">PRINCIPAL PARTNERSHIP</p>
+        <h3>Platinum Sponsor</h3>
+        <p class="label">ONE PARTNER</p>
         <ul>
-          <li>Premium exhibition positioning</li>
-          <li>Branding across conclave collateral</li>
-          <li>Product demonstration slot in the exhibition hall during breaks</li>
-          <li>Delegate registrations included</li>
+          <li>First-position stall at the exhibition entrance</li>
+          <li>Product session in the exhibition area at lunch, outside CPD hours</li>
+          <li>Named as Platinum Sponsor across website, programme &amp; signage</li>
+          <li>Company representative passes</li>
         </ul>
       </div>
       <div class="tier">
-        <h3>Gold Partner</h3>
-        <p class="label">MAJOR PARTNERSHIP</p>
+        <h3>Gold Sponsor</h3>
+        <p class="label">ONE PARTNER</p>
         <ul>
-          <li>Prominent exhibition stall</li>
-          <li>Branding across conclave collateral &amp; signage</li>
-          <li>Delegate registrations included</li>
+          <li>Second-position premium stall</li>
+          <li>Product demonstration slot in the exhibition area during a break</li>
+          <li>Named as Gold Sponsor across website, programme &amp; signage</li>
+          <li>Company representative passes</li>
         </ul>
       </div>
       <div class="tier">
-        <h3>Silver Partner</h3>
-        <p class="label">SUPPORTING PARTNERSHIP</p>
+        <h3>Silver Sponsor</h3>
+        <p class="label">ONE PARTNER</p>
         <ul>
-          <li>Exhibition stall in a standard position</li>
-          <li>Acknowledgement in conclave materials</li>
-          <li>Delegate registrations included</li>
+          <li>Premium stall in the front row</li>
+          <li>Named as Silver Sponsor across website, programme &amp; signage</li>
+          <li>Company representative passes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint-band">
+  <div class="container">
+    <header class="sec-head">
+      <span class="sec-num" aria-hidden="true">04</span>
+      <div>
+        <p class="label">EXHIBITION STALLS</p>
+        <h2 class="display">THREE STALL SIZES</h2>
+      </div>
+    </header>
+    <div class="tier-grid four">
+      <div class="tier">
+        <h3>Premium Stall</h3>
+        <p class="label">PREMIUM ROW</p>
+        <ul>
+          <li>Largest stall size, near the hall entrances</li>
+          <li>Listing in conclave materials</li>
+          <li>Exhibitor badges</li>
         </ul>
       </div>
       <div class="tier">
-        <h3>Exhibitor</h3>
-        <p class="label">EXHIBITION STALL</p>
+        <h3>Standard Stall</h3>
+        <p class="label">EXHIBITION HALL</p>
         <ul>
           <li>Standard stall in the exhibition hall</li>
           <li>Listing in conclave materials</li>
@@ -177,12 +203,21 @@
         </ul>
       </div>
       <div class="tier">
+        <h3>Compact Stall</h3>
+        <p class="label">EXHIBITION HALL</p>
+        <ul>
+          <li>Compact stall for focused product lines</li>
+          <li>Listing in conclave materials</li>
+          <li>Exhibitor badge</li>
+        </ul>
+      </div>
+      <div class="tier">
         <h3>Session Support</h3>
         <p class="label">QUOTED SEPARATELY</p>
         <ul>
           <li>Workshop &amp; symposium support</li>
-          <li>Lanyards, kits &amp; hospitality</li>
-          <li>Quoted separately from the partnership levels</li>
+          <li>Delegate kits</li>
+          <li>Quoted separately from sponsorship and stalls</li>
         </ul>
       </div>
     </div>
@@ -192,7 +227,7 @@
 <section class="note-band">
   <div class="container">
     <p class="label">PROSPECTUS &amp; PRICING</p>
-    <p>Partnership pricing is set out in the exhibitor &amp; partnership prospectus, sent on request. Stall tariffs for the exhibition hall are released with the venue announcement. Enquiries registered now receive the prospectus first, with priority in stall allocation.</p>
+    <p>Sponsorship and stall pricing is set out in the exhibitor &amp; partnership prospectus, sent on request. Final stall sizes follow the venue floor plan. Stalls are allocated in the order bookings are confirmed. Product sessions and demonstrations sit in the exhibition area, outside the CPD programme, so the scientific sessions stay independent.</p>
   </div>
 </section>
 
@@ -200,8 +235,8 @@
   <div class="container">
     <p class="reg-label">EXHIBITOR &amp; PARTNERSHIP ENQUIRIES</p>
     <h2 class="display">RESERVE YOUR PLACE EARLY</h2>
-    <p class="reg-copy">Write to the organizing committee with your company name, category and preferred partnership level — we will respond with the prospectus as soon as it is released.</p>
-    <a class="pill pill-inverse" href="mailto:precisionortho4488@gmail.com?subject=HSC%202027%20—%20Exhibitor%20enquiry&body=Company%3A%0ACategory%3A%0APreferred%20partnership%20level%3A%0AContact%20person%3A%0APhone%3A">ENQUIRE AS AN EXHIBITOR&ensp;→</a>
+    <p class="reg-copy">Write to the organizing committee with your company name, category and the sponsorship level or stall size you want — we will respond with the prospectus as soon as it is released.</p>
+    <a class="pill pill-inverse" href="mailto:precisionortho4488@gmail.com?subject=HSC%202027%20—%20Exhibitor%20enquiry&body=Company%3A%0ACategory%3A%0ASponsorship%20level%20or%20stall%20size%3A%0AContact%20person%3A%0APhone%3A">ENQUIRE AS AN EXHIBITOR&ensp;→</a>
   </div>
 </section>
 
